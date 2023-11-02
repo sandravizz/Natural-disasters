@@ -6,6 +6,7 @@ Data source: [NCEI](https://www.ncei.noaa.gov/access/billions/events/US/1980-202
 
 ## EDA
 
-The first step is always to check your data and variable structure and extreme values as well as general patterns and trends. For this purpose I used **arquero.js** as a data processing library and **plot.js** as a plotting library. Please find the whole process in this [Observable notebook](https://observablehq.com/@sandraviz/billion-dollar-disasters-arquero-js-plot-js?collection=@sandraviz/billion-dollar-disaster) 
+The first step is always to check your data and variable structure and extreme values as well as general patterns and trends. For this purpose I used [arquero.js](https://uwdata.github.io/arquero/)  as a data processing library and [plot.js](https://observablehq.com/plot/) 
+ as a plotting library. Please find the whole process in this [Observable notebook](https://observablehq.com/@sandraviz/billion-dollar-disasters-arquero-js-plot-js?collection=@sandraviz/billion-dollar-disaster) 
 
 
