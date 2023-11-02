@@ -4,6 +4,8 @@ In this repo I showcase the whole process of a web based data visualisation proj
 
 Data source: [NCEI](https://www.ncei.noaa.gov/access/billions/events/US/1980-2023?disasters[]=all-disasters)
 
+![One of nature's biggest force: hurricanes](images/hurricane.png)
+
 ## EDA
 
 The first step is always to check your data and variable structure and extreme values as well as general patterns and trends. For this purpose I used [arquero.js](https://uwdata.github.io/arquero/)  as a data processing library and [plot.js](https://observablehq.com/plot/) 
