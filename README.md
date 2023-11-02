@@ -15,7 +15,7 @@ The first step is always to check your data and variable structure and extreme v
 
  ### Objective 
 
- As **Edward Tufte** described it very well 
+ As [Edward Tufte](https://de.wikipedia.org/wiki/Edward_Tufte) described it very well 
 
  *"Graphical excellence is that which gives to the viewer the greatest number of ideas in the shortest time with the least ink in the smallest space."*
 
