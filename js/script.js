@@ -66,7 +66,11 @@ let color = d3.scaleOrdinal()
   .range(["#A3AB78", "#BDE038", "#9FC131", "#005C53", "#042940", "#f20666"]);
 
 
-
+  svg.append("circle")
+  .attr("id", "circle1")
+  .attr("cx", 200)
+  .attr("cy", 250)
+  .attr("r", 200);
 
 
 });
