@@ -2,12 +2,13 @@
 //  Margin and canvas
 // --------------------------------------
 
-var margin = { top: 100, right: 60, bottom: 60, left: 60 };
-var width = 900 - margin.left - margin.right;
-var height = 500 - margin.top - margin.bottom;
+const margin = { top: 100, right: 60, bottom: 60, left: 60 };
 
+const width = 900 - margin.left - margin.right;
+const height = 500 - margin.top - margin.bottom;
 
-var svg = d3.select("#graph")
+let svg = d3.select("#graph")
+              .append("svg")
               .attr("width", width + margin.left + margin.right)
               .attr("height", height + margin.top + margin.bottom)
               .append("g")
@@ -67,10 +68,8 @@ let color = d3.scaleOrdinal()
 
 
   svg.append("circle")
-  .attr("id", "circle1")
-  .attr("cx", 200)
-  .attr("cy", 250)
+  .attr("cx", 400)
+  .attr("cy", 100)
   .attr("r", 200);
-
 
 });
