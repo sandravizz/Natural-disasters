@@ -44,12 +44,14 @@ const data = d3.csv("./data/sankey_data.csv", d3.autoType)
       d.target = nodes.find((e) => e.name === d.target).id;
     });
     
-    console.log(nodes);
-    console.log(links);
-    console.log(data);
-
     let data_final = {nodes:nodes, links:links};
-    console.log(data_final);
+    // console.log(data_final);
+
+// --------------------------------------
+//  Format
+// --------------------------------------    
+
+let format = d3.format(".02s");
 
 // --------------------------------------
 //  Scales
@@ -66,10 +68,46 @@ let color = d3.scaleOrdinal()
   ])
   .range(["#A3AB78", "#BDE038", "#9FC131", "#005C53", "#042940", "#f20666"]);
 
+// --------------------------------------
+//  Sankey
+// --------------------------------------
 
-  svg.append("circle")
-  .attr("cx", 400)
-  .attr("cy", 100)
-  .attr("r", 200);
+function sankey1(){
+
+  const sankey = d3.sankey()
+  .nodeSort((a, b) => a.id - b.id)
+  .nodeAlign(d3.sankeyCenter)
+  .nodeId((d) => d.id)
+  .linkSort(null)
+  .nodeWidth(15)
+  .nodePadding(3)
+  .extent([
+    [margin.left, margin.top],
+    [width - margin.right, height - margin.bottom]
+  ]);
+  
+return ({ nodes, links }) =>
+  sankey({
+    nodes: nodes.map((d) => Object.assign({}, d)),
+    links: links.map((d) => Object.assign({}, d))
+  });
+
+};
+
+// Checking sankey applied to data
+console.log(sankey1(data_final));
+  
+
+
+
+
 
 });
+
+
+
+
+
+
+
+
