@@ -2,10 +2,10 @@
 //  Margin and canvas
 // --------------------------------------
 
-const margin = { top: 100, right: 60, bottom: 60, left: 60 };
+const margin = { top: 20, right: 100, bottom: 60, left: 60 };
 
 const width = 900 - margin.left - margin.right;
-const height = 500 - margin.top - margin.bottom;
+const height = 700 - margin.top - margin.bottom;
 
 let svg = d3.select("#graph")
               .append("svg")
@@ -71,9 +71,6 @@ let color = d3.scaleOrdinal()
 // --------------------------------------
 //  Sankey
 // --------------------------------------
-
-function sankey1(){
-
   const sankey = d3.sankey()
   .nodeSort((a, b) => a.id - b.id)
   .nodeAlign(d3.sankeyCenter)
@@ -85,22 +82,72 @@ function sankey1(){
     [margin.left, margin.top],
     [width - margin.right, height - margin.bottom]
   ]);
-  
-return ({ nodes, links }) =>
-  sankey({
-    nodes: nodes.map((d) => Object.assign({}, d)),
-    links: links.map((d) => Object.assign({}, d))
-  });
 
-};
 
 // Checking sankey applied to data
-console.log(sankey1(data_final));
+console.log((sankey(data_final)));
+
+// --------------------------------------
+//  Data drawing 
+// --------------------------------------
   
+svg
+.append("g")
+.selectAll("rect")
+.data((sankey(data_final)).nodes)
+.join("rect")
+.attr("x", (d) => (d.x0 > width / 2 ? d.x0 : d.x0 + 10))
+.attr("y", (d) => d.y0)
+.attr("height", (d) => d.y1 - d.y0)
+.attr("width", (d) => (d.x0 > width / 2 ? d.x1 - d.x0 + 30 : 5))
+.attr("fill", (d) => (d.x0 > width / 2 ? color(d.name) : "black"))
+.attr("opacity", (d) => (d.x0 > width / 2 ? 1 : 1))
+.on("mouseover", (e, d) => {
+  d3.selectAll("path").style("opacity", (p) =>
+    p.source.name === d.name || p.target.name === d.name ? "1" : "0.07"
+  );
+})
+.on("mouseout", (e, d) => {
+  d3.selectAll("path").style("opacity", 1);
+});
 
+const link = svg
+    .append("g")
+    .attr("fill", "none")
+    .selectAll("g")
+    .data((sankey(data_final)).links)
+    .join("g");
 
+  link
+    .append("path")
+    .attr("class", (d) => `trajectory_${d.id}`)
+    .attr("d", d3.sankeyLinkHorizontal())
+    .attr("stroke", (d) => color(d.target.name))
+    .attr("stroke-opacity", 1)
+    .attr("stroke-width", 0)
+    .transition()
+    .delay((d) => 1000 + d.target.index * 1500)
+    .duration(1000)
+    .attr("stroke-opacity", 1)
+    .attr("stroke-width", (d) => Math.max(1, d.width));
 
-
+  const node = svg
+    .append("g")
+    .selectAll("text")
+    .data((sankey(data_final)).nodes)
+    .join("text")
+    .attr("x", (d) => (d.x0 < width / 2 ? d.x1 - 10 : d.x0 + 50))
+    .attr("y", (d) => (d.y1 + d.y0) / 2)
+    .attr("fill", (d) => (d.x0 > width / 2 ? color(d.name) : "black"))
+    .attr("dy", "0.4em")
+    .attr("text-anchor", (d) => (d.x0 < width / 2 ? "end" : "start"))
+    .attr("font-size", (d) => (d.x0 < width / 2 ? 15 : 15))
+    .attr("font-weight", (d) => (d.x0 < width / 2 ? 300 : 500))
+    .text((d) => d.name + "s")
+    .append("tspan")
+    .attr("fill-opacity", (d) => (d.x0 < width / 2 ? 0.5 : 1))
+    .attr("font-weight", 400)
+    .text((d) => `  | ${format(d.value)}`);
 
 });
 
