@@ -2,7 +2,7 @@
 //  Margin and canvas
 // --------------------------------------
 
-const margin = { top: 20, right: 100, bottom: 60, left: 60 };
+const margin = { top: 30, right: 110, bottom: 20, left: 60 };
 
 const width = 1100 - margin.left - margin.right;
 const height = 600 - margin.top - margin.bottom;
@@ -68,7 +68,6 @@ let color = d3.scaleOrdinal()
   ])
   .range(["#A3AB78", "#BDE038", "#9FC131", "#005C53", "#042940", "#f20666"]);
 
-
 //Bar chart
 
   let y = d3.scaleBand()
@@ -80,12 +79,9 @@ let color = d3.scaleOrdinal()
     "Winter Storm",
     "Severe Storm"
   ])
-  .rangeRound([460, 0]);
+  .rangeRound([500, 0]);
 
   console.log(y.bandwidth());
-
-
-
 
 // --------------------------------------
 //  Sankey
@@ -118,7 +114,7 @@ svg
 .attr("x", 350)
 .attr("fill", (d) => (d.x0 > width / 2 ? color(d.name) : "black"))
 .attr("opacity", (d) => (d.x0 > width / 2 ? 1 : 0))
-.attr("y", (d, i) => (y.bandwidth() *i) -60 )
+.attr("y", (d, i) => (y.bandwidth() *i) -50 )
 .attr("height", y.bandwidth())
 .on("mouseover", (e, d) => {
   d3.selectAll("path").style("opacity", (p) =>
@@ -134,11 +130,11 @@ svg
 .attr("fill", (d) => (d.x0 > width / 2 ? color(d.name) : "black"))
 .attr("height", (d) => d.y1 - d.y0)
 .attr("opacity", (d) => (d.x0 > width / 2 ? 1 : 0))
-.attr("width", (d) => (d.x0 > width / 2 ? d.x1 - d.x0 + 30 : 10))
+.attr("width", (d) => (d.x0 > width / 2 ? d.x1 - d.x0 + 30 : 15))
 .attr("y", (d) => d.y0)
 .transition()
 .duration(2000)
-.attr("x", (d) => (d.x0 > width / 2 ? d.x0 : d.x0 + 10))
+.attr("x", (d) => (d.x0 > width / 2 ? d.x0 : d.x0 + 0))
 .transition()
 .delay(1000)
 .duration(1000)
@@ -169,8 +165,7 @@ const link = svg
     .selectAll("text")
     .data((sankey(data_final)).nodes)
     .join("text")
-   // .attr("x", (d) => (d.x0 < width / 2 ? d.x1 - 10 : 180))
-    .attr("x", (d) => (d.x0 < width / 2 ? d.x1 - 10 : d.x0 + 50))
+    .attr("x", (d) => (d.x0 < width / 2 ? d.x1 - 20 : d.x0 + 50))
     .attr("y", (d) => (d.y1 + d.y0) / 2)
     .attr("fill", "black")
    // .attr("fill", (d) => (d.x0 > width / 2 ? color(d.name) : "black"))
