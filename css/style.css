@@ -18,8 +18,7 @@ svg {
 /*--------------------------------------*/
 
 #h1 {
-  margin-top: 20;
-  font-size: 2rem;
+  font-size: 30px;
   color:#f20666;
   margin-bottom: 10px;
   font-weight:500;
@@ -34,10 +33,10 @@ svg {
   font-weight:300;
 }
 
-#h3 {
-  margin-top: 5px;
-  font-size: 1rem;
-  margin-bottom: 10px;
+.h3 {
+  margin-top: 0px;
+  font-size: 14px;
+  margin-bottom: 5px;
   color:black;
   font-weight:400;
 }
