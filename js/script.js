@@ -172,15 +172,16 @@ const link = svg
    // .attr("x", (d) => (d.x0 < width / 2 ? d.x1 - 10 : 180))
     .attr("x", (d) => (d.x0 < width / 2 ? d.x1 - 10 : d.x0 + 50))
     .attr("y", (d) => (d.y1 + d.y0) / 2)
-    .attr("fill", (d) => (d.x0 > width / 2 ? color(d.name) : "black"))
+    .attr("fill", "black")
+   // .attr("fill", (d) => (d.x0 > width / 2 ? color(d.name) : "black"))
     .attr("dy", "0.4em")
     .attr("text-anchor", (d) => (d.x0 < width / 2 ? "end" : "start"))
     .attr("font-size", (d) => (d.x0 < width / 2 ? 15 : 15))
-    .attr("font-weight", (d) => (d.x0 < width / 2 ? 300 : 500))
+    .attr("font-weight", (d) => (d.x0 < width / 2 ? 300 : 300))
     .text((d) => d.name + "s")
     .append("tspan")
-    .attr("fill-opacity", (d) => (d.x0 < width / 2 ? 0.5 : 1))
-    .attr("font-weight", 400)
+    .attr("fill-opacity", (d) => (d.x0 < width / 2 ? 0.5 : 0.5))
+    .attr("font-weight", 300)
     .text((d) => `  | ${format(d.value)}`);
 
 });
