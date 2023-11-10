@@ -4,8 +4,8 @@
 
 const margin = { top: 20, right: 100, bottom: 60, left: 60 };
 
-const width = 900 - margin.left - margin.right;
-const height = 700 - margin.top - margin.bottom;
+const width = 1100 - margin.left - margin.right;
+const height = 600 - margin.top - margin.bottom;
 
 let svg = d3.select("#graph")
               .append("svg")
@@ -68,6 +68,25 @@ let color = d3.scaleOrdinal()
   ])
   .range(["#A3AB78", "#BDE038", "#9FC131", "#005C53", "#042940", "#f20666"]);
 
+
+//Bar chart
+
+  let y = d3.scaleBand()
+  .domain([
+    "Tropical Cyclone",
+    "Drought",
+    "Wildfire",
+    "Flooding",
+    "Winter Storm",
+    "Severe Storm"
+  ])
+  .rangeRound([460, 0]);
+
+  console.log(y.bandwidth());
+
+
+
+
 // --------------------------------------
 //  Sankey
 // --------------------------------------
@@ -83,7 +102,6 @@ let color = d3.scaleOrdinal()
     [width - margin.right, height - margin.bottom]
   ]);
 
-
 // Checking sankey applied to data
 console.log((sankey(data_final)));
 
@@ -96,12 +114,12 @@ svg
 .selectAll("rect")
 .data((sankey(data_final)).nodes)
 .join("rect")
-.attr("x", (d) => (d.x0 > width / 2 ? d.x0 : d.x0 + 10))
-.attr("y", (d) => d.y0)
-.attr("height", (d) => d.y1 - d.y0)
-.attr("width", (d) => (d.x0 > width / 2 ? d.x1 - d.x0 + 30 : 5))
+.attr("width", (d) => d.y1 - d.y0)
+.attr("x", 350)
 .attr("fill", (d) => (d.x0 > width / 2 ? color(d.name) : "black"))
-.attr("opacity", (d) => (d.x0 > width / 2 ? 1 : 1))
+.attr("opacity", (d) => (d.x0 > width / 2 ? 1 : 0))
+.attr("y", (d, i) => (y.bandwidth() *i) -60 )
+.attr("height", y.bandwidth())
 .on("mouseover", (e, d) => {
   d3.selectAll("path").style("opacity", (p) =>
     p.source.name === d.name || p.target.name === d.name ? "1" : "0.07"
@@ -109,7 +127,22 @@ svg
 })
 .on("mouseout", (e, d) => {
   d3.selectAll("path").style("opacity", 1);
-});
+})
+.transition()
+.delay(3000)
+.duration(2000)
+.attr("fill", (d) => (d.x0 > width / 2 ? color(d.name) : "black"))
+.attr("height", (d) => d.y1 - d.y0)
+.attr("opacity", (d) => (d.x0 > width / 2 ? 1 : 0))
+.attr("width", (d) => (d.x0 > width / 2 ? d.x1 - d.x0 + 30 : 10))
+.attr("y", (d) => d.y0)
+.transition()
+.duration(2000)
+.attr("x", (d) => (d.x0 > width / 2 ? d.x0 : d.x0 + 10))
+.transition()
+.delay(1000)
+.duration(1000)
+.attr("opacity", (d) => (d.x0 > width / 2 ? 1 : 1));
 
 const link = svg
     .append("g")
@@ -126,7 +159,7 @@ const link = svg
     .attr("stroke-opacity", 1)
     .attr("stroke-width", 0)
     .transition()
-    .delay((d) => 1000 + d.target.index * 1500)
+    .delay((d) => 8000 + d.target.index * 1500)
     .duration(1000)
     .attr("stroke-opacity", 1)
     .attr("stroke-width", (d) => Math.max(1, d.width));
@@ -136,6 +169,7 @@ const link = svg
     .selectAll("text")
     .data((sankey(data_final)).nodes)
     .join("text")
+   // .attr("x", (d) => (d.x0 < width / 2 ? d.x1 - 10 : 180))
     .attr("x", (d) => (d.x0 < width / 2 ? d.x1 - 10 : d.x0 + 50))
     .attr("y", (d) => (d.y1 + d.y0) / 2)
     .attr("fill", (d) => (d.x0 > width / 2 ? color(d.name) : "black"))
@@ -150,11 +184,3 @@ const link = svg
     .text((d) => `  | ${format(d.value)}`);
 
 });
-
-
-
-
-
-
-
-
