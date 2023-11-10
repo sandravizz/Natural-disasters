@@ -58,28 +58,20 @@ svg {
   font-weight:400;
 }
 
+#link {
+  font-size: 8px;
+}
+
 a:link, a:active, a:visited {
   margin-top:0.5px;
   color:#662e9b;
-  font-size:12px;
   font-weight:500;
 }
 
 a:hover {
   margin-top:0.5px;
   color:#662e9b;
-  font-size:12px;
   font-weight:400;
-}
-
-/*--------------------------------------*/
-/* Chart stylings */
-/*--------------------------------------*/
-
-.line {
-  stroke:#f5fa91;
-  stroke-width: 1px;
-
 }
 
 /*--------------------------------------*/
@@ -106,43 +98,3 @@ a:hover {
   line-height: 1.4;
 }
 
-
-/*Defining axis stylings*/
-
-.y_text, .x_text {
-  font-family:'Montserrat Alternates', sans-serif;
-  font-weight:500;
-  font-size:13px;
-  opacity:1;
-  fill:#022859;
-}
-
-.x-axis path {
-  fill:none;
-  stroke-width:0;
-  stroke-opacity:1;
-  stroke:white;
-}
-
-.y-axis path {
-  fill:none;
-  stroke-width:0;
-  stroke-opacity:1;
-  stroke:#0D0D0D;
-}
-
-.y-axis, .x-axis line {
-  fill:none;
-  stroke-width:0;
-  stroke-opacity:1;
-  stroke:#0D0D0D;
-  stroke-dasharray:0;
-}
-
-.y-axis, .x-axis text {
-  font-family:'Montserrat Alternates', sans-serif;
-  font-weight:300;
-  font-size:8px;
-  opacity:1;
-  fill:black;
-}
