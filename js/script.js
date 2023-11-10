@@ -114,7 +114,7 @@ svg
 .attr("x", 350)
 .attr("fill", (d) => (d.x0 > width / 2 ? color(d.name) : "black"))
 .attr("opacity", (d) => (d.x0 > width / 2 ? 1 : 0))
-.attr("y", (d, i) => (y.bandwidth() *i) -50 )
+.attr("y", (d, i) => (y.bandwidth() * i) -50 )
 .attr("height", y.bandwidth())
 .on("mouseover", (e, d) => {
   d3.selectAll("path").style("opacity", (p) =>
@@ -133,6 +133,7 @@ svg
 .attr("width", (d) => (d.x0 > width / 2 ? d.x1 - d.x0 + 30 : 15))
 .attr("y", (d) => d.y0)
 .transition()
+.delay(1000)
 .duration(2000)
 .attr("x", (d) => (d.x0 > width / 2 ? d.x0 : d.x0 + 0))
 .transition()
@@ -155,7 +156,7 @@ const link = svg
     .attr("stroke-opacity", 1)
     .attr("stroke-width", 0)
     .transition()
-    .delay((d) => 8000 + d.target.index * 1500)
+    .delay((d) => 10000 + d.target.index * 1500)
     .duration(1000)
     .attr("stroke-opacity", 1)
     .attr("stroke-width", (d) => Math.max(1, d.width));
@@ -168,15 +169,23 @@ const link = svg
     .attr("x", (d) => (d.x0 < width / 2 ? d.x1 - 20 : d.x0 + 50))
     .attr("y", (d) => (d.y1 + d.y0) / 2)
     .attr("fill", "black")
-   // .attr("fill", (d) => (d.x0 > width / 2 ? color(d.name) : "black"))
     .attr("dy", "0.4em")
     .attr("text-anchor", (d) => (d.x0 < width / 2 ? "end" : "start"))
-    .attr("font-size", (d) => (d.x0 < width / 2 ? 15 : 15))
+    .attr("font-size", (d) => (d.x0 < width / 2 ? 0 : 0))
     .attr("font-weight", (d) => (d.x0 < width / 2 ? 300 : 300))
     .text((d) => d.name + "s")
-    .append("tspan")
-    .attr("fill-opacity", (d) => (d.x0 < width / 2 ? 0.5 : 0.5))
-    .attr("font-weight", 300)
-    .text((d) => `  | ${format(d.value)}`);
+    // .append("tspan")
+    // .attr("fill-opacity", (d) => (d.x0 < width / 2 ? 0.5 : 0.5))
+    // .attr("font-weight", 200)
+    // .text((d) => `${format(d.value)}`)
+    .transition()
+    .delay(8000)
+    .duration(500)
+    .attr("font-size", (d) => (d.x0 < width / 2 ? 0 : 15))
+    .transition()
+    .delay(1000)
+    .duration(500)
+    .attr("font-size", (d) => (d.x0 < width / 2 ? 15 : 15));
+
 
 });
