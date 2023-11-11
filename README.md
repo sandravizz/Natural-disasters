@@ -8,7 +8,7 @@ In this repository I analyse deeply the most destructiv natural disasters happin
 
 The data is provided by [NCEI](https://www.ncei.noaa.gov/access/billions/events/US/1980-2023?disasters[]=all-disasters). 
 
-The image below shows a hurricane, one of the most dangerous natural disasters. Scientist observed birds flying directly into the eye of the hurricane, where it is surprisingly clam. 
+The image below shows a hurricane, one of the most dangerous natural disasters. On the other hand do some birds flying directly into the eye of the hurricane, where it is surprisingly clam. 
 
 ![One of nature's biggest force: hurricanes](images/hurricane.png)
 
