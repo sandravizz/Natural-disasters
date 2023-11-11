@@ -1,8 +1,12 @@
 # Billion-dollar-disaster-US
 
-In this repo I showcase the whole process of a web based data visualisation project using JavaScript libraries for the EDA as well as the final visualisation. 
+The more time I spend in nature the more I'm facinated by it. Inspried by Albert Einstein's quote -  *Look deep into nature, and then you will understand everything better*. 
 
-Data source: [NCEI](https://www.ncei.noaa.gov/access/billions/events/US/1980-2023?disasters[]=all-disasters)
+At the same time climate change is becoming real. Following [Aaron Swartz](https://en.wikipedia.org/wiki/Aaron_Swartz)'s idea - *What is the most important thing you could be working on in the world right now? And if you're not working on that, why aren't you?* I believe this is the  most important thing right now.  
+
+In this repository I analyse deeply the most destructiv natural disasters happing in the US over the last decades. The main objective is to understand patterns and possilbe changes over time. On a practical side I showcase  the whole process of a data visualisation project using the porgramming language JavaScript for the data cleaning, EDA, plotting and the final dynamic visualisation. 
+
+The data is provided by [NCEI](https://www.ncei.noaa.gov/access/billions/events/US/1980-2023?disasters[]=all-disasters). 
 
 ![One of nature's biggest force: hurricanes](images/hurricane.png)
 
