@@ -6,7 +6,7 @@ At the same time climate change is becoming real. Following [Aaron Swartz](https
 
 In this repository I analyse deeply the most destructiv natural disasters happing in the US over the last decades. The main objective is to understand patterns and possilbe changes over time. On a practical side I showcase  the whole process of a data visualisation project using the porgramming language JavaScript for the data cleaning, EDA, plotting and the final dynamic visualisation with data provided by [NCEI](https://www.ncei.noaa.gov/access/billions/events/US/1980-2023?disasters[]=all-disasters). 
 
-As a start, look at the image below showing a hurricane, one of the most dangerous natural disasters. Some birds though flying directly into the eye of the hurricane, where it is surprisingly clam. 
+As a start, look at the image below showing a hurricane, one of the most dangerous natural disasters. Some birds though fly directly into the eye of the hurricane, where it is surprisingly clam. 
 
 ![One of nature's biggest force: hurricanes](images/hurricane.png)
 
