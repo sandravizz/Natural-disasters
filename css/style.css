@@ -7,7 +7,7 @@ html,body {
   font-weight:300;
   font-size:14px;
   color: white;
-  background-color:#687d73;
+  background-color:#444952;
 }
 
 
@@ -16,27 +16,27 @@ html,body {
 /*--------------------------------------*/
 
 #h1 {
-  font-size: 30px;
+  font-size: 28px;
   color:white;
   margin-bottom: 10px;
-  font-weight:500;
+  font-weight:450;
 }
 
 .h2 {
   margin-top: 0px;
-  font-size: 1rem;
-  margin-bottom: 5px;
+  font-size: 13px;
+  margin-bottom: 50px;
   margin-right: 50px;
   color:black;
-  font-weight:300;
+  font-weight:200;
 }
 
 .h3 {
   margin-top: 0px;
-  font-size: 14px;
+  font-size: 13px;
   margin-bottom: 5px;
   color:white;
-  font-weight:400;
+  font-weight:300;
 }
 
 #h4 {
@@ -56,18 +56,19 @@ html,body {
 }
 
 #link {
+  margin-top:20px;
   font-size: 8px;
   font-weight:300;
 }
 
 a:link, a:active, a:visited {
-  margin-top:0.5px;
+  margin-top:20px;
   color:white;
   font-weight:300;
 }
 
 a:hover {
-  margin-top:0.5px;
+  margin-top:20px;
   color:white;
   font-weight:400;
 }

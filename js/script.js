@@ -2,7 +2,7 @@
 //  Margin and canvas
 // --------------------------------------
 
-const margin = { top: 30, right: 110, bottom: 20, left: 110 };
+const margin = { top: 50, right: 110, bottom: 20, left: 90 };
 
 const width = 1400 - margin.left - margin.right;
 const height = 600 - margin.top - margin.bottom;
@@ -95,11 +95,11 @@ let color = d3.scaleOrdinal()
   
 const sankey = d3.sankey()
   .nodeSort((a, b) => a.id - b.id)
-  .nodeAlign(d3.sankeyCenter)
+  .nodeAlign(d3.sankeyLeft)
   .nodeId((d) => d.id)
   .linkSort(null)
-  .nodeWidth(15)
-  .nodePadding(3)
+  .nodeWidth(20)
+  .nodePadding(30)
   .extent([
     [margin.left, margin.top],
     [width - margin.right, height - margin.bottom]
