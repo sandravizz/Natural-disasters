@@ -4,7 +4,7 @@
 
 const margin = { top: 30, right: 110, bottom: 20, left: 110 };
 
-const width = 1100 - margin.left - margin.right;
+const width = 1400 - margin.left - margin.right;
 const height = 600 - margin.top - margin.bottom;
 
 let svg = d3.select("#graph")
@@ -58,15 +58,22 @@ let format = d3.format(".02s");
 // --------------------------------------
 
 let color = d3.scaleOrdinal()
-  .domain([
-    "Tropical Cyclone",
-    "Drought",
-    "Wildfire",
-    "Flooding",
-    "Winter Storm",
-    "Severe Storm"
-  ])
-  .range(["#A3AB78", "#BDE038", "#9FC131", "#005C53", "#042940", "#f20666"]);
+.domain([
+  "Tropical Cyclone",
+  "Drought",
+  "Wildfire",
+  "Flooding",
+  "Winter Storm",
+  "Severe Storm"
+])
+.range([
+  "#ccff99",
+  "#cccc99",
+  "#B0CCA3",
+  "#99FFD7",
+  "#99FFB4",
+  "#A8A87E"
+]);
 
 //Bar chart
   let y = d3.scaleBand()
@@ -128,7 +135,7 @@ svg
 .transition()
 .delay(3000)
 .duration(1500)
-.attr("fill", (d) => (d.x0 < width / 2 ? color(d.name) : "black"))
+.attr("fill", (d) => (d.x0 < width / 2 ? color(d.name) : "white"))
 .attr("height", (d) => d.y1 - d.y0)
 .attr("opacity", (d) => (d.x0 < width / 2 ? 1 : 0))
 .attr("width", (d) => (d.x0 < width / 2 ? d.x1 - d.x0 + 30 : 15))
@@ -166,11 +173,11 @@ const node = svg
     .join("text")
     .attr("x", (d) => (d.x0 > width / 2 ? d.x1 + 10 : d.x0 - 10))
     .attr("y",  (d) => (d.x0 < width / 2 ? (y(d.name) + 50) : ((d.y1 + d.y0) / 2)))
-    .attr("fill", "black")
+    .attr("fill", "white")
     .attr("dy", "0.4em")
     .attr("text-anchor", (d) => (d.x0 < width / 2 ? "end" : "start"))
-    .attr("font-size", (d) => (d.x0 > width / 2 ? 0 : 15))
-    .attr("font-weight", 300)
+    .attr("font-size", (d) => (d.x0 > width / 2 ? 0 : 13))
+    .attr("font-weight", 200)
     .text((d) => d.name + "s")
     // .append("tspan")
     // .attr("fill-opacity", (d) => (d.x0 < width / 2 ? 0.5 : 0.5))
@@ -184,6 +191,6 @@ const node = svg
     .delay(500)
     .duration(1500)
     .attr("y", (d) => (d.y1 + d.y0) / 2)
-    .attr("font-size", (d) => (d.x0 > width / 2 ? 15 : 15));
+    .attr("font-size", (d) => (d.x0 > width / 2 ? 13 : 13));
 
 });
