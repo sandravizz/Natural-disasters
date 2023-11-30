@@ -21,31 +21,36 @@ let svg = d3.select("#graph")
 const data = d3.csv("./data/sankey_data.csv", d3.autoType)    
   .then(function(data){ 
 
+    //Empty array
     let links = [];
 
+    //Sorting data by decade so the time is in order
     data.sort((b, a) => a["Decade"] - b["Decade"]);
 
-    data.map((row, i) => {
+    data.map((d, i) => {
       links.push({
-        source: row["Disaster"], 
-        target: row["Decade"],
-        value: row["sum_costs"],
+        source: d["Disaster"], 
+        target: d["Decade"],
+        value: d["sum_costs"],
         id: i
       });
     });
+    console.log(links);
 
     const nodes = Array.from(
-      new Set(links.flatMap((l) => [l.source, l.target])),
+      new Set(links.flatMap((d) => [d.source, d.target])),
       (name, id) => ({ name, id })
     );
+    console.log(nodes);
 
-    links.map((d) => {
+  links.map((d) => {
       d.source = nodes.find((e) => e.name === d.source).id;
       d.target = nodes.find((e) => e.name === d.target).id;
     });
+    console.log(links);
     
-    let data_final = {nodes:nodes, links:links};
-    // console.log(data_final);
+  let data_final = {nodes:nodes, links:links};
+  console.log(data_final);
 
 // --------------------------------------
 //  Format
@@ -75,7 +80,7 @@ let color = d3.scaleOrdinal()
   "#A8A87E"
 ]);
 
-//Bar chart
+//for the Source Stack Bar chart
   let y = d3.scaleBand()
   .domain([
     "Wildfire",
@@ -87,7 +92,7 @@ let color = d3.scaleOrdinal()
   ])
   .rangeRound([530, 30]);
 
-  console.log(y.bandwidth());
+  //console.log(y.bandwidth());
 
 // --------------------------------------
 //  Sankey
@@ -106,7 +111,7 @@ const sankey = d3.sankey()
   ]);
 
 // Checking sankey applied to data
-console.log((sankey(data_final)));
+//console.log((sankey(data_final)));
 
 // --------------------------------------
 //  Data drawing 
@@ -179,10 +184,6 @@ const node = svg
     .attr("font-size", (d) => (d.x0 > width / 2 ? 0 : 13))
     .attr("font-weight", 200)
     .text((d) => d.name + "s")
-    // .append("tspan")
-    // .attr("fill-opacity", (d) => (d.x0 < width / 2 ? 0.5 : 0.5))
-    // .attr("font-weight", 200)
-    // .text((d) => `${format(d.value)}`)
     .transition()
     .delay(3000)
     .duration(1500)

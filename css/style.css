@@ -10,7 +10,6 @@ html,body {
   background-color:#444952;
 }
 
-
 /*--------------------------------------*/
 /* Text stylings */
 /*--------------------------------------*/
@@ -73,27 +72,4 @@ a:hover {
   font-weight:400;
 }
 
-/*--------------------------------------*/
-/* Tooltip stylings */
-/*--------------------------------------*/
-
-.tip {
-  font-family:'Montserrat Alternates', sans-serif;
-  font-weight:700;
-  font-size:17px;
-  color:#f20666;
-  margin-left: 100px;
-  padding: 10px;
-  gap: 8px; 
-  width: 12em;
-  display: flex;
-  flex-direction: row;
-  align-items: center; 
-  text-align: left;
-  background-color: #ffffff;
-  box-shadow: 1px 3px 8px 
-  rgba(34, 84, 114, 0.2);
-  border-radius: 3px;
-  line-height: 1.4;
-}
 
