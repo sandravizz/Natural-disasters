@@ -27,6 +27,7 @@ const data = d3.csv("./data/sankey_data.csv", d3.autoType)
     //Sorting data by decade so the time is in order
     data.sort((b, a) => a["Decade"] - b["Decade"]);
 
+    //Pushing the data into the array, making it an object, changing variable names and add index i
     data.map((d, i) => {
       links.push({
         source: d["Disaster"], 
@@ -35,64 +36,41 @@ const data = d3.csv("./data/sankey_data.csv", d3.autoType)
         id: i
       });
     });
+
     console.log(links);
 
+    //Creating the array, which stores the nodes based on the information from the links array
     const nodes = Array.from(
       new Set(links.flatMap((d) => [d.source, d.target])),
       (name, id) => ({ name, id })
     );
+
     console.log(nodes);
 
-  links.map((d) => {
+    //We want to change the string names to ids in the links, that are inline with the nodes.
+    links.map((d) => {
       d.source = nodes.find((e) => e.name === d.source).id;
       d.target = nodes.find((e) => e.name === d.target).id;
     });
+
     console.log(links);
     
-  let data_final = {nodes:nodes, links:links};
-  console.log(data_final);
+    let data_final = {nodes:nodes, links:links};
 
-// --------------------------------------
-//  Format
-// --------------------------------------    
-
-let format = d3.format(".02s");
+    console.log(data_final);
 
 // --------------------------------------
 //  Scales
 // --------------------------------------
 
 let color = d3.scaleOrdinal()
-.domain([
-  "Tropical Cyclone",
-  "Drought",
-  "Wildfire",
-  "Flooding",
-  "Winter Storm",
-  "Severe Storm"
-])
-.range([
-  "#ccff99",
-  "#cccc99",
-  "#B0CCA3",
-  "#99FFD7",
-  "#99FFB4",
-  "#A8A87E"
-]);
+    .domain(["Tropical Cyclone", "Drought", "Wildfire", "Flooding", "Winter Storm", "Severe Storm"])
+    .range(["#ccff99", "#cccc99", "#B0CCA3", "#99FFD7", "#99FFB4", "#A8A87E"]);
 
 //for the Source Stack Bar chart
-  let y = d3.scaleBand()
-  .domain([
-    "Wildfire",
-    "Drought",
-    "Tropical Cyclone",
-    "Severe Storm", 
-    "Flooding",
-    "Winter Storm"
-  ])
-  .rangeRound([530, 30]);
-
-  //console.log(y.bandwidth());
+let y = d3.scaleBand()
+   .domain(["Wildfire", "Drought", "Tropical Cyclone", "Severe Storm", "Flooding", "Winter Storm"])
+   .rangeRound([530, 30]);
 
 // --------------------------------------
 //  Sankey
