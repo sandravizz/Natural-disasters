@@ -40,6 +40,7 @@ const data = d3.csv("./data/sankey_data.csv", d3.autoType)
     console.log(links);
 
     //Creating the array, which stores the nodes based on the information from the links array
+    //Changing names to "name", "id"
     const nodes = Array.from(
       new Set(links.flatMap((d) => [d.source, d.target])),
       (name, id) => ({ name, id })
@@ -55,6 +56,7 @@ const data = d3.csv("./data/sankey_data.csv", d3.autoType)
 
     console.log(links);
     
+    //Finally we create on object including the links and nodes array of objects
     let data_final = {nodes:nodes, links:links};
 
     console.log(data_final);
@@ -89,7 +91,7 @@ const sankey = d3.sankey()
   ]);
 
 // Checking sankey applied to data
-//console.log((sankey(data_final)));
+console.log((sankey(data_final)));
 
 // --------------------------------------
 //  Data drawing 
