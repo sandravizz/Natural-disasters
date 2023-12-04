@@ -4,13 +4,15 @@
 
 const margin = { top: 50, right: 110, bottom: 20, left: 90 };
 
-const width = 1400 - margin.left - margin.right;
-const height = 600 - margin.top - margin.bottom;
+const width = 1400; 
+const height = 600;
+const innerwidth = 1400 - margin.left - margin.right; 
+const innterheight = 600 - margin.top - margin.bottom;
 
 let svg = d3.select("#graph")
               .append("svg")
-              .attr("width", width + margin.left + margin.right)
-              .attr("height", height + margin.top + margin.bottom)
+              .attr("width", width)
+              .attr("height", height)
               .append("g")
               .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -72,7 +74,7 @@ let color = d3.scaleOrdinal()
 //for the Source Stack Bar chart
 let y = d3.scaleBand()
    .domain(["Wildfire", "Drought", "Tropical Cyclone", "Severe Storm", "Flooding", "Winter Storm"])
-   .rangeRound([530, 30]);
+   .rangeRound([innterheight, 0]);
 
 // --------------------------------------
 //  Sankey
@@ -87,7 +89,7 @@ const sankey = d3.sankey()
   .nodePadding(30)
   .extent([
     [margin.left, margin.top],
-    [width - margin.right, height - margin.bottom]
+    [innerwidth, innterheight]
   ]);
 
 // Checking sankey applied to data
