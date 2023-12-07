@@ -2,35 +2,33 @@
 /* Page stylings */
 /*--------------------------------------*/
 
-html,body {
+html {
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Montserrat Alternates', sans-serif;
   font-weight:300;
   font-size:14px;
   color: white;
   background-color:#444952;
+  line-height: 1.4;
 }
 
 /*--------------------------------------*/
 /* Text stylings */
 /*--------------------------------------*/
 
-#h1 {
+h1 {
   font-size: 28px;
   color:white;
   margin-bottom: 10px;
   font-weight:450;
 }
 
-.h2 {
-  margin-top: 0px;
-  font-size: 13px;
-  margin-bottom: 50px;
-  margin-right: 50px;
-  color:black;
-  font-weight:200;
-}
-
-.h3 {
+.text {
   margin-top: 0px;
   font-size: 13px;
   margin-bottom: 5px;
@@ -38,23 +36,58 @@ html,body {
   font-weight:300;
 }
 
-#h4 {
-  margin-top: 5px;
-  font-size: 1rem;
-  margin-bottom: 5px;
-  color:white;
-  font-weight:300;
+@media screen and (max-width: 596px) {
+  h1 {
+    font-size: 3rem;
+  }
 }
 
-#h5 {
-  margin-top: 5px;
-  font-size: 1rem;
-  margin-bottom: 0px;
-  color:white;
-  font-weight:400;
+/*--------------------------------------*/
+/* Chart stylings */
+/*--------------------------------------*/
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 30px;
+  padding-left: 30px;
+  width: 100%;
+  max-width: 1200px;
 }
 
-#link {
+.responsive-svg-container {
+  width: 100%;
+  max-width: 800px;
+}
+
+.col {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.col-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+
+@media screen and (max-width: 820px) {
+  .col {
+    margin-bottom: 30px;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/*--------------------------------------*/
+/* Footer and link stylings */
+/*--------------------------------------*/
+
+.footer {
+  padding: 50px 0 30px;
   margin-top:20px;
   font-size: 8px;
   font-weight:300;
@@ -71,5 +104,3 @@ a:hover {
   color:white;
   font-weight:400;
 }
-
-
