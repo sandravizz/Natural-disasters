@@ -30,16 +30,51 @@ h1 {
 
 .text {
   margin-top: 0px;
-  font-size: 13px;
+  font-size: 15px;
   margin-bottom: 5px;
   color:white;
   font-weight:300;
 }
 
+.support_decade {
+  display: inline-block;
+  margin: 1.8px 1px;
+  padding: 2px 5px;
+  line-height: 1.8rem;
+  font-weight: 500;
+  color: #444952;
+  border-radius: 2px;
+  background-color: white;
+}
+
+.support_tropical {
+  display: inline-block;
+  margin: 1.8px 1px;
+  padding: 2px 5px;
+  line-height: 1.8rem;
+  font-weight: 500;
+  color: #444952;
+  border-radius: 2px;
+  background-color: #ccff99;
+}
+
+.support_storm {
+  display: inline-block;
+  margin: 1.8px 1px;
+  padding: 2px 5px;
+  line-height: 1.8rem;
+  font-weight: 500;
+  color: black;
+  border-radius: 2px;
+  background-color: #A8A87E;
+}
+
+
 @media screen and (max-width: 596px) {
   h1 {
     font-size: 3rem;
   }
+
 }
 
 /*--------------------------------------*/
@@ -47,10 +82,10 @@ h1 {
 /*--------------------------------------*/
 
 .container {
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 0px;
+  padding-left: 0px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 900px;
 }
 
 /*--------------------------------------*/
