@@ -2,18 +2,20 @@
 //  Margin and canvas
 // --------------------------------------
 
-const margin = { top: 100, right: 110, bottom: 20, left: 150 };
+  const margin = {top: 100, right: 110, bottom: 20, left: 180};
+  const width = 900;
+  const height = 500;
+  const innerWidth = width - margin.left - margin.right;
+  const innerHeight = height - margin.top - margin.bottom;
 
-const width = 1200; 
-const height = 600;
-const innerwidth = width - margin.left - margin.right; 
-const innterheight = height - margin.top - margin.bottom;
-
-let svg = d3.select("#chart")
+  // Append the SVG container
+  const svg = d3.select("#chart")
     .append("svg")
-      .attr("viewBox", `0, 0, ${width}, ${height}`)
-      .style("border", "1px solid black")
-      .append("g")
+      .attr("viewBox", `0, 0, ${width}, ${height}`);
+
+  // Append the group for the inner chart
+  const innerChart = svg
+    .append("g")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 // --------------------------------------
@@ -74,7 +76,7 @@ let color = d3.scaleOrdinal()
 //for the Source Stack Bar chart
 let y = d3.scaleBand()
     .domain(["Wildfire", "Drought", "Tropical Cyclone", "Severe Storm", "Flooding", "Winter Storm"])
-    .rangeRound([innterheight, 0]);
+    .rangeRound([innerHeight, 0]);
 
 // --------------------------------------
 //  Sankey
@@ -85,11 +87,11 @@ const sankey = d3.sankey()
   .nodeAlign(d3.sankeyLeft) //as we only have two node groups it doesn't impact much
   .nodeId((d) => d.id)
   .linkSort(null)
-  .nodeWidth(20) //
+  .nodeWidth(15) //
   .nodePadding(30) //space between each node
   .extent([
     [0, 0],
-    [innerwidth, innterheight]
+    [innerWidth, innerHeight]
   ]);
 
 // Checking sankey generator applied to data
@@ -100,15 +102,14 @@ console.log((sankey(data_final)));
 // --------------------------------------
 
 //Nodes = rects
-svg
-.append("g")
+innerChart
 .selectAll("rect")
 .data((sankey(data_final)).nodes)
 .join("rect")
 .attr("width", (d) => d.y1 - d.y0)
-.attr("x", (d) => (d.x0 < innerwidth / 2 ? d.x0 : d.x0))
-.attr("fill", (d) => (d.x0 < innerwidth / 2 ? color(d.name) : "black"))
-.attr("opacity", (d) => (d.x0 < innerwidth / 2 ? 1 : 0))
+.attr("x", (d) => (d.x0 < innerWidth / 2 ? d.x0 : d.x0))
+.attr("fill", (d) => (d.x0 < innerWidth / 2 ? color(d.name) : "black"))
+.attr("opacity", (d) => (d.x0 < innerWidth / 2 ? 1 : 0))
 .attr("y", (d) => y(d.name))
 .attr("height", y.bandwidth())
 .on("mouseover", (e, d) => {
@@ -122,29 +123,25 @@ svg
 .transition()
 .delay(3000)
 .duration(1500)
-.attr("fill", (d) => (d.x0 < innerwidth / 2 ? color(d.name) : "white"))
+.attr("fill", (d) => (d.x0 < innerWidth / 2 ? color(d.name) : "white"))
 .attr("height", (d) => d.y1 - d.y0)
-.attr("opacity", (d) => (d.x0 < innerwidth / 2 ? 1 : 0))
-.attr("width", (d) => (d.x0 < innerwidth / 2 ? d.x1 - d.x0 + 30 : 15))
+.attr("opacity", (d) => (d.x0 < innerWidth / 2 ? 1 : 0))
+.attr("width", (d) => (d.x0 < innerWidth / 2 ? d.x1 - d.x0 + 30 : 15))
 .attr("y", (d) => d.y0)
 .transition()
 .delay(500)
 .duration(1500)
-.attr("opacity", (d) => (d.x0 < innerwidth / 2 ? 1 : 1));
+.attr("opacity", (d) => (d.x0 < innerWidth / 2 ? 1 : 1));
 
 //Links = path 
-const link = svg
-    .append("g")
-    .attr("fill", "none")
-    .selectAll("g")
+const link = innerChart
+    .selectAll("path")
     .data((sankey(data_final)).links)
-    .join("g");
-
-  link
-    .append("path")
+    .join("path")
     .attr("class", (d) => `trajectory_${d.id}`)
     .attr("d", d3.sankeyLinkHorizontal())
     .attr("stroke", (d) => color(d.source.name))
+    .attr("fill", "none")
     .attr("stroke-opacity", 1)
     .attr("stroke-width", 0)
     .transition()
@@ -153,17 +150,16 @@ const link = svg
     .attr("stroke-opacity", 1)
     .attr("stroke-width", (d) => Math.max(1, d.width));
 
-const node = svg
-    .append("g")
+const node = innerChart
     .selectAll("text")
     .data((sankey(data_final)).nodes)
     .join("text")
-    .attr("x", (d) => (d.x0 > innerwidth / 2 ? d.x1 + 10 : d.x0 - 10))
-    .attr("y",  (d) => (d.x0 < innerwidth / 2 ? (y(d.name) + 50) : ((d.y1 + d.y0) / 2)))
+    .attr("x", (d) => (d.x0 > innerWidth / 2 ? d.x1 + 10 : d.x0 - 10))
+    .attr("y",  (d) => (d.x0 < innerWidth / 2 ? (y(d.name) + 50) : ((d.y1 + d.y0) / 2)))
     .attr("fill", "white")
     .attr("dy", "0.4em")
-    .attr("text-anchor", (d) => (d.x0 < innerwidth / 2 ? "end" : "start"))
-    .attr("font-size", (d) => (d.x0 > innerwidth / 2 ? 0 : 13))
+    .attr("text-anchor", (d) => (d.x0 < innerWidth / 2 ? "end" : "start"))
+    .attr("font-size", (d) => (d.x0 > innerWidth / 2 ? 0 : 13))
     .attr("font-weight", 200)
     .text((d) => d.name + "s")
     .transition()
@@ -174,6 +170,6 @@ const node = svg
     .delay(500)
     .duration(1500)
     .attr("y", (d) => (d.y1 + d.y0) / 2)
-    .attr("font-size", (d) => (d.x0 > innerwidth / 2 ? 13 : 13));
+    .attr("font-size", (d) => (d.x0 > innerWidth / 2 ? 13 : 13));
 
 });

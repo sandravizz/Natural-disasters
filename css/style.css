@@ -47,39 +47,10 @@ h1 {
 /*--------------------------------------*/
 
 .container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 30px;
-  padding-left: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
   width: 100%;
   max-width: 1200px;
-}
-
-.responsive-svg-container {
-  width: 100%;
-  max-width: 800px;
-}
-
-.col {
-  position: relative;
-  width: 100%;
-  min-height: 1px;
-  flex-basis: 0;
-  flex-grow: 1;
-  max-width: 100%;
-}
-
-.col-9 {
-  flex: 0 0 75%;
-  max-width: 75%;
-}
-
-@media screen and (max-width: 820px) {
-  .col {
-    margin-bottom: 30px;
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
 }
 
 /*--------------------------------------*/
@@ -87,8 +58,8 @@ h1 {
 /*--------------------------------------*/
 
 .footer {
-  padding: 50px 0 30px;
-  margin-top:20px;
+  padding: 20px 0 30px;
+  margin-top:0px;
   font-size: 8px;
   font-weight:300;
 }
