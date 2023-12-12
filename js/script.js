@@ -2,7 +2,7 @@
 //  Margin and canvas
 // --------------------------------------
 
-  const margin = {top: 90, right: 100, bottom: 70, left: 140};
+  const margin = {top: 20, right: 100, bottom: 70, left: 180};
   const width = 1000;
   const height = 650;
   const innerWidth = width - margin.left - margin.right;
@@ -64,6 +64,12 @@ const data = d3.csv("./data/sankey_data.csv", d3.autoType)
     let data_final = {nodes:nodes, links:links};
 
     console.log(data_final);
+
+// --------------------------------------
+//  Formating 
+// --------------------------------------
+
+    format = d3.format(".02s")
 
 // --------------------------------------
 //  Scales
@@ -138,14 +144,13 @@ innerChart
     .selectAll("text")
     .data((sankey(data_final)).nodes)
     .join("text")
+    .text((d) => (d.name) + " " + format(d.value))
     .attr("x", (d) => (d.x0 > innerWidth / 2 ? d.x1 + 10 : d.x0 - 10))
     .attr("y",  (d) => (d.x0 < innerWidth / 2 ? (y(d.name) + 50) : ((d.y1 + d.y0) / 2)))
     .attr("fill", "white")
     .attr("dy", "0.4em")
     .attr("text-anchor", (d) => (d.x0 < innerWidth / 2 ? "end" : "start"))
     .attr("opacity", (d) => (d.x0 > innerWidth / 2 ? 0 : 1))
-    .attr("font-weight", 300)
-    .text((d) => d.name)
     .transition()
     .delay(3000)
     .duration(1500)

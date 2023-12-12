@@ -26,7 +26,7 @@ body {
 /*--------------------------------------*/
 
 h1 {
-  font-size: 37px;
+  font-size: var( --step-5);
   color:white;
   margin-bottom: 15px;
   margin-top: 30px;
@@ -34,8 +34,8 @@ h1 {
 }
 
 .text {
-  margin-top: 0px;
-  font-size: 15px;
+  margin-top: 10px;
+  font-size: var( --step-2);
   padding-bottom: 5px;
   color:white;
   font-weight:300;
@@ -43,9 +43,9 @@ h1 {
 
 .support {
   display: inline-block;
-  margin: 1.8px 1px;
+  margin: 6px 1px;
   padding: 2px 5px;
-  line-height: 1.8rem;
+  line-height: 3rem;
   font-weight: 500;
   border-radius: 2px;
 }
@@ -65,11 +65,11 @@ h1 {
   background-color: #A8A87E;
 }
 
-@media screen and (max-width: 596px) {
+/* @media screen and (max-width: 596px) {
   h1 {
     font-size: 3rem;
   }
-}
+} */
 
 /*--------------------------------------*/
 /* Chart stylings */
@@ -97,6 +97,7 @@ h1 {
 
 text {
   font-size: var( --step-1);
+  font-weight: 300;
 }
 
 /*--------------------------------------*/
