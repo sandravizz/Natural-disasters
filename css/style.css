@@ -7,8 +7,12 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
+*, ::after, ::before {
+  box-sizing: inherit;
+}
 
 body {
+  margin: 0;
   font-family: 'Montserrat Alternates', sans-serif;
   font-weight:300;
   font-size:14px;
@@ -22,50 +26,42 @@ body {
 /*--------------------------------------*/
 
 h1 {
-  font-size: 28px;
+  font-size: 37px;
   color:white;
-  margin-bottom: 10px;
-  font-weight:450;
+  margin-bottom: 15px;
+  margin-top: 30px;
+  font-weight:500;
 }
 
 .text {
   margin-top: 0px;
   font-size: 15px;
-  margin-bottom: 5px;
+  padding-bottom: 5px;
   color:white;
   font-weight:300;
 }
 
-.support_decade {
+.support {
   display: inline-block;
   margin: 1.8px 1px;
   padding: 2px 5px;
   line-height: 1.8rem;
   font-weight: 500;
-  color: #444952;
   border-radius: 2px;
+}
+
+.decade {
+  color: #444952;
   background-color: white;
 }
 
-.support_tropical {
-  display: inline-block;
-  margin: 1.8px 1px;
-  padding: 2px 5px;
-  line-height: 1.8rem;
-  font-weight: 500;
+.tropical {
   color: #444952;
-  border-radius: 2px;
   background-color: #ccff99;
 }
 
-.support_storm {
-  display: inline-block;
-  margin: 1.8px 1px;
-  padding: 2px 5px;
-  line-height: 1.8rem;
-  font-weight: 500;
-  color: black;
-  border-radius: 2px;
+.storm {
+  color: #444952;
   background-color: #A8A87E;
 }
 
@@ -82,10 +78,12 @@ h1 {
 /*--------------------------------------*/
 
 .container {
-  padding-right: 0px;
-  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
 }
 
 /*--------------------------------------*/

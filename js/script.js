@@ -2,9 +2,9 @@
 //  Margin and canvas
 // --------------------------------------
 
-  const margin = {top: 50, right: 100, bottom: 20, left: 150};
-  const width = 900;
-  const height = 500;
+  const margin = {top: 90, right: 100, bottom: 70, left: 140};
+  const width = 1000;
+  const height = 680;
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 
@@ -87,7 +87,7 @@ const sankey = d3.sankey()
   .nodeAlign(d3.sankeyLeft) //as we only have two node groups it doesn't impact much
   .nodeId((d) => d.id)
   .linkSort(null)
-  .nodeWidth(15) //
+  .nodeWidth(18) //
   .nodePadding(30) //space between each node
   .extent([
     [0, 0],
@@ -108,7 +108,7 @@ innerChart
     .join("rect")
     .attr("width", (d) => d.y1 - d.y0)
     .attr("x", (d) => (d.x0 < innerWidth / 2 ? d.x0 : d.x0))
-    .attr("fill", (d) => (d.x0 < innerWidth / 2 ? color(d.name) : "black"))
+    .attr("fill", (d) => (d.x0 < innerWidth / 2 ? color(d.name) : "white"))
     .attr("opacity", (d) => (d.x0 < innerWidth / 2 ? 1 : 0))
     .attr("y", (d) => y(d.name))
     .attr("height", y.bandwidth())
@@ -126,7 +126,7 @@ innerChart
     .attr("fill", (d) => (d.x0 < innerWidth / 2 ? color(d.name) : "white"))
     .attr("height", (d) => d.y1 - d.y0)
     .attr("opacity", (d) => (d.x0 < innerWidth / 2 ? 1 : 0))
-    .attr("width", (d) => (d.x0 < innerWidth / 2 ? d.x1 - d.x0 + 30 : 15))
+    .attr("width", (d) => (d.x0 < innerWidth / 2 ? d.x1 - d.x0 + 30 : 20))
     .attr("y", (d) => d.y0)
     .transition()
     .delay(500)
@@ -143,9 +143,9 @@ innerChart
     .attr("fill", "white")
     .attr("dy", "0.4em")
     .attr("text-anchor", (d) => (d.x0 < innerWidth / 2 ? "end" : "start"))
-    .attr("font-size", (d) => (d.x0 > innerWidth / 2 ? 0 : 13))
-    .attr("font-weight", 200)
-    .text((d) => d.name + "s")
+    .attr("font-size", (d) => (d.x0 > innerWidth / 2 ? 0 : 14))
+    .attr("font-weight", 300)
+    .text((d) => d.name)
     .transition()
     .delay(3000)
     .duration(1500)
@@ -154,7 +154,7 @@ innerChart
     .delay(500)
     .duration(1500)
     .attr("y", (d) => (d.y1 + d.y0) / 2)
-    .attr("font-size", (d) => (d.x0 > innerWidth / 2 ? 13 : 13));
+    .attr("font-size", (d) => (d.x0 > innerWidth / 2 ? 14 : 14));
 
 //Links = path 
 innerChart
