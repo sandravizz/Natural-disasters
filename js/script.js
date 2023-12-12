@@ -4,7 +4,7 @@
 
   const margin = {top: 90, right: 100, bottom: 70, left: 140};
   const width = 1000;
-  const height = 680;
+  const height = 650;
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 
@@ -75,7 +75,7 @@ let color = d3.scaleOrdinal()
 
 //for the stacked bar chart
 let y = d3.scaleBand()
-    .domain(["Wildfire", "Drought", "Tropical Cyclone", "Severe Storm", "Flooding", "Winter Storm"])
+    .domain([ "Winter Storm", "Wildfire", "Flooding", "Drought", "Severe Storm", "Tropical Cyclone"])
     .rangeRound([innerHeight, 0]);
 
 // --------------------------------------
@@ -88,7 +88,7 @@ const sankey = d3.sankey()
   .nodeId((d) => d.id)
   .linkSort(null)
   .nodeWidth(18) //
-  .nodePadding(30) //space between each node
+  .nodePadding(20) //space between each node
   .extent([
     [0, 0],
     [innerWidth, innerHeight]
@@ -143,7 +143,7 @@ innerChart
     .attr("fill", "white")
     .attr("dy", "0.4em")
     .attr("text-anchor", (d) => (d.x0 < innerWidth / 2 ? "end" : "start"))
-    .attr("font-size", (d) => (d.x0 > innerWidth / 2 ? 0 : 14))
+    .attr("opacity", (d) => (d.x0 > innerWidth / 2 ? 0 : 1))
     .attr("font-weight", 300)
     .text((d) => d.name)
     .transition()
@@ -154,7 +154,7 @@ innerChart
     .delay(500)
     .duration(1500)
     .attr("y", (d) => (d.y1 + d.y0) / 2)
-    .attr("font-size", (d) => (d.x0 > innerWidth / 2 ? 14 : 14));
+    .attr("opacity", (d) => (d.x0 > innerWidth / 2 ? 1 : 1));
 
 //Links = path 
 innerChart

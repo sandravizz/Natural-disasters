@@ -65,12 +65,10 @@ h1 {
   background-color: #A8A87E;
 }
 
-
 @media screen and (max-width: 596px) {
   h1 {
     font-size: 3rem;
   }
-
 }
 
 /*--------------------------------------*/
@@ -86,6 +84,21 @@ h1 {
   max-width: 1000px;
 }
 
+:root {
+  --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+  --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+  --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+  --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+  --step-3: clamp(1.9438rem, 1.7707rem + 0.8652vw, 2.4413rem);
+  --step-4: clamp(2.3325rem, 2.0823rem + 1.2511vw, 3.0519rem);
+  --step-5: clamp(2.7994rem, 2.4461rem + 1.7663vw, 3.815rem);
+}
+
+text {
+  font-size: var( --step-1);
+}
+
 /*--------------------------------------*/
 /* Footer and link stylings */
 /*--------------------------------------*/
@@ -93,7 +106,7 @@ h1 {
 .footer {
   padding: 20px 0 30px;
   margin-top:0px;
-  font-size: 8px;
+  font-size: var( --step--1);
   font-weight:300;
 }
 
