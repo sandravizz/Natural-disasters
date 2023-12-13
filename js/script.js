@@ -2,9 +2,9 @@
 //  Margin and canvas
 // --------------------------------------
 
-  const margin = {top: 20, right: 100, bottom: 70, left: 180};
+  const margin = {top: 10, right: 100, bottom: 60, left: 160};
   const width = 1000;
-  const height = 650;
+  const height = 620;
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 
@@ -22,14 +22,14 @@
 //  Data loading
 // --------------------------------------
 
-const data = d3.csv("./data/sankey_data.csv", d3.autoType)    
+const data = d3.csv("./data/sankey_data.csv", d3.autoType) 
   .then(function(data){ 
 
     //Empty array
     let links = [];
 
     //Sorting data by decade so the time is in order
-    data.sort((b, a) => a["Decade"] - b["Decade"]);
+    data.sort((a,b) => a["Decade"] - b["Decade"]);
 
     //Pushing the data into the array, making it an object, changing variable names and add index i
     data.map((d, i) => {
@@ -45,14 +45,15 @@ const data = d3.csv("./data/sankey_data.csv", d3.autoType)
 
     //Creating the array, which stores the nodes based on the information from the links array
     //Changing names to "name", "id"
+    //New set only unique values
     const nodes = Array.from(
       new Set(links.flatMap((d) => [d.source, d.target])),
-      (name, id) => ({ name, id })
+      (name, id) => ({ name, id})
     );
 
     console.log(nodes);
 
-    //We want to change the string names to ids in the links, that are inline with the nodes.
+    // //We want to change the string names to ids in the links, that are inline with the nodes.
     links.map((d) => {
       d.source = nodes.find((e) => e.name === d.source).id;
       d.target = nodes.find((e) => e.name === d.target).id;
@@ -60,8 +61,8 @@ const data = d3.csv("./data/sankey_data.csv", d3.autoType)
 
     console.log(links);
     
-    //Finally we create on object including the links and nodes array of objects
-    let data_final = {nodes:nodes, links:links};
+    // //Finally we create on object including the links and nodes array of objects
+    let data_final = {nodes, links};
 
     console.log(data_final);
 
@@ -69,7 +70,7 @@ const data = d3.csv("./data/sankey_data.csv", d3.autoType)
 //  Formating 
 // --------------------------------------
 
-    format = d3.format(".02s")
+    format = d3.format(".03s")
 
 // --------------------------------------
 //  Scales
@@ -89,11 +90,11 @@ let y = d3.scaleBand()
 // --------------------------------------
   
 const sankey = d3.sankey()
-  .nodeSort((a, b) => a.id - b.id)
+  .nodeSort((a,b) => a.id - b.id)
   .nodeAlign(d3.sankeyLeft) //as we only have two node groups it doesn't impact much
   .nodeId((d) => d.id)
   .linkSort(null)
-  .nodeWidth(18) //
+  .nodeWidth(15) //
   .nodePadding(20) //space between each node
   .extent([
     [0, 0],
@@ -109,15 +110,16 @@ console.log((sankey(data_final)));
 
 //Nodes = rects
 innerChart
+    .append("g")
     .selectAll("rect")
     .data((sankey(data_final)).nodes)
     .join("rect")
-    .attr("width", (d) => d.y1 - d.y0)
-    .attr("x", (d) => (d.x0 < innerWidth / 2 ? d.x0 : d.x0))
-    .attr("fill", (d) => (d.x0 < innerWidth / 2 ? color(d.name) : "white"))
-    .attr("opacity", (d) => (d.x0 < innerWidth / 2 ? 1 : 0))
+    .attr("x", (d) => d.x0)
     .attr("y", (d) => y(d.name))
     .attr("height", y.bandwidth())
+    .attr("width", (d) => d.y1 - d.y0)
+    .attr("fill", (d) => (d.x0 < innerWidth / 2 ? color(d.name) : "white"))
+    .attr("opacity", (d) => (d.x0 < innerWidth / 2 ? 1 : 0))
     .on("mouseover", (e, d) => {
       d3.selectAll("path").style("opacity", (p) =>
         p.source.name === d.name || p.target.name === d.name ? "1" : "0.07"
@@ -129,11 +131,9 @@ innerChart
     .transition()
     .delay(3000)
     .duration(1500)
-    .attr("fill", (d) => (d.x0 < innerWidth / 2 ? color(d.name) : "white"))
-    .attr("height", (d) => d.y1 - d.y0)
-    .attr("opacity", (d) => (d.x0 < innerWidth / 2 ? 1 : 0))
-    .attr("width", (d) => (d.x0 < innerWidth / 2 ? d.x1 - d.x0 + 30 : 20))
     .attr("y", (d) => d.y0)
+    .attr("height", (d) => d.y1 - d.y0)
+    .attr("width", (d) => (d.x0 < innerWidth / 2 ? d.x1 - d.x0 + 30 : 20))
     .transition()
     .delay(500)
     .duration(1500)
@@ -141,10 +141,11 @@ innerChart
 
 //Nodes = text 
 innerChart
+    .append("g")
     .selectAll("text")
     .data((sankey(data_final)).nodes)
     .join("text")
-    .text((d) => (d.name) + " " + format(d.value))
+    .text((d) => (d.name) + " | " + format(d.value))
     .attr("x", (d) => (d.x0 > innerWidth / 2 ? d.x1 + 10 : d.x0 - 10))
     .attr("y",  (d) => (d.x0 < innerWidth / 2 ? (y(d.name) + 50) : ((d.y1 + d.y0) / 2)))
     .attr("fill", "white")
@@ -158,11 +159,11 @@ innerChart
     .transition()
     .delay(500)
     .duration(1500)
-    .attr("y", (d) => (d.y1 + d.y0) / 2)
     .attr("opacity", (d) => (d.x0 > innerWidth / 2 ? 1 : 1));
 
 //Links = path 
 innerChart
+    .append("g")
     .selectAll("path")
     .data((sankey(data_final)).links)
     .join("path")
@@ -170,12 +171,10 @@ innerChart
     .attr("d", d3.sankeyLinkHorizontal())
     .attr("stroke", (d) => color(d.source.name))
     .attr("fill", "none")
-    .attr("stroke-opacity", 1)
     .attr("stroke-width", 0)
     .transition()
     .delay((d) => 7000 + d.source.id * 1500)
     .duration(1000)
-    .attr("stroke-opacity", 1)
-    .attr("stroke-width", (d) => Math.max(1, d.width));
+    .attr("stroke-width", (d) => Math.max(0, d.width));
 
 });
