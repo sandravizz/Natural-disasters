@@ -79,7 +79,7 @@ let color = d3.scaleOrdinal()
     .domain(["Tropical Cyclone", "Drought", "Wildfire", "Flooding", "Winter Storm", "Severe Storm"])
     .range(["#ccff99", "#cccc99", "#B0CCA3", "#99FFD7", "#99FFB4", "#A8A87E"]);
 
-//for the stacked bar chart
+// for the stacked bar chart
 let y = d3.scaleBand()
     .domain([ "Winter Storm", "Wildfire", "Flooding", "Drought", "Severe Storm", "Tropical Cyclone"])
     .rangeRound([innerHeight, 0]);
@@ -93,7 +93,7 @@ const sankey = d3.sankey()
   .nodeAlign(d3.sankeyLeft) //as we only have two node groups it doesn't impact much
   .nodeId((d) => d.id)
   .linkSort(null)
-  .nodeWidth(15) //
+  .nodeWidth(20) 
   .nodePadding(20) //space between each node
   .extent([
     [0, 0],

@@ -21,6 +21,17 @@ body {
   line-height: 1.4;
 }
 
+:root {
+  --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+  --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+  --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --step-1: clamp(1.5rem, 1.5561rem + 0.3696vw, 1.7225rem);
+  --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+  --step-3: clamp(1.9438rem, 1.7707rem + 0.8652vw, 2.4413rem);
+  --step-4: clamp(2.3325rem, 2.0823rem + 1.2511vw, 3.0519rem);
+  --step-5: clamp(2.7994rem, 2.4461rem + 1.7663vw, 3.815rem);
+}
+
 /*--------------------------------------*/
 /* Text stylings */
 /*--------------------------------------*/
@@ -61,11 +72,6 @@ h1 {
   background-color: #ccff99;
 }
 
-.storm {
-  color: #444952;
-  background-color: #A8A87E;
-}
-
 /*--------------------------------------*/
 /* Chart stylings */
 /*--------------------------------------*/
@@ -77,17 +83,6 @@ h1 {
   padding-left: 20px;
   width: 100%;
   max-width: 1000px;
-}
-
-:root {
-  --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
-  --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
-  --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
-  --step-1: clamp(1.5rem, 1.5561rem + 0.3696vw, 1.7225rem);
-  --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
-  --step-3: clamp(1.9438rem, 1.7707rem + 0.8652vw, 2.4413rem);
-  --step-4: clamp(2.3325rem, 2.0823rem + 1.2511vw, 3.0519rem);
-  --step-5: clamp(2.7994rem, 2.4461rem + 1.7663vw, 3.815rem);
 }
 
 text {
