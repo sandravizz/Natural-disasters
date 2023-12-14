@@ -19,7 +19,9 @@ The first step is always to check your data and variable structure as well as ge
 
  ## 1. D3.js visualisation | Sankey diagram 
 
- After finishing the EDA I wanted to create a compact chart which shows the connection between disaster types and change over type. I choose to aggregate the data on decade level to soften outliers. In the sankey diagram we see two stacked bar charts representing the nodes hence the total costs caused by disaster type on the leftside and by decades on the rigt side. The size of the paths shows how much a disaster type contributed to the costs of one decade and vice versa. Please find a short interpretation of the visualisation in this [video](https://www.youtube.com/watch?v=iPAET_ZtVxI) and on how I created the dataset for the sankey in this [video](https://www.youtube.com/watch?v=kFycJtlujEs). 
+ After finishing the EDA I wanted to create a compact chart which shows the connection between disaster types and change over type. I choose to aggregate the data on decade level to soften outliers. In the sankey diagram we see two stacked bar charts representing the nodes hence the total damage caused by disaster type on the leftside and by decades on the rigt side. The size of the paths shows how much a specific disaster type contributed to the damage of one specific decade and vice versa. 
+ 
+ Please find a short introduction to this sankey, how to reand and interpret it in this [video](https://www.youtube.com/watch?v=iPAET_ZtVxI) and on how I created the dataset for the sankey in this [video](https://www.youtube.com/watch?v=kFycJtlujEs). If you want to understand the code behind this visualisation please check out the this [video](https://www.youtube.com/watch?v=VV39xSZAJ6c).
 
 ![Alt text](<images/Sankey final.png>)
  
