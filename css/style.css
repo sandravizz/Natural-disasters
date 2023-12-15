@@ -46,7 +46,7 @@ h1 {
 
 .text {
   margin-top: 10px;
-  font-size: var( --step-2);
+  font-size: var( --step-1);
   padding-bottom: 5px;
   color:white;
   font-weight:300;
@@ -70,6 +70,22 @@ h1 {
 .tropical {
   color: #444952;
   background-color: #ccff99;
+}
+
+.text2 {
+  font-size: var( --step-3);
+  font-weight: 300;
+  margin-bottom: 50px;
+}
+
+.support2 {
+  display: inline-block;
+  font-size: var( --step-3);
+  margin: 5px 1px;
+  padding: 2px 5px;
+  line-height: 3rem;
+  font-weight: 500;
+  border-radius: 1px;
 }
 
 /*--------------------------------------*/
@@ -97,7 +113,7 @@ text {
 .footer {
   padding: 20px 0 20px;
   margin-top:0px;
-  font-size: var( --step--1);
+  font-size: var( --step--2);
   font-weight:300;
 }
 

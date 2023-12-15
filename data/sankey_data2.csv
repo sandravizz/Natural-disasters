@@ -1,0 +1,18 @@
+Disaster,Year,sum_costs,sum_deaths,count
+Tropical Cyclone,2020,53099.700000000004,86,7
+Severe Storm,2020,39791.2,85,13
+Drought,2020,5304.1,45,1
+Winter Storm,2020,0,0
+Wildfire,2020,19411,46,1
+Tropical Cyclone,2021,86352.79999999999,104,4
+Severe Storm,2021,22652.700000000004,114,11
+Drought,2021,9948.7,229,1
+Winter Storm,2021,26543,262,1
+Wildfire,2021,11752.1,8,1
+Flooding,2021,2822.2,7,2
+Tropical Cyclone,2022,119933,182,3
+Severe Storm,2022,22432.800000000003,10,11
+Drought,2022,22852,136,1
+Winter Storm,2022,8698.6,87,1
+Wildfire,2022,3234.4,17,1
+Flooding,2022,1523.6,42,1

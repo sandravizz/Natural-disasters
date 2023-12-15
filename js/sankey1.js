@@ -2,9 +2,9 @@
 //  Margin and canvas
 // --------------------------------------
 
-  const margin = {top: 10, right: 100, bottom: 60, left: 160};
+  const margin = {top: 5, right: 100, bottom: 30, left: 160};
   const width = 1000;
-  const height = 620;
+  const height = 650;
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 
