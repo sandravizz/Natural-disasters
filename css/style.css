@@ -67,15 +67,16 @@ h1 {
   background-color: white;
 }
 
-.tropical {
-  color: #444952;
-  background-color: #ccff99;
-}
-
 .text2 {
   font-size: var( --step-3);
   font-weight: 300;
   margin-bottom: 50px;
+}
+
+.tropical {
+  color: #444952;
+  background-color: #ccff99;
+  font-size: var( --step-5);
 }
 
 .support2 {
@@ -107,7 +108,7 @@ text {
 }
 
 .super_hurricane {
-  font-size: var( --step-1); 
+  font-size: var( --step-5); 
 }
 
 /*--------------------------------------*/

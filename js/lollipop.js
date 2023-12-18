@@ -61,7 +61,7 @@ innerChart3.append("g")
     .attr("class", "x-axis")
     .attr("transform", `translate(0, ${innerheight3})`)
     .call(d3.axisBottom(x)
-        	   .tickValues([1980, 1983, 1989, 1995, 2000, 2005, 2010, 2015, 2020, 2022]) 
+        	   .tickValues([1980, 1990, 2000, 2005, 2010, 2015, 2020, 2022]) 
      		     .tickSize(10)
              .tickPadding(5));
 
@@ -82,8 +82,6 @@ innerChart3
     .attr("stroke-width", 0.5)
     .attr("opacity", 0.7); 
 
-
-
 //Circle 
 innerChart3
     .selectAll("circle")
@@ -93,7 +91,7 @@ innerChart3
     .attr("cy", (d) => y(d.Costs))
     .attr("r", (d) => r(d.Costs))
     .attr("fill", (d) => c(d.Hurricane))
-    .attr("fill-opacity", 0.5)
+    .attr("fill-opacity", 0.8)
     .attr("stroke", (d) => c(d.Hurricane))
     .attr("fill", (d) => c(d.Hurricane))
     .attr("stroke-opacity", 1)
@@ -108,8 +106,10 @@ innerChart3
     .attr("x", (d) => x(d.Year))
     .attr("y", (d) => y(d.Costs))
     .attr("class", "super_hurricane")
-    .text("🔥🔥🔥")
+    .text("🔥")
     .attr("fill", "red")
     .attr("text-anchor", "middle");
+
+  
 
 });
