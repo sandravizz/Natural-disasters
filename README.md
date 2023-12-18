@@ -27,7 +27,14 @@ The first step is always to check your data and variable structure as well as ge
 
  ## 1B D3.js visualisation | Sankey diagram 
 
+ In this second sankey its all about our current decade and the question where are we heading now? Looking on the first 3 years only we can see that the trend stays the same but everything seems to speed up. 
+
 ![Alt text](images/Sankey2.png)
+
+ ## 2 D3.js visualisation | Lollipop chart
+
+Therefore the logic question is so why tropical cyclones are the ones causing this super disasters now. Therefore I filtered only on these ones and chacke now by year how they developed. The main question is, if these aggregated data are mainly based on a few outliers or an actual behaviour change?
+ 
  
 
  
