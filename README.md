@@ -17,13 +17,17 @@ Have a look at the image below showing a hurricane, one of the most dangerous na
 The first step is always to check your data and variable structure as well as general patterns and trends. For this purpose I used [arquero.js](https://uwdata.github.io/arquero/) as a data processing library and [plot.js](https://observablehq.com/plot/) 
  as a plotting library. Please find the whole analysis and finding in this [Observable notebook](https://observablehq.com/@sandraviz/billion-dollar-disasters-arquero-js-plot-js?collection=@sandraviz/billion-dollar-disaster) with a detailed explanation and presentation in this [video](https://www.youtube.com/watch?v=FaoWCGo88ks) 
 
- ## 1. D3.js visualisation | Sankey diagram 
+ ## 1A D3.js visualisation | Sankey diagram 
 
  After finishing the EDA I wanted to create a compact chart which shows the connection between disaster types and change over type. I choose to aggregate the data on decade level to soften outliers. In the sankey diagram we see two stacked bar charts representing the nodes hence the total damage caused by disaster type on the leftside and by decades on the rigt side. The size of the paths shows how much a specific disaster type contributed to the damage of one specific decade and vice versa. 
  
  Please find a short introduction to this sankey, how to reand and interpret it in this [video](https://www.youtube.com/watch?v=iPAET_ZtVxI) and on how I created the dataset for the sankey in this [video](https://www.youtube.com/watch?v=kFycJtlujEs). If you want to understand the code behind this visualisation please check out the this [video](https://www.youtube.com/watch?v=VV39xSZAJ6c).
 
 ![Alt text](<images/Sankey final.png>)
+
+ ## 1B D3.js visualisation | Sankey diagram 
+
+![Alt text](images/Sankey2.png)
  
 
  
