@@ -7,7 +7,7 @@ const width2 = 1000;
 const height2 = 250;
 const innerWidth2 = width2 - margin2.left - margin2.right;
 const innerHeight2 = height2 - margin2.top - margin2.bottom;
-console.log(innerHeight2);
+// console.log(innerHeight2);
 
 
 // Append the SVG container
@@ -43,7 +43,7 @@ const data2 = d3.csv("./data/sankey_data2.csv", d3.autoType)
       });
     });
 
-    console.log(links);
+    // console.log(links);
 
     // Creating the array, which stores the nodes based on the information from the links array
     // New set to keep unique values
@@ -52,7 +52,7 @@ const data2 = d3.csv("./data/sankey_data2.csv", d3.autoType)
       (name, id) => ({ name, id})
     );
 
-    console.log(nodes);
+    // console.log(nodes);
 
     // We want to change the string names to ids in the links, that are inline with the nodes.
     links.map((d) => {
@@ -60,12 +60,12 @@ const data2 = d3.csv("./data/sankey_data2.csv", d3.autoType)
       d.target = nodes.find((e) => e.name === d.target).id;
     });
 
-    console.log(links);
+    // console.log(links);
     
     // Finally we create on object including the links and nodes array of objects
     let data_final2 = {nodes, links};
 
-    console.log(data_final2);
+    // console.log(data_final2);
 
 // --------------------------------------
 //  Formating 
@@ -80,7 +80,6 @@ format = d3.format(".03s")
 let color = d3.scaleOrdinal()
     .domain(["Tropical Cyclone", "Drought", "Wildfire", "Flooding", "Winter Storm", "Severe Storm"])
     .range(["#ccff99", "#cccc99", "#B0CCA3", "#99FFD7", "#99FFB4", "#A8A87E"]);
-
 
 // --------------------------------------
 //  Sankey
@@ -98,7 +97,7 @@ const sankey2 = d3.sankey()
     [innerWidth2, innerHeight2]
   ]);
 
-  console.log(sankey2(data_final2));
+  // console.log(sankey2(data_final2));
 
 // --------------------------------------
 //  Data drawing 

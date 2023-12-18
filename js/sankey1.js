@@ -41,7 +41,7 @@ const data = d3.csv("./data/sankey_data.csv", d3.autoType)
       });
     });
 
-    console.log(links);
+    // console.log(links);
 
     // Creating the array, which stores the nodes based on the information from the links array
     // New set to keep unique values
@@ -50,7 +50,7 @@ const data = d3.csv("./data/sankey_data.csv", d3.autoType)
       (name, id) => ({ name, id})
     );
 
-    console.log(nodes);
+    // console.log(nodes);
 
     // We want to change the string names to ids in the links, that are inline with the nodes.
     links.map((d) => {
@@ -58,12 +58,12 @@ const data = d3.csv("./data/sankey_data.csv", d3.autoType)
       d.target = nodes.find((e) => e.name === d.target).id;
     });
 
-    console.log(links);
+    // console.log(links);
     
     // Finally we create on object including the links and nodes array of objects
     let data_final = {nodes, links};
 
-    console.log(data_final);
+    // console.log(data_final);
 
 // --------------------------------------
 //  Formating 
@@ -101,7 +101,7 @@ const sankey = d3.sankey()
   ]);
 
 // Checking sankey generator applied to data
-console.log((sankey(data_final)));
+// console.log((sankey(data_final)));
 
 // --------------------------------------
 //  Data drawing 

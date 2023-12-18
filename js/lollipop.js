@@ -2,13 +2,11 @@
 //  Margin and canvas
 // --------------------------------------
 
-const margin3 = {top: 0, right: 100, bottom: 10, left: 180};
+const margin3 = {top: 60, right: 35, bottom: 50, left: 30};
 const width3 = 1000;
-const height3 = 250;
+const height3 = 600;
 const innerwidth3 = width3 - margin3.left - margin3.right;
 const innerheight3 = height3 - margin3.top - margin3.bottom;
-console.log(innerheight3);
-
 
 // Append the SVG container
 const svg3 = d3.select("#chart3")
@@ -33,47 +31,85 @@ const data3 = d3.csv("./data/tropical.csv", d3.autoType)
 //  Formating 
 // --------------------------------------
 
-format = d3.format(".03s")
+format = d3.format(".03s");
 
 // --------------------------------------
 //  Scales
 // --------------------------------------
 
+let x = d3.scaleLinear()
+    .domain(d3.extent(data3, d => d.Year))
+    .range([0, innerwidth3]);
 
+let y = d3.scaleLinear()
+    .domain(d3.extent(data3, d => d.Costs))
+    .range([innerheight3, 0]);
 
+let r = d3.scaleSqrt()
+    .domain(d3.extent(data3, d => d.Costs))
+    .range([0, 45]);
 
+let c = d3.scaleOrdinal()
+    .domain(["True", "False"])
+    .range(["#ccff99", "white"]);
 
+// --------------------------------------
+//  Axes 
+// --------------------------------------
 
-let color = d3.scaleOrdinal()
-    .domain(["Tropical Cyclone", "Drought", "Wildfire", "Flooding", "Winter Storm", "Severe Storm"])
-    .range(["#ccff99", "#cccc99", "#B0CCA3", "#99FFD7", "#99FFB4", "#A8A87E"]);
-
-
+innerChart3.append("g")
+    .attr("class", "x-axis")
+    .attr("transform", `translate(0, ${innerheight3})`)
+    .call(d3.axisBottom(x)
+        	   .tickValues([1980, 1983, 1989, 1995, 2000, 2005, 2010, 2015, 2020, 2022]) 
+     		     .tickSize(10)
+             .tickPadding(5));
 
 // --------------------------------------
 //  Data drawing 
 // --------------------------------------
+
+//Lines
+innerChart3
+    .selectAll("line")
+    .data(data3)
+    .join("line")
+    .attr("x1", (d) => x(d.Year))
+    .attr("x2", (d) => x(d.Year))
+    .attr("y1", innerheight3)
+    .attr("y2", (d) => y(d.Costs) + r(d.Costs))
+    .attr("stroke", (d) => c(d.Hurricane))
+    .attr("stroke-width", 0.5)
+    .attr("opacity", 0.7); 
+
+
 
 //Circle 
 innerChart3
     .selectAll("circle")
     .data(data3)
     .join("circle")
-    .attr("r", (d) => d.y1 - d.y0)
-    .attr("cy", (d) => d.y0)
-    .attr("cx", (d) => d.x0)
-    .attr("fill", (d) => (d.x0 < innerwidth3 / 2 ? color(d.name) : "white"));
+    .attr("cx", (d) => x(d.Year))
+    .attr("cy", (d) => y(d.Costs))
+    .attr("r", (d) => r(d.Costs))
+    .attr("fill", (d) => c(d.Hurricane))
+    .attr("fill-opacity", 0.5)
+    .attr("stroke", (d) => c(d.Hurricane))
+    .attr("fill", (d) => c(d.Hurricane))
+    .attr("stroke-opacity", 1)
+    .attr("stroke-width", 0.2); 
 
-//Labels  
+//Text 
 innerChart3
     .selectAll("text")
     .data(data3)
     .join("text")
-    .text((d) => (d.name) + " | " + format(d.value))
-    .attr("x", (d) => (d.x0 > innerwidth3 / 2 ? d.x1 + 10 : d.x0 - 10))
-    .attr("y", (d) => (d.y1 + d.y0) / 2)
-    .attr("fill", "white")
-    .attr("dy", "0.4em")
-    .attr("text-anchor", (d) => (d.x0 < innerwidth3 / 2 ? "end" : "start"));
+    .filter(d => d.Costs > 60000)
+    .attr("x", (d) => x(d.Year))
+    .attr("y", (d) => y(d.Costs))
+    .attr("class", "super_hurricane")
+    .text("🔥🔥🔥")
+    .attr("fill", "red")
+    .attr("text-anchor", "middle");
 
 });

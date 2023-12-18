@@ -106,6 +106,35 @@ text {
   font-weight: 300;
 }
 
+.super_hurricane {
+  font-size: var( --step-1); 
+}
+
+/*--------------------------------------*/
+/* Axes stylings */
+/*--------------------------------------*/
+
+.x-axis text {
+  font-family:'Montserrat Alternates', sans-serif;
+  font-weight:300;
+  font-size:11px;
+  opacity:1;
+  fill:white;
+}
+
+.x-axis path {
+  stroke-width:0;
+  stroke-opacity:0;
+  stroke:#8ff798;
+}
+
+.x-axis line {
+  fill:none;
+  stroke-width:2;
+  stroke-opacity:1;
+  stroke:white;
+}
+
 /*--------------------------------------*/
 /* Footer and link stylings */
 /*--------------------------------------*/
