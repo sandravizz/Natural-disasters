@@ -25,6 +25,9 @@
 const data = d3.csv("./data/sankey_data.csv", d3.autoType) 
   .then(function(data){ 
 
+    console.log(data);
+
+
     // Empty array
     let links = [];
 

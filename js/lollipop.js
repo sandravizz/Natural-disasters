@@ -34,6 +34,18 @@ const data3 = d3.csv("./data/tropical.csv", d3.autoType)
 format = d3.format(".03s");
 
 // --------------------------------------
+// Tooltip
+// --------------------------------------
+
+const tooltip = d3.tip()
+    .attr("class", "tooltip")
+    .html(
+      (event, d) => `<div>${(d.Name)}<br>Year ${(d.Year)}</br>Death ${(d.Deaths)}<br>Damage ${format(d.Costs)}</br></div>`
+    );
+
+svg.call(tooltip); 
+
+// --------------------------------------
 //  Scales
 // --------------------------------------
 
@@ -71,6 +83,7 @@ innerChart3.append("g")
 
 //Lines
 innerChart3
+    .append("g")
     .selectAll("line")
     .data(data3)
     .join("line")
@@ -84,6 +97,7 @@ innerChart3
 
 //Circle 
 innerChart3
+    .append("g")
     .selectAll("circle")
     .data(data3)
     .join("circle")
@@ -95,10 +109,13 @@ innerChart3
     .attr("stroke", (d) => c(d.Hurricane))
     .attr("fill", (d) => c(d.Hurricane))
     .attr("stroke-opacity", 1)
-    .attr("stroke-width", 0.2); 
+    .attr("stroke-width", 0.2)
+    .on("mouseover", tooltip.show)
+    .on("mouseout", tooltip.hide); 
 
 //Text 
 innerChart3
+    .append("g")
     .selectAll("text")
     .data(data3)
     .join("text")
@@ -106,10 +123,36 @@ innerChart3
     .attr("x", (d) => x(d.Year))
     .attr("y", (d) => y(d.Costs))
     .attr("class", "super_hurricane")
-    .text("🔥")
-    .attr("fill", "red")
-    .attr("text-anchor", "middle");
+    .text(d => d.Name)
+    .attr("text-anchor", "middle")
+    .on("mouseover", tooltip.show)
+    .on("mouseout", tooltip.hide);
 
-  
+// --------------------------------------
+//  Legend 
+// --------------------------------------
+
+const formatsInfo = [
+  {id: "hurricane", label: "Hurricane", color: "#ccff99"},
+  {id: "tropical_storm", label: "Tropical storm", color: "white"},
+];
+
+const legendItems = d3.select(".legend-container")
+    .append("ul")
+      .attr("class", "color-legend")
+    .selectAll(".color-legend-item")
+    .data(formatsInfo)
+    .join("li")
+      .attr("class", "color-legend-item");
+
+  legendItems
+    .append("span")
+      .attr("class", "color-legend-item-color")
+      .style("background-color", d => d.color);
+
+  legendItems
+    .append("span")
+      .attr("class", "color-legend-item-label")
+      .text(d => d.label);
 
 });

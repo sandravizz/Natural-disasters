@@ -21,14 +21,9 @@
 		<span class="support decade">decade</span>.
 		</h1>
 
-		<div>
-			<!-- Chart text -->
-			<p class ="text">Damage in billion $ caused by natural disasters from 1980 to 2019 in the US</p>			
-			
-			<!-- Chart container -->
+			<!-- Chart 1 -->
+			<p class ="text">Damage in billion $ caused by natural disasters from 1980 to 2019 in the US</p>						
 			<div id="chart"></div>
-		
-			<!-- Footer -->
 			<div class="footer">Data:
 				<a href="https://www.ncei.noaa.gov/access/billions/events/US/1980-2023?disasters[]=all-disasters">NOAA</a>
 			</div>
@@ -36,13 +31,9 @@
 			<!-- Article text -->
 			<p class ="text2">Where are we heading right now? In the same direction just faster. <br> Looking at the current decade, only the first three <span class="support2 decade">years</span> already made up for half of the damage prodcued in the 2010s. </p>			
 			
-			<!-- Chart text -->
+			<!-- Chart 2 -->
 			<p class ="text">Damage in billion $ caused by natural disasters 2020, 2021, 2022 in the US</p>			
-
-			<!-- 2. Chart container -->
 			<div id="chart2"></div>
-
-			<!-- Footer -->
 			<div class="footer">Data:
 				<a href="https://www.ncei.noaa.gov/access/billions/events/US/1980-2023?disasters[]=all-disasters">NOAA</a>
 			</div>
@@ -51,28 +42,22 @@
 			<p class ="text2">What is exactly behind these Tropical Cyclones? <br> Focusing on hurricanes (green) we can easily identify 
 			a changing moment around 2005, when the first <span class="support2 tropical"> 🔥 super hurricane</span> Katarina caused damage far beyond anything seen before. </p>			
 			
-			<!-- Chart text -->
+			<!-- Chart 3 -->
 			<p class ="text">Damage in billion $ caused by tropical cyclones 1980 - 2023 in the US</p>			
-
-			<!-- 3. Chart container -->
+			<div class="legend-container"></div>
 			<div id="chart3"></div>
-
-			<!-- Footer -->
 			<div class="footer">Data:
 				<a href="https://www.ncei.noaa.gov/access/billions/events/US/1980-2023?disasters[]=all-disasters">NOAA</a>
 			</div>
-
-		</div>
-
 	</div>
 
 <!-- Scripts -->
 <script src="plugins/d3.js"></script>
 <script src="plugins/d3-sankey.js"></script>
+<script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
 <script src="js/sankey1.js"></script>
 <script src="js/sankey2.js"></script>
 <script src="js/lollipop.js"></script>
-
 
 </body>
 </html>
