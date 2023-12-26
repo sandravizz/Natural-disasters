@@ -9,7 +9,6 @@ const innerWidth2 = width2 - margin2.left - margin2.right;
 const innerHeight2 = height2 - margin2.top - margin2.bottom;
 // console.log(innerHeight2);
 
-
 // Append the SVG container
 const svg2 = d3.select("#chart2")
   .append("svg")

@@ -2,7 +2,7 @@
 //  Margin and canvas
 // --------------------------------------
 
-  const margin = {top: 5, right: 100, bottom: 30, left: 160};
+  const margin = {top: 50, right: 100, bottom: 30, left: 160};
   const width = 1000;
   const height = 650;
   const innerWidth = width - margin.left - margin.right;
@@ -25,8 +25,7 @@
 const data = d3.csv("./data/sankey_data.csv", d3.autoType) 
   .then(function(data){ 
 
-    console.log(data);
-
+    // console.log(data);
 
     // Empty array
     let links = [];

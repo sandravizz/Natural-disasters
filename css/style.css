@@ -109,12 +109,15 @@ text {
 
 .super_hurricane {
   font-size: var( --step-0);
-  text-transform: uppercase;
-  font-weight: 500;
+  text-transform: lowercase;
+  font-weight: 600;
   fill: #444952;
 }
 
+/*--------------------------------------*/
 /* Tooltip */
+/*--------------------------------------*/
+
 .tooltip {
   font-weight:400;
   font-size:13px;
@@ -125,8 +128,8 @@ text {
   flex-direction: row;
   align-items: right; 
   text-align: center;
-  color:#8ff798;
-  background-color:#444952;
+  color:#444952;
+  background-color:#ccff99;
   box-shadow: 1px 3px 8px 
   rgba(34, 84, 114, 0.2);
   border-radius: 3px;
@@ -153,7 +156,7 @@ text {
 
 .x-axis line {
   fill:none;
-  stroke-width:2;
+  stroke-width:0;
   stroke-opacity:1;
   stroke:white;
 }
@@ -162,23 +165,25 @@ text {
 /* Legend stylings */
 /*--------------------------------------*/
 
-/* Color legend */
 .color-legend {
   display: flex;
   justify-content: left;
   flex-wrap: wrap;
-  margin: 0;
   padding-left: 0;
 }
+
 .color-legend-item {
-  margin: 5px 12px;
+  margin: -10px 0px;
+  padding: 0px 10px;
   font-size: 1.4rem;
   color: #444952; 
 }
+
 .color-legend span {
   display: inline-block;
   color:white;
 }
+
 .color-legend-item-color {
   position: relative;
   top: 2px;
@@ -209,4 +214,30 @@ a:hover {
   margin-top:20px;
   color:white;
   font-weight:400;
+}
+
+/*--------------------------------------*/
+/* Filter buttons */
+/*--------------------------------------*/
+
+#filters {
+  margin: -10px 0px;
+}
+.filter {
+  min-width: 80px;
+  margin: 0 2px;
+  padding: 8px 10px;
+  font-family:'Montserrat Alternates', sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  color: #444952;
+  font-weight: 500;
+  border: none;
+  border-radius: 20px;
+  transition: color 0.3ms ease-in;
+}
+.filter:hover,
+.filter.active {
+  color: red;
+  transition-timing-function: ease-out;
 }

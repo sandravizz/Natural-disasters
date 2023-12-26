@@ -17,18 +17,18 @@
 		
 		<!-- Headline -->
 		<h1><span class="support tropical">Tropical Cyclones</span> 
-		most diastrous, <br>worse every 
-		<span class="support decade">decade</span>.
-		</h1>
+			most diastrous, worse every <span class="support decade">decade</span>.</h1>
 
-			<!-- Chart 1 -->
-			<p class ="text">Damage in billion $ caused by natural disasters from 1980 to 2019 in the US</p>						
+			<!-- Chart 0 -->
+			<p class ="text">Damage in billion $ caused by natural disasters from 1980 to 2023 in the US</p>							
+			<div id="chart0"></div>
+		
+			<!-- Chart 1 -->					
 			<div id="chart"></div>
 			<div class="footer">Data:
 				<a href="https://www.ncei.noaa.gov/access/billions/events/US/1980-2023?disasters[]=all-disasters">NOAA</a>
 			</div>
 
-			<!-- Article text -->
 			<p class ="text2">Where are we heading right now? In the same direction just faster. <br> Looking at the current decade, only the first three <span class="support2 decade">years</span> already made up for half of the damage prodcued in the 2010s. </p>			
 			
 			<!-- Chart 2 -->
@@ -38,13 +38,13 @@
 				<a href="https://www.ncei.noaa.gov/access/billions/events/US/1980-2023?disasters[]=all-disasters">NOAA</a>
 			</div>
 
-			<!-- Article text -->
 			<p class ="text2">What is exactly behind these Tropical Cyclones? <br> Focusing on hurricanes (green) we can easily identify 
-			a changing moment around 2005, when the first <span class="support2 tropical"> 🔥 super hurricane</span> Katarina caused damage far beyond anything seen before. </p>			
+			a changing moment around 2005, when the first <span class="support2 tropical"> 🔥 super hurricane</span> Katrina caused damage far beyond anything seen before. </p>			
 			
 			<!-- Chart 3 -->
 			<p class ="text">Damage in billion $ caused by tropical cyclones 1980 - 2023 in the US</p>			
-			<div class="legend-container"></div>
+			<!-- <div class="legend-container"></div> -->
+			<div id="filters"></div>
 			<div id="chart3"></div>
 			<div class="footer">Data:
 				<a href="https://www.ncei.noaa.gov/access/billions/events/US/1980-2023?disasters[]=all-disasters">NOAA</a>
@@ -55,6 +55,7 @@
 <script src="plugins/d3.js"></script>
 <script src="plugins/d3-sankey.js"></script>
 <script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
+<script src="js/violion.js"></script>
 <script src="js/sankey1.js"></script>
 <script src="js/sankey2.js"></script>
 <script src="js/lollipop.js"></script>
