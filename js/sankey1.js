@@ -111,7 +111,6 @@ const sankey = d3.sankey()
 
 // Nodes: rects
 innerChart
-    .append("g")
     .selectAll("rect")
     .data((sankey(data_final)).nodes)
     .join("rect")
@@ -122,12 +121,12 @@ innerChart
     .attr("fill", (d) => (d.x0 < innerWidth / 2 ? color(d.name) : "white"))
     .attr("opacity", (d) => (d.x0 < innerWidth / 2 ? 1 : 0))
     .on("mouseover", (e, d) => {
-      d3.selectAll("path").style("opacity", (p) =>
+      d3.selectAll(".sankey_path").style("opacity", (p) =>
         p.source.name === d.name || p.target.name === d.name ? "1" : "0.07"
       );
     })
     .on("mouseout", (e, d) => {
-      d3.selectAll("path").style("opacity", 1);
+      d3.selectAll(".sankey_path").style("opacity", 1);
     })
     .transition()
     .delay(3000)
@@ -165,10 +164,10 @@ innerChart
 //Links: path 
 innerChart
     .append("g")
-    .selectAll("path")
+    .selectAll(".sankey_path")
     .data((sankey(data_final)).links)
     .join("path")
-    .attr("class", (d) => `${d.id}`)
+    .attr("class", "sankey_path")
     .attr("d", d3.sankeyLinkHorizontal())
     .attr("stroke", (d) => color(d.source.name))
     .attr("fill", "none")

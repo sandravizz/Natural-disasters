@@ -140,5 +140,4 @@ disaster.forEach(disaster => {
       .call( d3.axisTop(x)
       .tickSizeOuter(0));
 
-
 });

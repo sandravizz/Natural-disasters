@@ -113,12 +113,12 @@ innerChart2
     .attr("x", (d) => d.x0)
     .attr("fill", (d) => (d.x0 < innerWidth2 / 2 ? color(d.name) : "white"))
     .on("mouseover", (e, d) => {
-      d3.selectAll("path").style("opacity", (p) =>
+      d3.selectAll(".sankey_path").style("opacity", (p) =>
         p.source.name === d.name || p.target.name === d.name ? "1" : "0.07"
       );
     })
     .on("mouseout", (e, d) => {
-      d3.selectAll("path").style("opacity", 1);
+      d3.selectAll(".sankey_path").style("opacity", 1);
     });
 
 //Nodes = text 
@@ -135,10 +135,10 @@ innerChart2
 
 //Links = path 
 innerChart2
-    .selectAll("path")
+    .selectAll(".sankey_path")
     .data((sankey2(data_final2)).links)
     .join("path")
-    .attr("class", (d) => `${d.id}`)
+    .attr("class", "sankey_path")
     .attr("d", d3.sankeyLinkHorizontal())
     .attr("stroke", (d) => color(d.source.name))
     .attr("fill", "none")

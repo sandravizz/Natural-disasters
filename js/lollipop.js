@@ -129,8 +129,8 @@ innerChart3
     .attr("r", (d) => r2(d.Deaths))
     .attr("fill", "#FF809B")
     .attr("fill-opacity", 0.3)
-    .on("mouseover", tooltip.show)
-    .on("mouseout", tooltip.hide); 
+    // .on("mouseover", tooltip.show)
+    // .on("mouseout", tooltip.hide); 
 
 //Text 
 innerChart3
@@ -189,49 +189,50 @@ const filters = [
       .join("button")
         .attr("class", d => `filter ${d.isActive ? "active" : ""}`)
         .text(d =>d.label)
-        .style("background-color", d => d.color)
-        .on("click", (e, d) => {
-          console.log("DOM event", e);
-          console.log("Attached datum", d);
+        .style("background-color", d => d.color);
 
-        // If the user clicked on a button that is not yet active
-        if (!d.isActive) {
+    //     .on("click", (e, d) => {
+    //       console.log("DOM event", e);
+    //       console.log("Attached datum", d);
 
-          // Update isActive states in the filters array
-          filters.forEach(filter => {
-            filter.isActive = d.id === filter.id ? true : false;
-          });
+    //     // If the user clicked on a button that is not yet active
+    //     if (!d.isActive) {
 
-          // Handle the buttons active class name
-          d3.selectAll(".filter")
-          .classed("active", filter => filter.id === d.id ? true : false);
+    //       // Update isActive states in the filters array
+    //       filters.forEach(filter => {
+    //         filter.isActive = d.id === filter.id ? true : false;
+    //       });
 
-          // Call the function to filter the histogram
-          updateChart(d.id, data);
+    //       // Handle the buttons active class name
+    //       d3.selectAll(".filter")
+    //       .classed("active", filter => filter.id === d.id ? true : false);
 
-
-        }
-
-    });
+    //       // Call the function to filter the histogram
+    //       updateChart(d.id, data);
 
 
-const updateChart = (filterId, data) => {
+    //     }
+
+    // });
+
+
+// const updateChart = (filterId, data) => {
   
-  // Filter the original data based on the selected option
-  let updatedData = filterId === "all"
-    ? data
-    : data.filter(respondent => respondent.gender === filterId);
+//   // Filter the original data based on the selected option
+//   let updatedData = filterId === "all"
+//     ? data
+//     : data.filter(respondent => respondent.gender === filterId);
 
-  // Update the histogram
-  d3.selectAll("#histogram rect")
-    .data(updatedBins)
-    .transition()
-      .duration(500)
-      .ease(d3.easeCubicOut)
-      .attr("y", d => yScale(d.length))
-      .attr("height", d => innerHeight - yScale(d.length));
+//   // Update the histogram
+//   d3.selectAll("#histogram rect")
+//     .data(updatedBins)
+//     .transition()
+//       .duration(500)
+//       .ease(d3.easeCubicOut)
+//       .attr("y", d => yScale(d.length))
+//       .attr("height", d => innerHeight - yScale(d.length));
 
-};
+// };
 
 
 });
