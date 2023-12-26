@@ -25,6 +25,7 @@ body {
   --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
   --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
   --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --step-05: clamp(1.35rem, 1.35rem + 0.2174vw, 1.50rem);
   --step-1: clamp(1.5rem, 1.5561rem + 0.3696vw, 1.7225rem);
   --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
   --step-3: clamp(1.9438rem, 1.7707rem + 0.8652vw, 2.4413rem);
@@ -108,10 +109,10 @@ text {
 }
 
 .super_hurricane {
-  font-size: var( --step-0);
+  font-size: var(   --step-05);
   text-transform: lowercase;
-  font-weight: 600;
-  fill: #444952;
+  font-weight: 400;
+  fill: #ccff99;
 }
 
 /*--------------------------------------*/
@@ -228,10 +229,10 @@ a:hover {
   margin: 0 2px;
   padding: 8px 10px;
   font-family:'Montserrat Alternates', sans-serif;
-  font-size: 12px;
+  font-size: var( --step-05);
   line-height: 1;
   color: #444952;
-  font-weight: 500;
+  font-weight: 600;
   border: none;
   border-radius: 20px;
   transition: color 0.3ms ease-in;

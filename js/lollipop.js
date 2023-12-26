@@ -2,7 +2,7 @@
 //  Margin and canvas
 // --------------------------------------
 
-const margin3 = {top: 50, right: 50, bottom: 50, left:15};
+const margin3 = {top: 65, right: 50, bottom: 40, left:15};
 const width3 = 1000;
 const height3 = 600;
 const innerwidth3 = width3 - margin3.left - margin3.right;
@@ -59,11 +59,11 @@ let y = d3.scaleLinear()
 
 let r2 = d3.scaleSqrt()
     .domain(d3.extent(data3, d => d.Deaths))
-    .range([0, 50]);
+    .range([0, 47]);
 
 let r1 = d3.scaleSqrt()
     .domain(d3.extent(data3, d => d.Costs))
-    .range([0, 50]);
+    .range([0, 47]);
 
 let c = d3.scaleOrdinal()
     .domain(["True", "False"])
@@ -96,7 +96,7 @@ innerChart3
     .attr("y1", innerheight3)
     .attr("y2", (d) => y(d.Costs) + r1(d.Costs))
     .attr("stroke", (d) => c(d.Hurricane))
-    .attr("stroke-width", 0.5)
+    .attr("stroke-width", 0.4)
     .attr("opacity", 0.7); 
 
 //Circle costs
@@ -128,9 +128,9 @@ innerChart3
     .attr("cy", (d) => y(d.Costs))
     .attr("r", (d) => r2(d.Deaths))
     .attr("fill", "#FF809B")
-    .attr("fill-opacity", 0.3)
-    // .on("mouseover", tooltip.show)
-    // .on("mouseout", tooltip.hide); 
+    .attr("fill-opacity", 0.7)
+    .on("mouseover", tooltip.show)
+    .on("mouseout", tooltip.hide); 
 
 //Text 
 innerChart3
@@ -138,9 +138,9 @@ innerChart3
     .selectAll("text")
     .data(data3)
     .join("text")
-    .filter(d => d.Costs > 60000)
+    .filter(d => d.Costs > 80000)
     .attr("x", (d) => x(d.Year))
-    .attr("y", (d) => y(d.Costs))
+    .attr("y", (d) => y(d.Costs) - d3.max([r1(d.Costs),r2(d.Deaths)])-4.5)
     .attr("class", "super_hurricane")
     .text(d => "🔥 " + d.Name)
     .attr("text-anchor", "middle")
@@ -180,7 +180,8 @@ innerChart3
 
 const filters = [
   { id: "hurricane", label: "Hurricane", isActive: false,  color: "#ccff99" },
-  { id: "tropical_storm", label: "Tropical storm", isActive: false, color: "white" }
+  { id: "tropical_storm", label: "Tropical storm", isActive: false, color: "white" }, 
+  { id: "deaths", label: "Deaths", isActive: false, color: "#FF809B" }
 ];
 
     d3.select("#filters")
