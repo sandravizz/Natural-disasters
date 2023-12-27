@@ -2,9 +2,9 @@
 //  Margin and canvas
 // --------------------------------------
 
-const margin2 = {top: 0, right: 100, bottom: 10, left: 180};
+const margin2 = {top: 40, right: 90, bottom: 30, left: 100};
 const width2 = 1000;
-const height2 = 250;
+const height2 = 270;
 const innerWidth2 = width2 - margin2.left - margin2.right;
 const innerHeight2 = height2 - margin2.top - margin2.bottom;
 // console.log(innerHeight2);
@@ -70,14 +70,14 @@ const data2 = d3.csv("./data/sankey_data2.csv", d3.autoType)
 //  Formating 
 // --------------------------------------
 
-format = d3.format(".03s")
+format = d3.format(".01s")
 
 // --------------------------------------
 //  Scales
 // --------------------------------------
 
 let color = d3.scaleOrdinal()
-    .domain(["Tropical Cyclone", "Drought", "Wildfire", "Flooding", "Winter Storm", "Severe Storm"])
+    .domain(["TC", "Drought", "Wildfire", "Flooding", "Winter", "Storm"])
     .range(["#ccff99", "#cccc99", "#B0CCA3", "#99FFD7", "#99FFB4", "#A8A87E"]);
 
 // --------------------------------------
@@ -90,7 +90,7 @@ const sankey2 = d3.sankey()
   .nodeId((d) => d.id)
   .linkSort(null)
   .nodeWidth(20) //
-  .nodePadding(20) //space between each node
+  .nodePadding(5) //space between each node
   .extent([
     [0, 0],
     [innerWidth2, innerHeight2]
@@ -126,10 +126,10 @@ innerChart2
     .selectAll("text")
     .data((sankey2(data_final2)).nodes)
     .join("text")
-    .text((d) => (d.name) + " | " + format(d.value))
-    .attr("x", (d) => (d.x0 > innerWidth2 / 2 ? d.x1 + 10 : d.x0 - 10))
+    .text((d) => (d.name) + " " + format(d.value))
+    .attr("x", (d) => (d.x0 > innerWidth2 / 2 ? d.x1 +5 : d.x0 - 5))
     .attr("y", (d) => (d.y1 + d.y0) / 2)
-    .attr("fill", "white")
+    .attr("fill", (d) => (d.x0 < innerWidth2 / 2 ? color(d.name) : "white"))
     .attr("dy", "0.4em")
     .attr("text-anchor", (d) => (d.x0 < innerWidth2 / 2 ? "end" : "start"));
 

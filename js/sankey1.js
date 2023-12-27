@@ -2,7 +2,7 @@
 //  Margin and canvas
 // --------------------------------------
 
-  const margin = {top: 50, right: 100, bottom: 30, left: 160};
+  const margin = {top: 40, right: 90, bottom: 30, left: 100};
   const width = 1000;
   const height = 600;
   const innerWidth = width - margin.left - margin.right;
@@ -71,19 +71,19 @@ const data = d3.csv("./data/sankey_data.csv", d3.autoType)
 //  Formating 
 // --------------------------------------
 
-    format = d3.format(".03s")
+    format = d3.format(".01s")
 
 // --------------------------------------
 //  Scales
 // --------------------------------------
 
 let color = d3.scaleOrdinal()
-    .domain(["Tropical Cyclone", "Drought", "Wildfire", "Flooding", "Winter Storm", "Severe Storm"])
+    .domain(["TC", "Drought", "Wildfire", "Flooding", "Winter", "Storm"])
     .range(["#ccff99", "#cccc99", "#B0CCA3", "#99FFD7", "#99FFB4", "#A8A87E"]);
 
 // for the stacked bar chart
 let y = d3.scaleBand()
-    .domain([ "Winter Storm", "Wildfire", "Flooding", "Drought", "Severe Storm", "Tropical Cyclone"])
+    .domain(["Winter", "Wildfire", "Flooding", "Drought", "Storm", "TC"])
     .rangeRound([innerHeight, 0]);
 
 // --------------------------------------
@@ -96,7 +96,7 @@ const sankey = d3.sankey()
   .nodeId((d) => d.id)
   .linkSort(null)
   .nodeWidth(20) 
-  .nodePadding(20) //space between each node
+  .nodePadding(5) //space between each node
   .extent([
     [0, 0],
     [innerWidth, innerHeight]
@@ -145,10 +145,10 @@ innerChart
     .selectAll("text")
     .data((sankey(data_final)).nodes)
     .join("text")
-    .text((d) => (d.name) + " | " + format(d.value))
-    .attr("x", (d) => (d.x0 > innerWidth / 2 ? d.x1 + 10 : d.x0 - 10))
+    .text((d) => (d.name) + " " + format(d.value))
+    .attr("x", (d) => (d.x0 > innerWidth / 2 ? d.x1 +5 : d.x0 - 5))
     .attr("y",  (d) => (d.x0 < innerWidth / 2 ? (y(d.name) + 50) : ((d.y1 + d.y0) / 2)))
-    .attr("fill", "white")
+    .attr("fill", (d) => (d.x0 < innerWidth / 2 ? color(d.name) : "white"))
     .attr("dy", "0.4em")
     .attr("text-anchor", (d) => (d.x0 < innerWidth / 2 ? "end" : "start"))
     .attr("opacity", (d) => (d.x0 > innerWidth / 2 ? 0 : 1))

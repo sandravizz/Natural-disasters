@@ -141,23 +141,36 @@ text {
 /* Axes stylings */
 /*--------------------------------------*/
 
-.x-axis text {
+.x-axis-violin text {
   font-family:'Montserrat Alternates', sans-serif;
-  font-weight:300;
-  font-size:11px;
+  font-weight:500;
+  font-size: var( --step-0);
+  opacity:1;
+}
+
+.x-axis text, .y-axis text {
+  font-family:'Montserrat Alternates', sans-serif;
+  font-weight:200;
+  font-size: var( --step--1);
   opacity:1;
   fill:white;
 }
 
-.x-axis path {
+.x-axis, .x-axis-violin, .y-axis path {
   stroke-width:0;
   stroke-opacity:0;
   stroke:#8ff798;
 }
 
-.x-axis line {
+.x-axis, .x-axis-violin line {
   fill:none;
   stroke-width:0;
+  stroke-opacity:1;
+  stroke:white;
+}
+
+.y-axis line {
+  stroke-width:0.1;
   stroke-opacity:1;
   stroke:white;
 }

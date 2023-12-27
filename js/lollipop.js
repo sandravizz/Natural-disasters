@@ -78,8 +78,8 @@ innerChart3.append("g")
     .attr("transform", `translate(0, ${innerheight3})`)
     .call(d3.axisBottom(x)
         	.tickValues([1980, 1992, 2005, 2012, 2017, 2020, 2022]) 
-     		  .tickSize(10)
-          .tickPadding(5));
+     		.tickSize(10)
+            .tickPadding(5));
 
 // --------------------------------------
 //  Data drawing 
