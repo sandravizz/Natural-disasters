@@ -110,7 +110,7 @@ innerChart3
     .attr("cy", (d) => y(d.Costs))
     .attr("r", (d) => r1(d.Costs))
     .attr("fill", (d) => c(d.Hurricane))
-    .attr("fill-opacity", 0.87)
+    .attr("fill-opacity", (d) => (d.Hurricane === true ? 0.87 : 0.87))
     .attr("stroke", (d) => c(d.Hurricane))
     .attr("stroke-opacity", 1)
     .attr("stroke-width", 0.2)
@@ -148,6 +148,106 @@ innerChart3
     .on("mouseout", tooltip.hide);
 
 // --------------------------------------
+//  Buttons 
+// --------------------------------------
+
+const filters = [
+  { id: "hurricane", label: "Hurricane", isActive: false,  color: "#ccff99" },
+  { id: "tropical_storm", label: "Tropical storm", isActive: false, color: "white" }, 
+  { id: "deaths", label: "Deaths", isActive: false, color: "#FF809B" },
+  { id: "reset", label: "Reset", isActive: false, color: "lightgrey" }
+];
+
+    d3.select("#filters")
+        .selectAll(".filter")
+        .data(filters)
+        .join("button")
+        .attr("class", d => `filter`)
+        .attr("id", d => d.id)
+        .text(d => d.label)
+        .style("background-color", d => d.color);
+
+//When clicking on the deaths buttons
+
+    d3.select("#deaths")
+        .on("click", (e, d) => {
+
+        d3.selectAll(".death_circle")
+            .transition()
+            .duration(1000)
+            .attr("fill-opacity", 0.7);
+        
+        d3.selectAll(".cost_circle")
+            .data(data3)
+            .transition()
+            .duration(1000)
+            .attr("fill-opacity", (d) => (d.Hurricane === true ? 0 : 0)); 
+       
+    });
+
+//When clicking on the deaths buttons
+
+    d3.select("#tropical_storm")
+        .on("click", (e, d) => {
+
+        d3.selectAll(".death_circle")
+            .transition()
+            .duration(1000)
+            .attr("fill-opacity", 0);
+
+        d3.selectAll(".cost_circle")
+            .data(data3)
+            .transition()
+            .duration(1000)
+            .attr("fill-opacity", (d) => (d.Hurricane === true ? 0 : 1)); 
+
+    });
+
+
+//When clicking on the deaths buttons
+
+    d3.select("#hurricane")
+        .on("click", (e, d) => {
+
+        d3.selectAll(".death_circle")
+            .transition()
+            .duration(1000)
+            .attr("fill-opacity", 0);
+
+        d3.selectAll(".cost_circle")
+            .data(data3)
+            .transition()
+            .duration(1000)
+            .attr("fill-opacity", (d) => (d.Hurricane === true ? 1 : 0)); 
+
+});
+
+
+//When clicking on the deaths buttons
+
+    d3.select("#reset")
+        .on("click", (e, d) => {
+
+        d3.selectAll(".death_circle")
+            .transition()
+            .duration(1000)
+            .attr("fill-opacity", 0.7);
+
+        d3.selectAll(".cost_circle")
+            .data(data3)
+            .transition()
+            .duration(1000)
+            .attr("fill-opacity", (d) => (d.Hurricane === true ? 0.7 : 0.7)); 
+
+});
+
+
+
+});
+
+
+
+// --------------------------------------
 //  Legend 
 // --------------------------------------
 
@@ -173,67 +273,3 @@ innerChart3
 //     .append("span")
 //       .attr("class", "color-legend-item-label")
 //       .text(d => d.label);
-
-// --------------------------------------
-//  Buttons 
-// --------------------------------------
-
-const filters = [
-  { id: "hurricane", label: "Hurricane", isActive: false,  color: "#ccff99" },
-  { id: "tropical_storm", label: "Tropical storm", isActive: false, color: "white" }, 
-  { id: "deaths", label: "Deaths", isActive: false, color: "#FF809B" }
-];
-
-    d3.select("#filters")
-      .selectAll(".filter")
-      .data(filters)
-      .join("button")
-        .attr("class", d => `filter ${d.isActive ? "active" : ""}`)
-        .text(d =>d.label)
-        .style("background-color", d => d.color);
-
-    //     .on("click", (e, d) => {
-    //       console.log("DOM event", e);
-    //       console.log("Attached datum", d);
-
-    //     // If the user clicked on a button that is not yet active
-    //     if (!d.isActive) {
-
-    //       // Update isActive states in the filters array
-    //       filters.forEach(filter => {
-    //         filter.isActive = d.id === filter.id ? true : false;
-    //       });
-
-    //       // Handle the buttons active class name
-    //       d3.selectAll(".filter")
-    //       .classed("active", filter => filter.id === d.id ? true : false);
-
-    //       // Call the function to filter the histogram
-    //       updateChart(d.id, data);
-
-
-    //     }
-
-    // });
-
-
-// const updateChart = (filterId, data) => {
-  
-//   // Filter the original data based on the selected option
-//   let updatedData = filterId === "all"
-//     ? data
-//     : data.filter(respondent => respondent.gender === filterId);
-
-//   // Update the histogram
-//   d3.selectAll("#histogram rect")
-//     .data(updatedBins)
-//     .transition()
-//       .duration(500)
-//       .ease(d3.easeCubicOut)
-//       .attr("y", d => yScale(d.length))
-//       .attr("height", d => innerHeight - yScale(d.length));
-
-// };
-
-
-});

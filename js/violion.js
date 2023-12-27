@@ -7,7 +7,7 @@ const width0 = 1000;
 const height0 = 180;
 const innerwidth0 = width0 - margin0.left - margin0.right;
 const innerheight0 = height0 - margin0.top - margin0.bottom;
-console.log(innerheight0);
+//console.log(innerheight0);
 
 // Append the SVG container
 const svg0 = d3.select("#chart0")
@@ -42,7 +42,7 @@ const data0 = d3.csv("./data/violin.csv", d3.autoType)
         .map(d => d.costs);
 
       disaster["bins"] = d3.bin()(disaster.costs);
-      console.log(disaster.bins);
+      //console.log(disaster.bins);
   
     });
 

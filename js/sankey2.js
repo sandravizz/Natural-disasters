@@ -2,7 +2,7 @@
 //  Margin and canvas
 // --------------------------------------
 
-const margin2 = {top: 40, right: 90, bottom: 30, left: 100};
+const margin2 = {top: 5, right: 90, bottom: 30, left: 100};
 const width2 = 1000;
 const height2 = 270;
 const innerWidth2 = width2 - margin2.left - margin2.right;
@@ -129,7 +129,7 @@ innerChart2
     .text((d) => (d.name) + " " + format(d.value))
     .attr("x", (d) => (d.x0 > innerWidth2 / 2 ? d.x1 +5 : d.x0 - 5))
     .attr("y", (d) => (d.y1 + d.y0) / 2)
-    .attr("fill", (d) => (d.x0 < innerWidth2 / 2 ? color(d.name) : "white"))
+    .attr("fill", "white")
     .attr("dy", "0.4em")
     .attr("text-anchor", (d) => (d.x0 < innerWidth2 / 2 ? "end" : "start"));
 
