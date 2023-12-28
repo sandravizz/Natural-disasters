@@ -8,12 +8,10 @@ const height3 = 600;
 const innerwidth3 = width3 - margin3.left - margin3.right;
 const innerheight3 = height3 - margin3.top - margin3.bottom;
 
-// Append the SVG container
 const svg3 = d3.select("#chart3")
   .append("svg")
     .attr("viewBox", `0, 0, ${width3}, ${height3}`);
 
-// Append the group for the inner chart
 const innerChart3 = svg3
   .append("g")
     .attr("transform", `translate(${margin3.left}, ${margin3.top})`);
@@ -167,7 +165,7 @@ const filters = [
         .text(d => d.label)
         .style("background-color", d => d.color);
 
-//When clicking on the deaths buttons
+//When clicking on the deaths button
 
     d3.select("#deaths")
         .on("click", (e, d) => {
@@ -185,7 +183,7 @@ const filters = [
        
     });
 
-//When clicking on the deaths buttons
+//When clicking on the tropical_storm button
 
     d3.select("#tropical_storm")
         .on("click", (e, d) => {
@@ -204,7 +202,7 @@ const filters = [
     });
 
 
-//When clicking on the deaths buttons
+//When clicking on the hurricane button
 
     d3.select("#hurricane")
         .on("click", (e, d) => {
@@ -223,7 +221,7 @@ const filters = [
 });
 
 
-//When clicking on the deaths buttons
+//When clicking on the reset button
 
     d3.select("#reset")
         .on("click", (e, d) => {
@@ -240,8 +238,6 @@ const filters = [
             .attr("fill-opacity", (d) => (d.Hurricane === true ? 0.7 : 0.7)); 
 
 });
-
-
 
 });
 
