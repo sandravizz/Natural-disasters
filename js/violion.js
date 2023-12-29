@@ -2,7 +2,7 @@
 //  Margin and canvas
 // --------------------------------------
 
-const margin0 = {top: 60, right: 60, bottom: 20, left:60};
+const margin0 = {top: 40, right: 60, bottom: 20, left:60};
 const width0 = 1000;
 const height0 = 180;
 const innerwidth0 = width0 - margin0.left - margin0.right;
@@ -21,13 +21,15 @@ const innerChart0 = svg0
 // --------------------------------------
 
 const disaster = [
-  {id: "Flooding" },
-  {id: "Drought" },
-  {id: "Wildfire" },
-  {id: "Winter Storm" },
-  {id: "Tropical Cyclone" },
-  {id: "Severe Storm" },
+  {id: "Tropical Cyclone", count: 61},
+  {id: "Severe Storm", count: 186},
+  {id: "Drought", count: 31},
+  {id: "Flooding", count: 42},
+  {id: "Wildfire", count: 22},
+  {id: "Winter Storm", count: 22}
 ];
+
+console.log(disaster);
 
 const data0 = d3.csv("./data/violin.csv", d3.autoType) 
   .then(function(data0){ 
@@ -107,6 +109,22 @@ const data0 = d3.csv("./data/violin.csv", d3.autoType)
 
       });
 
+
+// --------------------------------------
+//  Lables 
+// --------------------------------------
+
+    // Counts: text 
+    innerChart0
+        .append("g")
+        .selectAll("text")
+        .data(disaster)
+        .join("text")
+        .text((d) => (d.count)  + " times" )
+        .attr("x", (d, i) => 31+ i * 153)
+        .attr("y", -8)
+        .attr("fill", (d) => color(d.id));
+
 // --------------------------------------
 //  Axes
 // --------------------------------------
@@ -115,8 +133,8 @@ const data0 = d3.csv("./data/violin.csv", d3.autoType)
       .append("g")
         .attr("class", "x-axis-violin")
         .attr("transform", `translate(0, 0)`)
-        .call( d3.axisTop(x)
-                .tickPadding(10)
+        .call(d3.axisTop(x)
+                .tickPadding(22)
                 .tickSizeOuter(20));
 
     innerChart0
