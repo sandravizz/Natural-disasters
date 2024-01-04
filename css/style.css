@@ -227,10 +227,12 @@ a:focus {
   font-size: var( --step-1);
   font-weight: 300;
   margin-bottom: 50px;
+  margin-top:80px;
 }
 
 .text {
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
   font-size: var( --step-0);
   padding-bottom: 10px;
   color:white;
@@ -240,11 +242,11 @@ a:focus {
 .support {
   display: inline-block;
   font-size: var( --step-1);
-  margin: 6px 1px;
-  padding: 2px 5px;
-  line-height: 4rem;
-  font-weight: 600;
-  border-radius: 1px;
+  margin: 2px 1px;
+  padding: 3px 6px;
+  line-height: 2rem;
+  font-weight: 500;
+  border-radius: 10px;
 }
 
 .decade {
@@ -267,8 +269,8 @@ a:focus {
   margin-left: auto;
   padding-right: 20px;
   padding-left: 20px;
-  width: 90%;
-  max-width: 800px;
+  width: 100%;
+  max-width: 1000px;
 }
 
 /* text {
@@ -384,16 +386,16 @@ a:focus {
 }
 
 .filter {
-  min-width: 80px;
-  margin: 0 2px;
-  padding: 8px 10px;
+  min-width: 50px;
+  margin: 0 5px;
+  padding: 4px 10px;
   font-family:'Montserrat Alternates', sans-serif;
   font-size: var( --step-01);
   line-height: 1;
   color: #444952;
-  font-weight: 400;
+  font-weight: 500;
   border: none;
-  border-radius: 20px;
+  border-radius: 30px;
   transition: color 30ms ease-in;
 }
 

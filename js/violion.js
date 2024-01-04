@@ -2,7 +2,7 @@
 //  Margin and canvas
 // --------------------------------------
 
-const margin0 = {top: 40, right: 60, bottom: 20, left:60};
+const margin0 = {top: 40, right: 20, bottom: 20, left:20};
 const width0 = 1000;
 const height0 = 180;
 const innerwidth0 = width0 - margin0.left - margin0.right;
@@ -121,7 +121,7 @@ const data0 = d3.csv("./data/violin.csv", d3.autoType)
         .data(disaster)
         .join("text")
         .text((d) => (d.count)  + " times" )
-        .attr("x", (d, i) => 31+ i * 153)
+        .attr("x", (d, i) => 50 + i * 165)
         .attr("y", -8)
         .attr("fill", (d) => color(d.id));
 

@@ -57,7 +57,7 @@ let y = d3.scaleLinear()
 
 let r2 = d3.scaleSqrt()
     .domain(d3.extent(data3, d => d.Deaths))
-    .range([0, 47]);
+    .range([0, 30]);
 
 let r1 = d3.scaleSqrt()
     .domain(d3.extent(data3, d => d.Costs))
@@ -125,7 +125,7 @@ innerChart3
     .attr("cx", (d) => x(d.Year))
     .attr("cy", (d) => y(d.Costs))
     .attr("r", (d) => r2(d.Deaths))
-    .attr("fill", "#FF809B")
+    .attr("fill", "")
     .attr("fill-opacity", 0.7)
     .on("mouseover", tooltip.show)
     .on("mouseout", tooltip.hide); 
@@ -207,16 +207,16 @@ const filters = [
     d3.select("#hurricane")
         .on("click", (e, d) => {
 
-        d3.selectAll(".death_circle")
-            .transition()
-            .duration(1000)
-            .attr("fill-opacity", 0);
+    d3.selectAll(".death_circle")
+        .transition()
+        .duration(1000)
+        .attr("fill-opacity", 0);
 
-        d3.selectAll(".cost_circle")
-            .data(data3)
-            .transition()
-            .duration(1000)
-            .attr("fill-opacity", (d) => (d.Hurricane === true ? 1 : 0)); 
+    d3.selectAll(".cost_circle")
+        .data(data3)
+        .transition()
+        .duration(1000)
+        .attr("fill-opacity", (d) => (d.Hurricane === true ? 1 : 0)); 
 
 });
 
@@ -240,7 +240,6 @@ const filters = [
 });
 
 });
-
 
 
 // --------------------------------------
