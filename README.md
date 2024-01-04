@@ -10,7 +10,7 @@ On a practical side I showcase the whole process of a data visualisation project
 
 Have a look at the image below showing a hurricane, one of the most dangerous natural disasters. Some birds though fly directly into the eye of the hurricane, where it is surprisingly clam. 
 
-![One of nature's biggest force: hurricanes](images/hurricane.png)
+![One of nature's biggest force: hurricanes](img/hurricane.png)
 
 ## EDA
 
@@ -23,13 +23,13 @@ The first step is always to check your data and variable structure as well as ge
  
  Please find a short introduction to this sankey, how to reand and interpret it in this [video](https://www.youtube.com/watch?v=iPAET_ZtVxI) and on how I created the dataset for the sankey in this [video](https://www.youtube.com/watch?v=kFycJtlujEs). If you want to understand the code behind this visualisation please check out the this [video](https://www.youtube.com/watch?v=VV39xSZAJ6c).
 
-![Alt text](<images/Sankey final.png>)
+![Alt text](<img/Sankey final.png>)
 
  ## 1B D3.js visualisation | Sankey diagram 
 
  In this second sankey its all about our current decade and the question where are we heading now? Looking on the first 3 years only we can see that the trend stays the same but everything seems to speed up. 
 
-![Alt text](images/Sankey2.png)
+![Alt text](img/Sankey2.png)
 
  ## 2 D3.js visualisation | Lollipop chart
 
