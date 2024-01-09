@@ -37,12 +37,11 @@ body {
 
 .frame {
 	text-align: center;
-  color:white;
+  color:#F20519;
 	position: relative;
 	z-index: 1000;
-  font-family: "Syncopate", sans-serif;
-  font-size: 1.3vh;
-	font-weight: 100;
+  font-size: 2vh;
+	font-weight: 500;
 }
 
 .frame__title {
@@ -61,7 +60,7 @@ body {
 
 a {
 	text-decoration: none;
-	color: white;
+	color: #F20519;
 	outline: none;
 }
 
@@ -135,8 +134,8 @@ a:focus {
 }
 
 .content__text-inner--stroke {
-	-webkit-text-stroke: 3px;
-	text-stroke: 3px;
+	-webkit-text-stroke: 3px #F20519;
+	text-stroke: 3px #F20519;
 	-webkit-text-fill-color: transparent;
 	text-fill-color: transparent;
 	color: transparent;
@@ -202,14 +201,14 @@ a:focus {
 		font-size: 12vh;
 	}
 	.content__text-inner--stroke {
-		-webkit-text-stroke: 3px #ccff99;
-		text-stroke: 3px #ccff99;
+		-webkit-text-stroke: 3px #F20519;
+		text-stroke: 3px #F20519;
 	}
 }
 
 :root {
-  --step--2: clamp(0.5rem, 0.6rem + 0.0326vw, 0.7rem);
-  --step--1: clamp(0.7rem, 0.8rem + 0.1087vw, 0.rem);
+  --step--2: clamp(0.7rem, 0.7rem + 0.0326vw, 0.9rem);
+  --step--1: clamp(0.9rem, 0.9rem + 0.1087vw, 1.125rem);
   --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
   --step-05: clamp(1.35rem, 1.35rem + 0.2174vw, 1.50rem);
   --step-1: clamp(1.48rem, 1.5rem + 0.3696vw, 1.7rem);
@@ -232,7 +231,7 @@ a:focus {
 
 .text {
   margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   font-size: var( --step-0);
   padding-bottom: 10px;
   color:white;
@@ -272,11 +271,6 @@ a:focus {
   width: 100%;
   max-width: 1000px;
 }
-
-/* text {
-  font-size: var( --step-0);
-  font-weight: 300;
-} */
 
 .super_hurricane {
   font-size: var(   --step-05);
@@ -321,7 +315,7 @@ a:focus {
 .x-axis text, .y-axis text {
   font-family:'Montserrat Alternates', sans-serif;
   font-weight:200;
-  font-size: var( --step--2);
+  font-size: var( --step--1);
   opacity:1;
   fill:white;
 }
