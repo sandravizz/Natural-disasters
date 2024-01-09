@@ -305,28 +305,28 @@ a:focus {
 /* Axes stylings */
 /*--------------------------------------*/
 
-.x-axis-violin text {
+.x-violin text, .y-violin text {
   font-family:'Montserrat Alternates', sans-serif;
   font-weight:300;
   font-size: var( --step--1);
   opacity:1;
 }
 
-.x-axis text, .y-axis text {
+.x-axis text, .y-axis {
   font-family:'Montserrat Alternates', sans-serif;
   font-weight:200;
   font-size: var( --step--1);
   opacity:1;
-  fill:white;
+  fill:lightgrey;
 }
 
-.x-axis, .x-axis-violin, .y-axis path {
+.x-axis, .x-violin, .y-axis, .y-violin path {
   stroke-width:0;
   stroke-opacity:0;
   stroke:#8ff798;
 }
 
-.x-axis, .x-axis-violin line {
+.x-axis, .x-violin, .y-violin line {
   fill:none;
   stroke-width:0;
   stroke-opacity:1;

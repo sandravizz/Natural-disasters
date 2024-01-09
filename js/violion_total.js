@@ -2,7 +2,7 @@
 //  Margin and canvas
 // --------------------------------------
 
-const margin00 = {top: 0, right: 0, bottom: 0, left:0};
+const margin00 = {top: 15, right: 0, bottom: 0, left:0};
 const width00 = 1000;
 const height00 = 350;
 const innerwidth00 = width00 - margin00.left - margin00.right;
@@ -20,10 +20,10 @@ const innerChart00 = svg00
 //  Data loading
 // --------------------------------------
 
-const data0 = d3.csv("./data/violin.csv", d3.autoType) 
-  .then(function(data0){ 
+const data00 = d3.csv("./data/violin.csv", d3.autoType) 
+  .then(function(data00){ 
 
-    costs = data0.map(d => d.costs);
+    costs = data00.map(d => d.costs);
     console.log(costs);
 
     var bins = d3.bin()(costs);
@@ -40,7 +40,7 @@ const data0 = d3.csv("./data/violin.csv", d3.autoType)
 // -------------------------------------- 
 
     const y = d3.scaleLinear()
-        .domain([0, d3.max(data0, d => d.costs)])
+        .domain([0, d3.max(data00, d => d.costs)])
         .range([0, innerheight00]);
 
    const violinsScale = d3.scaleLinear()
@@ -72,9 +72,10 @@ const data0 = d3.csv("./data/violin.csv", d3.autoType)
     // Counts: text 
     innerChart00
         .append("text")
+        .attr("class", "text")
         .text("364 disasters")
-        .attr("x", innerwidth00/2)
-        .attr("y", 0)
+        .attr("x", innerwidth00/2 - 35)
+        .attr("y", -6)
         .attr("fill", "white");
 
 // --------------------------------------
@@ -83,12 +84,12 @@ const data0 = d3.csv("./data/violin.csv", d3.autoType)
 
     innerChart00
       .append("g")
-        .attr("class", "y-axis")
+      .attr("class", "y-violin")
         .attr("transform", `translate(0, 0)`)
         .call(d3.axisRight(y)
         .tickSize(innerwidth00/2)
         .tickFormat(format)
         .tickPadding(5)
-        .tickValues([20000, 70000, 120000, 180000 ]));
+        .tickValues([ 65000, 120000, 160000 ]));
 
 });

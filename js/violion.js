@@ -2,9 +2,9 @@
 //  Margin and canvas
 // --------------------------------------
 
-const margin0 = {top: 40, right: 20, bottom: 20, left:20};
+const margin0 = {top: 20, right: 0, bottom: 0, left:0};
 const width0 = 1000;
-const height0 = 180;
+const height0 = 200;
 const innerwidth0 = width0 - margin0.left - margin0.right;
 const innerheight0 = height0 - margin0.top - margin0.bottom;
 
@@ -61,19 +61,13 @@ const data0 = d3.csv("./data/violin.csv", d3.autoType)
         .domain(["Tropical Cyclone", "Drought", "Wildfire", "Flooding", "Winter Storm", "Severe Storm"])
         .range(["#ccff99", "#cccc99", "#B0CCA3", "#99FFD7", "#99FFB4", "#A8A87E"]);  
 
-    // const x = d3.scalePoint()
-    //     .domain(["Tropical Cyclone (TC)", "Severe Storm (Storm)", "Drought", "Flooding", "Wildfire", "Winter Storm (Winter)"])
-    //     .range([0, innerwidth0])
-    //     .padding(0.4);
-
     const x = d3.scalePoint()
         .domain(["Tropical Cyclone", "Severe Storm", "Drought", "Flooding", "Wildfire", "Winter Storm"])
         .range([0, innerwidth0])
         .padding(0.4);
 
     const y = d3.scaleLinear()
-        .domain([0, 85000])
-        //.domain([0, d3.max(data0, d => d.costs)])
+        .domain([0, 170000])
         .range([0, innerheight0]);
 
     let maxBinLength = 0;
@@ -120,31 +114,9 @@ const data0 = d3.csv("./data/violin.csv", d3.autoType)
         .selectAll("text")
         .data(disaster)
         .join("text")
-        .text((d) => (d.count)  + " times" )
-        .attr("x", (d, i) => 50 + i * 165)
-        .attr("y", -8)
+        .text((d) => (d.count) + " " +  (d.id) )
+        .attr("x", (d, i) => 30 + i * 175)
+        .attr("y", -10)
         .attr("fill", (d) => color(d.id));
-
-// --------------------------------------
-//  Axes
-// --------------------------------------
-
-    innerChart0
-      .append("g")
-        .attr("class", "x-axis-violin")
-        .attr("transform", `translate(0, 0)`)
-        .call(d3.axisTop(x)
-                .tickPadding(22)
-                .tickSizeOuter(20));
-
-    innerChart0
-      .append("g")
-        .attr("class", "y-axis")
-        .attr("transform", `translate(0, 0)`)
-        .call(d3.axisLeft(y)
-        .tickSize(-innerwidth0)
-        .tickFormat(format)
-        .tickPadding(5)
-        .tickValues([5000, 50000, 80000]));
 
 });
