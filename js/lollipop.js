@@ -65,7 +65,7 @@ let r1 = d3.scaleSqrt()
 
 let c = d3.scaleOrdinal()
     .domain(["True", "False"])
-    .range(["#ccff99", "white"]);
+    .range(["#ccff99", "#ccff99"]);
 
 // --------------------------------------
 //  Axes 
@@ -125,7 +125,7 @@ innerChart3
     .attr("cx", (d) => x(d.Year))
     .attr("cy", (d) => y(d.Costs))
     .attr("r", (d) => r2(d.Deaths))
-    .attr("fill", "")
+    .attr("fill", "orange")
     .attr("fill-opacity", 0.7)
     .on("mouseover", tooltip.show)
     .on("mouseout", tooltip.hide); 
@@ -138,9 +138,9 @@ innerChart3
     .join("text")
     .filter(d => d.Costs > 80000)
     .attr("x", (d) => x(d.Year))
-    .attr("y", (d) => y(d.Costs) - d3.max([r1(d.Costs),r2(d.Deaths)])-4.5)
+    .attr("y", (d) => y(d.Costs) - d3.max([r1(d.Costs),r2(d.Deaths)])-6)
     .attr("class", "super_hurricane")
-    .text(d => "🔥 " + d.Name)
+    .text(d => d.Name)
     .attr("text-anchor", "middle")
     .on("mouseover", tooltip.show)
     .on("mouseout", tooltip.hide);
@@ -149,12 +149,12 @@ innerChart3
 //  Buttons 
 // --------------------------------------
 
-const filters = [
-  { id: "hurricane", label: "Hurricane", isActive: false,  color: "#ccff99" },
-  { id: "tropical_storm", label: "Tropical storm", isActive: false, color: "white" }, 
-  { id: "deaths", label: "Deaths", isActive: false, color: "#FF809B" },
-  { id: "reset", label: "Reset", isActive: false, color: "lightgrey" }
-];
+    const filters = [
+    { id: "hurricane", label: "Hurricane", isActive: false,  color: "#ccff99" },
+    { id: "tropical_storm", label: "Tropical storm", isActive: false, color: "#ccff99" }, 
+    { id: "deaths", label: "Deaths", isActive: false, color: "orange" },
+    { id: "reset", label: "Reset", isActive: false, color: "lightgrey" }
+    ];
 
     d3.select("#filters")
         .selectAll(".filter")
@@ -163,7 +163,7 @@ const filters = [
         .attr("class", d => `filter`)
         .attr("id", d => d.id)
         .text(d => d.label)
-        .style("background-color", d => d.color);
+        .style("color", d => d.color);
 
 //When clicking on the deaths button
 
@@ -201,7 +201,6 @@ const filters = [
 
     });
 
-
 //When clicking on the hurricane button
 
     d3.select("#hurricane")
@@ -219,7 +218,6 @@ const filters = [
         .attr("fill-opacity", (d) => (d.Hurricane === true ? 1 : 0)); 
 
 });
-
 
 //When clicking on the reset button
 

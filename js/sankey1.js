@@ -115,11 +115,7 @@ innerChart
     .data((sankey(data_final)).nodes)
     .join("rect")
     .attr("x", (d) => d.x0)
-    .attr("y", (d) => y(d.name))
-    .attr("height", y.bandwidth())
-    .attr("width", (d) => d.y1 - d.y0)
     .attr("fill", (d) => (d.x0 < innerWidth / 2 ? color(d.name) : "white"))
-    .attr("opacity", (d) => (d.x0 < innerWidth / 2 ? 1 : 0))
     .on("mouseover", (e, d) => {
       d3.selectAll(".sankey_path").style("opacity", (p) =>
         p.source.name === d.name || p.target.name === d.name ? "1" : "0.07"
@@ -128,15 +124,19 @@ innerChart
     .on("mouseout", (e, d) => {
       d3.selectAll(".sankey_path").style("opacity", 1);
     })
-    .transition()
-    .delay(3000)
-    .duration(1500)
+    // .attr("y", (d) => y(d.name))
+    // .attr("height", y.bandwidth())
+    // .attr("width", (d) => d.y1 - d.y0)
+    // .attr("opacity", (d) => (d.x0 < innerWidth / 2 ? 1 : 0))
+    // .transition()
+    // .delay(3000)
+    // .duration(1500)
     .attr("y", (d) => d.y0)
     .attr("height", (d) => d.y1 - d.y0)
     .attr("width", (d) => (d.x0 < innerWidth / 2 ? d.x1 - d.x0 + 30 : 20))
-    .transition()
-    .delay(500)
-    .duration(1500)
+    // .transition()
+    // .delay(500)
+    // .duration(1500)
     .attr("opacity", (d) => (d.x0 < innerWidth / 2 ? 1 : 1));
 
 // Nodes: text 
@@ -147,19 +147,18 @@ innerChart
     .join("text")
     .text((d) => (d.name) + " " + format(d.value))
     .attr("x", (d) => (d.x0 > innerWidth / 2 ? d.x1 +5 : d.x0 - 5))
-    .attr("y",  (d) => (d.x0 < innerWidth / 2 ? (y(d.name) + 50) : ((d.y1 + d.y0) / 2)))
-    //.attr("fill", (d) => (d.x0 < innerWidth / 2 ? color(d.name) : "white"))
     .attr("fill", "white")
     .attr("dy", "0.4em")
     .attr("text-anchor", (d) => (d.x0 < innerWidth / 2 ? "end" : "start"))
-    .attr("opacity", (d) => (d.x0 > innerWidth / 2 ? 0 : 1))
-    .transition()
-    .delay(3000)
-    .duration(1500)
+    // .attr("y",  (d) => (d.x0 < innerWidth / 2 ? (y(d.name) + 50) : ((d.y1 + d.y0) / 2)))
+    // .attr("opacity", (d) => (d.x0 > innerWidth / 2 ? 0 : 1))
+    // .transition()
+    // .delay(3000)
+    // .duration(1500)
     .attr("y", (d) => (d.y1 + d.y0) / 2)
-    .transition()
-    .delay(500)
-    .duration(1500)
+    // .transition()
+    // .delay(500)
+    // .duration(1500)
     .attr("opacity", (d) => (d.x0 > innerWidth / 2 ? 1 : 1));
 
 //Links: path 
@@ -172,10 +171,10 @@ innerChart
     .attr("d", d3.sankeyLinkHorizontal())
     .attr("stroke", (d) => color(d.source.name))
     .attr("fill", "none")
-    .attr("stroke-width", 0)
-    .transition()
-    .delay((d) => 7000 + d.source.id * 1500)
-    .duration(1000)
+    // .attr("stroke-width", 0)
+    // .transition()
+    // .delay((d) => 7000 + d.source.id * 1500)
+    // .duration(1000)
     .attr("stroke-width", (d) => Math.max(0, d.width));
 
 });

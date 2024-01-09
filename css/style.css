@@ -382,13 +382,12 @@ a:focus {
 .filter {
   min-width: 50px;
   margin: 0 5px;
-  padding: 4px 10px;
+  padding: 5px 10px;
   font-family:'Montserrat Alternates', sans-serif;
-  font-size: var( --step-01);
+  font-size: var( --step-0);
   line-height: 1;
-  color: #444952;
-  font-weight: 500;
-  border: none;
+  background-color: #444952;;
+  font-weight: 200;
   border-radius: 30px;
   transition: color 30ms ease-in;
 }
