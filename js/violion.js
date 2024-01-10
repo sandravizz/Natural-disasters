@@ -2,7 +2,7 @@
 //  Margin and canvas
 // --------------------------------------
 
-const margin0 = {top: 20, right: 0, bottom: 0, left:0};
+const margin0 = {top: 0, right: 0, bottom: 20, left:0};
 const width0 = 1000;
 const height0 = 200;
 const innerwidth0 = width0 - margin0.left - margin0.right;
@@ -21,10 +21,10 @@ const innerChart0 = svg0
 // --------------------------------------
 
 const disaster = [
-  {id: "Tropical Cyclone", count: 61},
+  {id: "Tropical Cyclone", count: 62},
   {id: "Severe Storm", count: 186},
   {id: "Drought", count: 31},
-  {id: "Flooding", count: 42},
+  {id: "Flooding", count: 44},
   {id: "Wildfire", count: 22},
   {id: "Winter Storm", count: 22}
 ];
@@ -94,7 +94,7 @@ const data0 = d3.csv("./data/violin.csv", d3.autoType)
           .x0(d => x(disaster.id) - violinsScale(d.length))
           .x1(d => x(disaster.id) + violinsScale(d.length))
           .y(d => y(d.x1) + ((y(d.x0) - y(d.x1))))
-          .curve(d3.curveCatmullRom);
+          .curve(d3.curveCatmullRom.alpha(0.3));
 
         disasterContainer
           .append("path")
@@ -102,7 +102,6 @@ const data0 = d3.csv("./data/violin.csv", d3.autoType)
             .attr("fill", (d) => color(disaster.id));
 
       });
-
 
 // --------------------------------------
 //  Lables 
@@ -114,9 +113,9 @@ const data0 = d3.csv("./data/violin.csv", d3.autoType)
         .selectAll("text")
         .data(disaster)
         .join("text")
-        .text((d) => (d.count) + " " +  (d.id) )
+        .text((d) => (d.count) + " " +  (d.id)+ "s" )
         .attr("x", (d, i) => 30 + i * 175)
-        .attr("y", -10)
+        .attr("y", 200)
         .attr("fill", (d) => color(d.id));
 
 });

@@ -214,7 +214,7 @@ a:focus {
   --step-1: clamp(1.48rem, 1.5rem + 0.3696vw, 1.7rem);
   --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
   --step-3: clamp(1.9438rem, 1.7707rem + 0.8652vw, 2.4413rem);
-  --step-4: clamp(2.3325rem, 2.0823rem + 1.2511vw, 3.0519rem);
+  --step-4: clamp(2.4325rem, 2.0823rem + 1.5511vw, 3.5519rem);
   --step-5: clamp(2.7994rem, 2.4461rem + 1.7663vw, 3.815rem);
 }
 
@@ -277,6 +277,19 @@ a:focus {
   text-transform: lowercase;
   font-weight: 400;
   fill: #ccff99;
+}
+
+
+.explanation {
+  font-size:  var(   --step-0);
+  font-weight: 600;
+  fill:white;
+}
+
+.tspan {
+  font-size: var(   --step--1);
+  font-weight: 400;
+  fill: white;
 }
 
 /*--------------------------------------*/

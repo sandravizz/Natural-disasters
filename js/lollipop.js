@@ -20,7 +20,7 @@ const innerChart3 = svg3
 //  Data loading
 // --------------------------------------
 
-const data3 = d3.csv("./data/tropical.csv", d3.autoType) 
+const data3 = d3.csv("./data/tropical2.csv", d3.autoType) 
   .then(function(data3){ 
 
     // console.log(data3);

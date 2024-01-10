@@ -1,64 +1,64 @@
 disaster,costs,deaths
-Flooding,2685.7,7
+Flooding,2678.6,7
 Tropical Cyclone,2177.2,13
 Drought,39579,1260
-Severe Storm,1376.9,20
+Severe Storm,1372.9,20
 Winter Storm,2158.1,85
 Severe Storm,1565.6,33
 Severe Storm,1540.5,30
-Flooding,4823.3,45
-Flooding,4708.8,50
-Tropical Cyclone,9210,21
-Drought,9336.9,0
-Flooding,1224,14
-Severe Storm,1809.5,80
-Severe Storm,1325.2,1
-Winter Storm,2444.1,150
-Severe Storm,1716,89
-Tropical Cyclone,3697.6,4
+Flooding,4807.9,45
+Flooding,4693.8,50
+Tropical Cyclone,9180,21
+Drought,9307.3,0
+Flooding,1220,14
+Severe Storm,1803.7,80
+Severe Storm,1320.8,1
+Winter Storm,2435.8,150
+Severe Storm,1710.1,89
+Tropical Cyclone,3684.6,4
 Tropical Cyclone,2431.5,11
-Tropical Cyclone,4235.8,63
+Tropical Cyclone,4220.7,63
 Flooding,3948,62
 Severe Storm,1488.8,13
-Drought,5068.2,100
+Drought,5050.2,100
 Flooding,1116,10
-Drought,53210.1,454
-Severe Storm,1373.3,21
-Tropical Cyclone,1450.8,11
+Drought,53010.4,454
+Severe Storm,1367.6,21
+Tropical Cyclone,1445,11
 Tropical Cyclone,22139.8,86
 Drought,7628.1,0
-Winter Storm,1659.1,100
+Winter Storm,1652.7,100
 Flooding,2396.3,13
-Severe Storm,1935.3,0
-Wildfire,1673.1,17
-Severe Storm,1470.8,0
+Severe Storm,1927.1,0
+Wildfire,1666.1,17
+Severe Storm,1464,0
 Tropical Cyclone,3381.6,18
-Drought,6889.4,0
-Wildfire,7392,25
-Severe Storm,1777.6,0
-Severe Storm,2109.2,0
+Drought,6859.4,0
+Wildfire,7359,25
+Severe Storm,1769.5,0
+Severe Storm,2099.7,0
 Severe Storm,1638.1,0
 Tropical Cyclone,58860,61
-Tropical Cyclone,6758,7
-Severe Storm,1425.9,26
-Winter Storm,5388.1,19
+Tropical Cyclone,6727,7
+Severe Storm,1418.9,26
+Winter Storm,5363.3,19
 Winter Storm,11883.3,270
 Severe Storm,1371.7,1
-Flooding,45275.5,48
-Drought,2717.3,16
+Flooding,45065.9,48
+Drought,2704.8,16
 Wildfire,2907.6,4
 Winter Storm,2184.5,70
-Winter Storm,6295.1,9
-Severe Storm,2058.9,3
+Winter Storm,6264.7,9
+Severe Storm,2048.9,3
 Tropical Cyclone,2066.9,32
-Flooding,2060,19
-Wildfire,1508,0
-Flooding,5125,27
-Severe Storm,1167.3,0
+Flooding,2050,19
+Wildfire,1500.9,0
+Flooding,5100,27
+Severe Storm,1161.5,0
 Severe Storm,11082.7,32
 Tropical Cyclone,1708.5,6
-Tropical Cyclone,4221,13
-Drought,1978.2,872
+Tropical Cyclone,4200,13
+Drought,1968,872
 Tropical Cyclone,9378,27
 Winter Storm,5976.1,187
 Flooding,2006.5,9
@@ -66,27 +66,27 @@ Drought,3565,0
 Tropical Cyclone,9763.8,37
 Flooding,1318.3,1
 Flooding,5822.8,36
-Severe Storm,1886.8,67
-Flooding,7095.6,11
+Severe Storm,1877,67
+Flooding,7058.8,11
 Winter Storm,2663.4,16
-Severe Storm,1918.7,132
+Severe Storm,1908.5,132
 Severe Storm,3083.1,1
 Severe Storm,2151.7,20
-Severe Storm,1690.1,12
+Severe Storm,1680.7,12
 Tropical Cyclone,1316,2
 Tropical Cyclone,1842.4,3
 Drought,6703.3,200
 Tropical Cyclone,11250.9,16
-Flooding,1771.1,31
+Flooding,1761.7,31
 Winter Storm,1930.6,25
 Winter Storm,1649.4,0
 Severe Storm,3722.6,55
 Drought,4673.1,502
 Tropical Cyclone,11878.5,77
 Winter Storm,1284.9,4
-Severe Storm,1242,0
-Wildfire,1935,0
-Flooding,1593,3
+Severe Storm,1235.1,0
+Wildfire,1924.4,0
+Flooding,1584,3
 Drought,9094.9,140
 Severe Storm,5385.2,3
 Severe Storm,1167.6,0
@@ -94,17 +94,17 @@ Tropical Cyclone,14743.1,43
 Severe Storm,3580.3,7
 Tropical Cyclone,1877.7,2
 Tropical Cyclone,1955,5
-Severe Storm,1224,28
+Severe Storm,1216.9,28
 Wildfire,2248.8,21
-Drought,15671.2,0
+Drought,15581.1,0
 Severe Storm,3350.5,3
-Severe Storm,6935.7,51
+Severe Storm,6894.4,51
 Severe Storm,1433,7
 Severe Storm,1683.8,7
 Tropical Cyclone,9103.5,55
 Drought,8480.1,35
 Wildfire,6458.1,22
-Severe Storm,1652.6,4
+Severe Storm,1642.7,4
 Severe Storm,1125.9,0
 Tropical Cyclone,25919.2,35
 Tropical Cyclone,15876,48
@@ -112,89 +112,89 @@ Tropical Cyclone,33211,57
 Tropical Cyclone,12144.6,28
 Severe Storm,1375.4,0
 Tropical Cyclone,3917.1,15
-Tropical Cyclone,196296.4,1833
+Tropical Cyclone,195046.1,1833
 Drought,2374.6,0
-Tropical Cyclone,28675.2,119
+Tropical Cyclone,28490.1,119
 Tropical Cyclone,29260,35
 Severe Storm,2059.9,10
-Severe Storm,2453.9,10
-Severe Storm,3707.9,27
-Flooding,2312.8,20
+Severe Storm,2437.8,10
+Severe Storm,3683.8,27
+Flooding,2297.7,20
 Severe Storm,1146.2,1
 Drought,9296.7,0
 Severe Storm,1336.1,1
 Wildfire,2273.8,28
 Severe Storm,3736.7,9
-Wildfire,4057.2,12
+Wildfire,4029.7,12
 Drought,5378,15
-Severe Storm,1433.8,12
+Severe Storm,1424.2,12
 Severe Storm,1756.9,57
 Severe Storm,1628.6,5
 Severe Storm,1486.7,2
 Severe Storm,4301.9,13
-Severe Storm,2306.7,18
-Flooding,14539.3,24
+Severe Storm,2290.3,18
+Flooding,14439.8,24
 Tropical Cyclone,1774.2,3
 Tropical Cyclone,8395.8,53
-Tropical Cyclone,42298.3,112
-Wildfire,1740,16
-Drought,10234.7,0
+Tropical Cyclone,41998.3,112
+Wildfire,1727.7,16
+Drought,10164.6,0
 Severe Storm,2523.4,10
-Severe Storm,2378.8,0
+Severe Storm,2362.3,0
 Severe Storm,2059.3,6
 Severe Storm,1239.8,7
-Severe Storm,1899.1,0
+Severe Storm,1885.8,0
 Severe Storm,1430,0
 Flooding,1275.9,10
-Wildfire,1447,10
-Drought,5098.3,0
+Wildfire,1436.8,10
+Drought,5063.4,0
 Winter Storm,1160.2,3
 Flooding,2618.9,11
 Flooding,3218,32
 Severe Storm,4700.7,3
 Severe Storm,1270.5,2
 Severe Storm,1337.2,0
-Severe Storm,5358,0
-Winter Storm,2511.8,36
+Severe Storm,5320,0
+Winter Storm,2493.9,36
 Severe Storm,3802.1,9
 Severe Storm,2985.6,0
 Severe Storm,2821.1,38
 Severe Storm,1421.4,0
 Severe Storm,14004.1,321
 Severe Storm,12371.7,177
-Flooding,4180.4,7
+Flooding,4150.5,7
 Severe Storm,2090.6,3
-Flooding,2803.2,5
+Flooding,2783.3,5
 Severe Storm,1207.7,0
 Severe Storm,1679.6,2
 Severe Storm,1566,0
 Tropical Cyclone,18351.9,45
-Drought,16750.6,95
-Tropical Cyclone,3417.1,21
+Drought,16631.1,95
+Tropical Cyclone,3392.1,21
 Winter Storm,1258.1,1
 Wildfire,2476.2,5
 Severe Storm,4192.7,42
-Severe Storm,1360.4,0
-Severe Storm,1505.6,6
-Severe Storm,4390.2,1
+Severe Storm,1350.3,0
+Severe Storm,1494.4,6
+Severe Storm,4357.4,1
 Severe Storm,3087,1
 Severe Storm,3481,0
 Severe Storm,3870.6,28
-Tropical Cyclone,3703.1,9
+Tropical Cyclone,3675.4,9
 Tropical Cyclone,86502.7,159
 Wildfire,2329.6,8
-Drought,40804.9,123
-Severe Storm,1226.4,1
+Drought,40504.8,123
+Severe Storm,1217,1
 Severe Storm,2666.5,1
 Severe Storm,1906.1,1
 Flooding,1421.6,4
 Severe Storm,3168.4,27
 Severe Storm,2393.8,10
-Severe Storm,1375.4,0
-Flooding,1991.2,9
+Severe Storm,1365,0
+Flooding,1976.1,9
 Severe Storm,1439.7,8
-Drought,13970.7,53
-Winter Storm,2868.1,16
+Drought,13866.6,53
+Winter Storm,2846.4,16
 Severe Storm,1851.3,0
 Severe Storm,1193.4,0
 Severe Storm,2257.2,33
@@ -203,25 +203,25 @@ Severe Storm,4790.1,0
 Severe Storm,2475.8,2
 Flooding,1330.9,2
 Severe Storm,1806.5,0
-Drought,5216.3,0
+Drought,5176.8,0
 Winter Storm,3880.2,30
 Severe Storm,2022.1,2
 Severe Storm,1669.1,0
 Severe Storm,1227.2,3
 Severe Storm,1640.9,4
-Flooding,3300.7,31
+Flooding,3275.4,31
 Severe Storm,1511.8,1
 Flooding,2577.7,25
 Wildfire,3906.1,12
 Severe Storm,2550.4,50
-Drought,5895.1,0
-Severe Storm,1352.2,10
-Flooding,2983.3,5
+Drought,5850.6,0
+Severe Storm,1341.6,10
+Flooding,2960.3,5
 Severe Storm,1561.3,1
 Severe Storm,2663.6,0
-Severe Storm,4513.2,0
+Severe Storm,4478.2,0
 Flooding,3478.8,8
-Severe Storm,3088.9,6
+Severe Storm,3064.9,6
 Severe Storm,2201,2
 Severe Storm,1467.2,0
 Flooding,1259.6,23
@@ -229,28 +229,28 @@ Severe Storm,1876,0
 Flooding,13000,13
 Tropical Cyclone,12700,49
 Drought,4476.6,0
-Wildfire,3065.6,21
-Severe Storm,1403.5,24
-Flooding,1905,5
+Wildfire,3041.8,21
+Severe Storm,1392.3,24
+Flooding,1890,5
 Severe Storm,2275.7,6
 Severe Storm,2741.8,2
 Severe Storm,3395.7,0
 Severe Storm,1229.8,1
 Severe Storm,1125.2,0
-Flooding,2107.1,20
-Severe Storm,4221,0
-Severe Storm,1185.6,1
-Severe Storm,2961,0
-Severe Storm,1901.4,0
-Severe Storm,1795.5,0
-Tropical Cyclone,156250,89
-Tropical Cyclone,62500,97
-Tropical Cyclone,112500,2981
-Drought,3175,0
-Wildfire,22686.3,54
+Flooding,2090.3,20
+Severe Storm,4187.5,0
+Severe Storm,1176.5,1
+Severe Storm,2937.5,0
+Severe Storm,1886.5,0
+Severe Storm,1781.3,0
+Tropical Cyclone,155000,89
+Tropical Cyclone,62000,97
+Tropical Cyclone,111600,2981
+Drought,3150,0
+Wildfire,22506.3,54
 Winter Storm,1293.4,22
-Winter Storm,2720.5,9
-Severe Storm,1800.5,0
+Winter Storm,2698.7,9
+Severe Storm,1786.1,0
 Severe Storm,1621.4,3
 Severe Storm,1710,0
 Severe Storm,1685.1,5
@@ -261,22 +261,22 @@ Severe Storm,1933.7,0
 Severe Storm,1038.2,0
 Severe Storm,1250.5,0
 Tropical Cyclone,29280,53
-Tropical Cyclone,30469.5,49
+Tropical Cyclone,30219.8,49
 Drought,3707.6,0
 Wildfire,29280,106
-Severe Storm,1509.7,2
+Severe Storm,1497.4,2
 Severe Storm,1857.4,0
 Flooding,13087,3
 Severe Storm,1502.4,7
 Severe Storm,1816.8,0
 Severe Storm,1167.6,0
-Severe Storm,5397.6,3
+Severe Storm,5517.6,3
 Flooding,3630,5
 Severe Storm,1209.6,0
 Flooding,7464.7,4
 Tropical Cyclone,1932,10
 Tropical Cyclone,6000,5
-Severe Storm,2061.6,2
+Severe Storm,2044.4,2
 Wildfire,5400,3
 Severe Storm,1367.6,10
 Severe Storm,1495,3
@@ -300,7 +300,7 @@ Tropical Cyclone,5135.3,6
 Tropical Cyclone,1722.8,12
 Drought,5304.1,45
 Wildfire,19411,46
-Flooding,1292.1,2
+Flooding,1281.2,2
 Winter Storm,26543,262
 Severe Storm,1945.4,6
 Severe Storm,1561.5,8
@@ -310,16 +310,16 @@ Severe Storm,1441,4
 Flooding,1530.1,5
 Severe Storm,1929.2,0
 Severe Storm,1416,0
-Tropical Cyclone,1370.9,1
-Severe Storm,1220.6,0
-Severe Storm,1451.2,2
-Tropical Cyclone,1443.3,7
+Tropical Cyclone,1358.6,1
+Severe Storm,1209.6,0
+Severe Storm,1438.1,2
+Tropical Cyclone,1430.2,7
 Tropical Cyclone,82400.7,96
 Tropical Cyclone,1137.9,0
-Severe Storm,4345.8,93
-Severe Storm,1978.2,1
-Drought,9948.7,229
+Severe Storm,4306.5,93
+Severe Storm,1960.2,1
 Wildfire,11752.1,8
+Drought,9864.5,229
 Severe Storm,1088.6,0
 Severe Storm,1344.1,2
 Severe Storm,1501.9,3
@@ -329,7 +329,7 @@ Severe Storm,2289.6,0
 Severe Storm,2868.3,1
 Severe Storm,2552.8,0
 Severe Storm,1987.4,0
-Severe Storm,3374.9,1
+Severe Storm,3322.9,1
 Severe Storm,1393.6,1
 Flooding,1523.6,42
 Tropical Cyclone,2610.4,25
@@ -338,28 +338,31 @@ Tropical Cyclone,1050.6,5
 Wildfire,3234.4,17
 Winter Storm,8698.6,87
 Drought,22852,136
-Winter Storm,1784.1,1
-Severe Storm,5891.5,13
+Winter Storm,1786.1,1
+Severe Storm,5993.5,13
 Flooding,4635,22
-Severe Storm,2952.8,23
-Severe Storm,5541.5,33
-Severe Storm,2870.4,5
-Severe Storm,1371.9,0
-Severe Storm,2998.8,1
+Severe Storm,2871.2,23
+Severe Storm,5740.4,33
+Severe Storm,2871.5,5
+Flooding,1111,0
+Severe Storm,1361.7,0
+Severe Storm,3019.2,1
 Severe Storm,1333.3,0
-Severe Storm,2115.1,1
-Severe Storm,3424,1
-Severe Storm,1616,0
+Severe Storm,2158.6,1
+Severe Storm,3460.4,1
+Severe Storm,1641.3,0
+Tropical Cyclone,4292.5,2
 Severe Storm,4072.6,0
 Severe Storm,3805.8,5
-Severe Storm,5036.1,8
-Severe Storm,2091.9,3
-Flooding,2192.1,10
-Severe Storm,1723.1,1
-Severe Storm,1547.3,2
+Severe Storm,5296.5,8
+Severe Storm,1938.4,3
+Flooding,2187.1,10
+Severe Storm,1850.3,1
+Severe Storm,1496.8,2
 Wildfire,5555,100
 Severe Storm,1647.6,4
-Severe Storm,1531.2,0
-Tropical Cyclone,3581.5,5
-Severe Storm,1257.6,0
-Drought,10472,244
+Severe Storm,1792.8,0
+Tropical Cyclone,3490.6,5
+Severe Storm,1645,0
+Drought,14517,247
+Flooding,1276,5
