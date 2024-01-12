@@ -106,10 +106,10 @@ const data0 = d3.csv("./data/violin.csv", d3.autoType)
 // --------------------------------------
 //  Lables 
 // --------------------------------------
-
-    // Counts: text 
+ 
     innerChart0
         .append("g")
+        .attr("class", "y-violin")
         .selectAll("text")
         .data(disaster)
         .join("text")

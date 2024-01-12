@@ -1,83 +1,179 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="no-js">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Sankey diagram | Billion $ disasters 1980 - 2019 in the US  </title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Billion $ disasters 1980 - 2024 in the US  </title>
+	<meta name="description" content="A data visualisation project about natural disasters happened in the US from 1980 - 2024" />
+	<meta name="keywords" content="data visualisation, d3.js, natural disasters, climate change, sankey" />
 	<meta name="author" content="Sandra Becker" />
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Kanit:500,900|Syncopate:700" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/style.css">		
+	<link rel="stylesheet" type="text/css" href="css/base.css" />
+	
+	<script>
+	document.documentElement.className = "js";
+	var supportsCssVars = function() { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
+	supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
+	</script>
+
 </head>
 
-<body>
+<body class="demo-5 loading">
 	<main>
-	<!-- <div class="frame">
-		<p class="frame__title">Design + Implementation
-		by <a href="https://dribbble.com/shots/5910521-Abstract-is-hiring">sandraviz</a></p>
-		
-		<div class="frame__links">
-			<a href="https://www.ncei.noaa.gov/access/billions/events/US/1980-2023?disasters[]=all-disasters">Data Source</a>
-			<a href="https://www.youtube.com/watch?v=FaoWCGo88ks">Videos</a>
-			<a href="https://github.com/sandravizz/Billion-dollar-disaster-US">GitHub</a>
-		</div>
-	</div> -->
 
-	<div class="content">
-		<div class="content__img content__img--full">
-			<div class="content__img-inner" style="background-image: url(img/1.jpeg);"></div>
-		</div>
-
-		<div class="content__text-wrap">
-			<span class="content__text">
-			<span class="content__text-inner content__text-inner--stroke">natural disasters</span>
-			</span>
-		</div>
-	</div>
-</main>
-
-	<div class="container"> 
-
-			<p class ="article">There is no doubt and scientific consensus that the human factor is and will change the magnitude of damage caused by natural disasters. 
-			Some go so far and call these disasters unnatural as they aren't natural anymore. 
-			<br> The question is when, where and how do these super disaster look like? </p>			
+		<div class="frame">
+			<!-- <div class="frame__title-wrap">
+				<h1 class="frame__title"><a href=""a></a>blabla</h1>
+			</div> -->
+			<!-- <p class="frame__tagline">by <a href="https://www.sandraviz.com/"></a> Sandra Becker</p> -->
 			
-			<p class ="text">Distribution of damage in billion $ 1980 - 2024</p>							
-			<div id="chart00"></div>	
-			<!-- <p class ="text">Distribution of damage in billion $ by disaster type</p>					 -->
-			<div id="chart0"></div>
+			<div class="frame__links">
+				<a href="https://www.ncei.noaa.gov/access/billions/events/US/1980-2023?disasters[]=all-disasters">Data Source</a>
+				<a href="https://www.youtube.com/watch?v=FaoWCGo88ks">Videos</a>
+				<a href="https://github.com/sandravizz/Billion-dollar-disaster-US">GitHub</a>
+			</div>
 
-			<p class ="article">There is no doubt and scientific consensus that the human factor is and will change the magnitude of damage caused by natural disasters. 
-			Some go so far and call these disasters unnatural as they aren't natural anymore. 
-			<br> The question is when, where and how do these super disaster look like?</p>				
-		
-			<p class ="text">Damage in billion $ caused by natural disasters by decade in the US</p>					
-			<div id="chart"></div>
+			<div class="frame__demos">
+				<a href="index.html" class="frame__demo frame__demo--current">1</a>
+				<a href="index2.html" class="frame__demo">2</a>
+				<a href="index3.html" class="frame__demo">3</a>
+				<a href="index4.html" class="frame__demo">4</a>
+				<a href="index5.html" class="frame__demo">5</a>
+			</div>
 
-			<!-- <p class ="article">Where are we heading right now? In the same direction just faster. <br> Looking at the current decade, only the first three <span class="support decade">years</span> already made up for half of the damage prodcued in the 2010s. </p>			 -->
-			
-			<p class ="text">Damage in billion $ caused by natural disasters 2020, 2021, 2022, 2023 in the US</p>			
-			<div id="chart2"></div>
+		</div>
 
-			<!-- <p class ="article">What is exactly behind these Tropical Cyclones? <br> Focusing on hurricanes (green) we can easily identify 
-			a changing moment around 2005, when the first super<span class="support tropical"> 🔥 hurricane</span> Katrina caused damage far beyond anything seen before. </p>			 -->
-			
-			<p class ="text">Damage in billion $ caused by tropical cyclones 1980 - 2024 in the US</p>			
-			<!-- <div class="legend-container"></div> -->
-			<div id="filters"></div>
-			<div id="chart3"></div>
-
-	</div>
-
-<!-- Scripts -->
-<script src="plugins/d3.js"></script>
-<script src="plugins/d3-sankey.js"></script>
-<script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
-<script src="js/violion.js"></script>
-<script src="js/violion_total.js"></script>
-<script src="js/sankey1.js"></script>
-<script src="js/sankey2.js"></script>
-<script src="js/lollipop.js"></script>
-
+		<div class="content">
+			<div class="content__slide">
+				<div class="content__img content__img--full">
+					<div class="content__img-inner" style="background-image: url(img/2.jpeg);"></div>
+				</div>
+				<div class="content__text-wrap">
+					<span class="content__text">
+						<span class="content__text-inner content__text-inner--stroke"><natural disasters></span>
+					</span>
+					<span class="content__text">
+						<span class="content__text-inner">natural disasters</span>
+					</span>
+					<span class="content__text content__text--full">
+						<span class="content__text-inner content__text-inner--stroke">natural disasters</span>
+					</span>
+					<span class="content__text">
+						<span class="content__text-inner content__text-inner--stroke">natural disasters</span>
+					</span>
+					<span class="content__text">
+						<span class="content__text-inner">natural disasters</span>
+					</span>
+					<span class="content__text content__text--full">
+						<span class="content__text-inner content__text-inner--stroke">natural disasters</span>
+					</span>
+					<span class="content__text">
+						<span class="content__text-inner content__text-inner--bottom">natural disasters</span>
+					</span>
+					<span class="content__text">
+						<span class="content__text-inner">natural disasters</span>
+					</span>
+					<span class="content__text content__text--full">
+						<span class="content__text-inner content__text-inner--stroke">natural disasters</span>
+					</span>
+					<span class="content__text">
+						<span class="content__text-inner content__text-inner--stroke content__text-inner--bottom">natural disasters</span>
+					</span>
+					<span class="content__text">
+						<span class="content__text-inner">natural disasters</span>
+					</span>
+				</div>
+			</div>
+			<div class="content__slide">
+				<div class="content__img content__img--full">
+					<div class="content__img-inner" style="background-image: url(img/3.jpeg);"></div>
+				</div>
+				<div class="content__text-wrap">
+					<span class="content__text">
+						<span class="content__text-inner content__text-inner--stroke">USA | 1980 to 2024</span>
+					</span>
+					<span class="content__text">
+						<span class="content__text-inner">USA | 1980 to 2024</span>
+					</span>
+					<span class="content__text content__text--full">
+						<span class="content__text-inner content__text-inner--stroke">USA | 1980 to 2024</span>
+					</span>
+					<span class="content__text">
+						<span class="content__text-inner content__text-inner--stroke">USA | 1980 to 2024</span>
+					</span>
+					<span class="content__text">
+						<span class="content__text-inner">USA | 1980 to 2024</span>
+					</span>
+					<span class="content__text content__text--full">
+						<span class="content__text-inner content__text-inner--stroke">USA | 1980 to 2024</span>
+					</span>
+					<span class="content__text">
+						<span class="content__text-inner content__text-inner--bottom">USA | 1980 to 2024</span>
+					</span>
+					<span class="content__text">
+						<span class="content__text-inner">USA | 1980 to 2024</span>
+					</span>
+					<span class="content__text content__text--full">
+						<span class="content__text-inner content__text-inner--stroke">USA | 1980 to 2024</span>
+					</span>
+					<span class="content__text">
+						<span class="content__text-inner content__text-inner--stroke content__text-inner--bottom">USA | 1980 to 2024</span>
+					</span>
+					<span class="content__text">
+						<span class="content__text-inner">USA | 1980 to 2024</span>
+					</span>
+				</div>
+			</div>
+			<div class="content__slide">
+				<div class="content__img content__img--full">
+					<div class="content__img-inner" style="background-image: url(img/1.jpeg);"></div>
+				</div>
+				<div class="content__text-wrap">
+					<span class="content__text">
+						<span class="content__text-inner content__text-inner--stroke">Damage in billon $</span>
+					</span>
+					<span class="content__text">
+						<span class="content__text-inner">Damage in billon $</span>
+					</span>
+					<span class="content__text content__text--full">
+						<span class="content__text-inner content__text-inner--stroke">Damage in billon $</span>
+					</span>
+					<span class="content__text">
+						<span class="content__text-inner content__text-inner--stroke">Damage in billon $</span>
+					</span>
+					<span class="content__text">
+						<span class="content__text-inner">Damage in billon $</span>
+					</span>
+					<span class="content__text content__text--full ">
+						<span class="content__text-inner content__text-inner--stroke">Damage in billon $</span>
+					</span>
+					<span class="content__text">
+						<span class="content__text-inner content__text-inner--bottom">Damage in billon $</span>
+					</span>
+					<span class="content__text">
+						<span class="content__text-inner">Damage in billon $</span>
+					</span>
+					<span class="content__text content__text--full">
+						<span class="content__text-inner content__text-inner--stroke">Damage in billon $</span>
+					</span>
+					<span class="content__text">
+						<span class="content__text-inner content__text-inner--stroke content__text-inner--bottom">Damage in billon $</span>
+					</span>
+					<span class="content__text">
+						<span class="content__text-inner">Damage in billon $</span>
+					</span>
+				</div>
+			</div>
+			<nav class="content__nav">
+				<button class="content__nav-button content__nav-button--next">next</button>
+			</nav>
+		</div>
+	</main>
+	<script src="plugins/imagesloaded.pkgd.min.js"></script>
+	<script src="plugins/TweenMax.min.js"></script>
+	<script src="js/title.js"></script>
 </body>
+
 </html>

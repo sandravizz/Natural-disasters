@@ -29,7 +29,6 @@ const data00 = d3.csv("./data/violin.csv", d3.autoType)
     var bins = d3.bin()(costs);
     console.log(bins);
 
-
 // --------------------------------------
 //  Scales
 // -------------------------------------- 

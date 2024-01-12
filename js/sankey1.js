@@ -124,19 +124,19 @@ innerChart
     .on("mouseout", (e, d) => {
       d3.selectAll(".sankey_path").style("opacity", 1);
     })
-    // .attr("y", (d) => y(d.name))
-    // .attr("height", y.bandwidth())
-    // .attr("width", (d) => d.y1 - d.y0)
-    // .attr("opacity", (d) => (d.x0 < innerWidth / 2 ? 1 : 0))
-    // .transition()
-    // .delay(3000)
-    // .duration(1500)
+    .attr("y", (d) => y(d.name))
+    .attr("height", y.bandwidth())
+    .attr("width", (d) => d.y1 - d.y0)
+    .attr("opacity", (d) => (d.x0 < innerWidth / 2 ? 1 : 0))
+    .transition()
+    .delay(3000)
+    .duration(1500)
     .attr("y", (d) => d.y0)
     .attr("height", (d) => d.y1 - d.y0)
     .attr("width", (d) => (d.x0 < innerWidth / 2 ? d.x1 - d.x0 + 30 : 20))
-    // .transition()
-    // .delay(500)
-    // .duration(1500)
+    .transition()
+    .delay(500)
+    .duration(1500)
     .attr("opacity", (d) => (d.x0 < innerWidth / 2 ? 1 : 1));
 
 // Nodes: text 
@@ -150,15 +150,15 @@ innerChart
     .attr("fill", "white")
     .attr("dy", "0.4em")
     .attr("text-anchor", (d) => (d.x0 < innerWidth / 2 ? "end" : "start"))
-    // .attr("y",  (d) => (d.x0 < innerWidth / 2 ? (y(d.name) + 50) : ((d.y1 + d.y0) / 2)))
-    // .attr("opacity", (d) => (d.x0 > innerWidth / 2 ? 0 : 1))
-    // .transition()
-    // .delay(3000)
-    // .duration(1500)
+    .attr("y",  (d) => (d.x0 < innerWidth / 2 ? (y(d.name) + 50) : ((d.y1 + d.y0) / 2)))
+    .attr("opacity", (d) => (d.x0 > innerWidth / 2 ? 0 : 1))
+    .transition()
+    .delay(3000)
+    .duration(1500)
     .attr("y", (d) => (d.y1 + d.y0) / 2)
-    // .transition()
-    // .delay(500)
-    // .duration(1500)
+    .transition()
+    .delay(500)
+    .duration(1500)
     .attr("opacity", (d) => (d.x0 > innerWidth / 2 ? 1 : 1));
 
 //Links: path 
@@ -171,10 +171,10 @@ innerChart
     .attr("d", d3.sankeyLinkHorizontal())
     .attr("stroke", (d) => color(d.source.name))
     .attr("fill", "none")
-    // .attr("stroke-width", 0)
-    // .transition()
-    // .delay((d) => 7000 + d.source.id * 1500)
-    // .duration(1000)
+    .attr("stroke-width", 0)
+    .transition()
+    .delay((d) => 7000 + d.source.id * 1500)
+    .duration(1000)
     .attr("stroke-width", (d) => Math.max(0, d.width));
 
 });

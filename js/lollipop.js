@@ -20,16 +20,10 @@ const innerChart3 = svg3
 //  Data loading
 // --------------------------------------
 
-const data3 = d3.csv("./data/tropical2.csv", d3.autoType) 
+const data3 = d3.csv("./data/tropical.csv", d3.autoType) 
   .then(function(data3){ 
 
     // console.log(data3);
-
-// --------------------------------------
-//  Formating 
-// --------------------------------------
-
-format = d3.format(".03s");
 
 // --------------------------------------
 // Tooltip
@@ -41,7 +35,7 @@ const tooltip = d3.tip()
       (event, d) => `<div>${(d.Name)}<br>Year ${(d.Year)}</br>Death ${(d.Deaths)}<br>Damage ${format(d.Costs)}</br></div>`
     );
 
-svg.call(tooltip); 
+svg3.call(tooltip); 
 
 // --------------------------------------
 //  Scales
@@ -125,7 +119,7 @@ innerChart3
     .attr("cx", (d) => x(d.Year))
     .attr("cy", (d) => y(d.Costs))
     .attr("r", (d) => r2(d.Deaths))
-    .attr("fill", "orange")
+    .attr("fill", "#ff00c4")
     .attr("fill-opacity", 0.7)
     .on("mouseover", tooltip.show)
     .on("mouseout", tooltip.hide); 
@@ -152,7 +146,7 @@ innerChart3
     const filters = [
     { id: "hurricane", label: "Hurricane", isActive: false,  color: "#ccff99" },
     { id: "tropical_storm", label: "Tropical storm", isActive: false, color: "#ccff99" }, 
-    { id: "deaths", label: "Deaths", isActive: false, color: "orange" },
+    { id: "deaths", label: "Deaths", isActive: false, color: "#ff00c4" },
     { id: "reset", label: "Reset", isActive: false, color: "lightgrey" }
     ];
 
@@ -160,7 +154,7 @@ innerChart3
         .selectAll(".filter")
         .data(filters)
         .join("button")
-        .attr("class", d => `filter`)
+        .attr("class", "content__nav-button content__nav-button--prev")
         .attr("id", d => d.id)
         .text(d => d.label)
         .style("color", d => d.color);
@@ -238,31 +232,3 @@ innerChart3
 });
 
 });
-
-
-// --------------------------------------
-//  Legend 
-// --------------------------------------
-
-// const formatsInfo = [
-//   {id: "hurricane", label: "Hurricane", color: "#ccff99"},
-//   {id: "tropical_storm", label: "Tropical storm", color: "white"},
-// ];
-
-// const legendItems = d3.select(".legend-container")
-//     .append("ul")
-//       .attr("class", "color-legend")
-//     .selectAll(".color-legend-item")
-//     .data(formatsInfo)
-//     .join("li")
-//       .attr("class", "color-legend-item");
-
-//   legendItems
-//     .append("span")
-//       .attr("class", "color-legend-item-color")
-//       .style("background-color", d => d.color);
-
-//   legendItems
-//     .append("span")
-//       .attr("class", "color-legend-item-label")
-//       .text(d => d.label);

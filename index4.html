@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Billion $ disasters 1980 - 2024 in the US  </title>
+	<meta name="description" content="A data visualisation project about natural disasters happened in the US from 1980 - 2024" />
+	<meta name="keywords" content="data visualisation, d3.js, natural disasters, climate change, sankey" />
+	<meta name="author" content="Sandra Becker" />
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Kanit:500,900|Syncopate:700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/base.css" />
+</head>
+
+<body class="demo-2 loading">
+	<main>
+		<div class="frame">
+			<div class="frame__demos">
+				<a href="index.html" class="frame__demo">1</a>
+				<a href="index2.html" class="frame__demo">2</a>
+				<a href="index3.html" class="frame__demo">3</a>
+				<a href="index4.html" class="frame__demo frame__demo--current">4</a>
+				<a href="index5.html" class="frame__demo">5</a>
+			</div>
+		</div>
+
+		<div class="container"> 
+
+			<p class ="article">Where are we heading right now? In the same direction just faster. <br> Looking at the current decade, only the first three <span class="support decade">years</span> already made up for half of the damage prodcued in the 2010s. </p>						
+			<p class ="text">Disaster type vs. 2020 - 2024</p>			
+			<div id="chart2"></div>
+
+		</div>
+
+	</main>
+		<script src="plugins/d3.js"></script>
+		<script src="plugins/d3-sankey.js"></script>
+		<script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
+		<script src="js/sankey2.js"></script>
+</body>
+</html>
