@@ -17,11 +17,16 @@ Have a look at the image below showing a hurricane, one of the most dangerous na
 The first step is always to check your data and variable structure as well as general patterns and trends. For this purpose I used [arquero.js](https://uwdata.github.io/arquero/) as a data processing library and [plot.js](https://observablehq.com/plot/) 
  as a plotting library. Please find the whole analysis and finding in this [Observable notebook](https://observablehq.com/@sandraviz/billion-dollar-disasters-arquero-js-plot-js?collection=@sandraviz/billion-dollar-disaster) with a detailed explanation and presentation in this [video](https://www.youtube.com/watch?v=FaoWCGo88ks) 
 
- # 1 Intro | TweenMax.js
+ ## 1 Intro | TweenMax.js
 
 ![Alt text](img/1.png)
 
- # 2 Violin chart | d3.js 
+Credits to 
+- [imagesLoaded](https://imagesloaded.desandro.com/) by Dave DeSandro
+- [TweenMax](https://greensock.com/tweenmax) by Greensock
+- [TextTrailEffect](https://github.com/codrops/TextTrailEffect) by Manoela Ilic
+
+ ## 2 Violin chart | d3.js 
 
 ![Alt text](img/2.png)
 
