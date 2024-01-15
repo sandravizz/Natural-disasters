@@ -19,7 +19,7 @@ The first step is always to check your data and variable structure as well as ge
 
  # 1 Intro | TweenMax.js
 
-![Alt text](img/2.png)
+![Alt text](img/1.png)
 
  # 2 Violin chart | d3.js 
 
