@@ -1,12 +1,3 @@
-/**
- * http://www.codrops.com
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- * 
- * Copyright 2019, Codrops
- * http://www.codrops.com
- */
 {
     const randomIntFromInterval = (min,max) => Math.floor(Math.random()*(max-min+1)+min);
 
@@ -161,15 +152,13 @@
                 return false;
             }
             this.isAnimating = true;
-            // Current slide
+
             const currentSlide = this.slides[this.current];
             
-            // Update current
             this.current = dir === 'next' ? 
                 this.current < this.slidesTotal - 1 ? this.current + 1 : 0 :
                 this.current > 0 ? this.current - 1 : this.slidesTotal - 1;
                 
-            // Upcoming slide
             const upcomingSlide = this.slides[this.current];
 
             const onCurrentHalfwayCallback = () => {
@@ -189,6 +178,5 @@
 
     new Slideshow(document.querySelector('.content'));
 
-    // Preload all the images in the page.
     imagesLoaded(document.querySelectorAll('.content__img-inner'), {background: true}, () => document.body.classList.remove('loading'));
 }

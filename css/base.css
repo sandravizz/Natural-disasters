@@ -29,8 +29,8 @@ html {
 	--step--3: clamp(0.58rem, 0.5848rem + 0.0326vw, 0.61rem);
 	--step--2: clamp(0.7813rem, 0.7748rem + 0.0326vw, 0.79rem);
 	--step--1: clamp(0.9375rem, 0.9159rem + 0.1086vw, 1rem);
-	--step-0: clamp(1.125rem, 1.0817rem + 0.2172vw, 1.25rem);
-	--step-1: clamp(1.35rem, 1.2764rem + 0.3692vw, 1.5625rem);
+	--step-0: clamp(0.8rem, 1.0817rem + 0.2172vw, 1.25rem);
+	--step-1: clamp(1.1rem, 1.2764rem + 0.3692vw, 1.4625rem);
 	--step-2: clamp(1.62rem, 1.5046rem + 0.5787vw, 1.9531rem);
 	--step-3: clamp(1.9438rem, 1.7714rem + 0.8643vw, 2.4413rem);
 	--step-4: clamp(2.3325rem, 2.0833rem + 1.2497vw, 3.0519rem);
@@ -63,8 +63,6 @@ body {
 
 .demo-5 {
 	--color-slide-text: #eaf8e9;
-    /* --color-link: #d61e68;
-    --color-text: #00baff; */
 	--color-link: #eaf8e9;
     --color-text: #eaf8e9; 
     --color-nav: #fff;
@@ -129,12 +127,6 @@ a:focus {
 	z-index: 1000;
 }
 
-.frame__title {
-	font-size: 1rem;
-	margin: 0 0 1rem;
-	font-weight: 500;
-}
-
 .frame__links {
 	display: inline;
 }
@@ -152,8 +144,6 @@ a:focus {
 .frame__demo--current:hover {
 	color: var(--color-text);
 }
-
-
 
 /*Content*/
 .content {
@@ -227,10 +217,6 @@ a:focus {
 	justify-content: center;
 }
 
-/* .demo-5 .content__text-wrap {
-	mix-blend-mode: color-dodge;
-} */
-
 .content__text {
 	overflow: hidden;
 	flex: 1;
@@ -291,20 +277,15 @@ a:focus {
 	cursor: pointer;
 	background: none;
 	margin: 0.25rem 0;
-	padding: 5;
-	text-transform: lowercase;
+	padding: 10;
 	color: var(--color-nav);
 	font-weight: 300;
 	line-height: 1;
 }
 
-.content__nav-button:focus {
-	outline: none;
-}
-
-.content__nav-button--next {
-	transform: translateX(1rem);
-}
+/*--------------------------------------*/
+/* Screen stylings */
+/*--------------------------------------*/
 
 @media screen and (min-width: 53em) {
 	.frame {
@@ -325,13 +306,6 @@ a:focus {
 		grid-template-areas: 'title tagline'
 							'... ...'
 							'links demos';
-	}
-	.frame__title-wrap {
-		grid-area: title;
-		display: flex;
-	}
-	.frame__title {
-		margin: 0;
 	}
 	.frame__tagline {
 		grid-area: tagline;
@@ -393,7 +367,7 @@ a:focus {
 }
 
 .chart_title {
-	margin-bottom: 80px;
+	margin-bottom: 50px;
 	margin-top:20px;
 	font-size: var( --step--1);
   }
@@ -484,14 +458,14 @@ a:focus {
 
 .x-violin, .y-violin text {
   font-family:'Montserrat Alternates', sans-serif;
-  font-weight:100;
+  font-weight:200;
   font-size: var( --step--3);
   opacity:1;
 }
 
 .x-axis, .y-axis text {
   font-family:'Montserrat Alternates', sans-serif;
-  font-weight:100;
+  font-weight:200;
   font-size: var( --step--3);
   opacity:1;
   fill:lightgrey;

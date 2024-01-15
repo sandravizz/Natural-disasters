@@ -4,7 +4,7 @@
 
   const margin = {top: 0, right: 90, bottom: 30, left: 130};
   const width = 1000;
-  const height = 550;
+  const height = 530;
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 

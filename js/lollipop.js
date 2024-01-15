@@ -55,7 +55,7 @@ let r2 = d3.scaleSqrt()
 
 let r1 = d3.scaleSqrt()
     .domain(d3.extent(data3, d => d.Costs))
-    .range([0, 37]);
+    .range([0, 35]);
 
 let c = d3.scaleOrdinal()
     .domain(["True", "False"])
@@ -144,8 +144,7 @@ innerChart3
 // --------------------------------------
 
     const filters = [
-    { id: "hurricane", label: "Hurricane", isActive: false,  color: "#ccff99" },
-    { id: "tropical_storm", label: "Tropical storm", isActive: false, color: "#ccff99" }, 
+    { id: "damage", label: "Damage", isActive: false,  color: "#ccff99" },
     { id: "deaths", label: "Deaths", isActive: false, color: "#ff00c4" },
     { id: "reset", label: "Reset", isActive: false, color: "lightgrey" }
     ];
@@ -177,27 +176,9 @@ innerChart3
        
     });
 
-//When clicking on the tropical_storm button
-
-    d3.select("#tropical_storm")
-        .on("click", (e, d) => {
-
-        d3.selectAll(".death_circle")
-            .transition()
-            .duration(1000)
-            .attr("fill-opacity", 0);
-
-        d3.selectAll(".cost_circle")
-            .data(data3)
-            .transition()
-            .duration(1000)
-            .attr("fill-opacity", (d) => (d.Hurricane === true ? 0 : 1)); 
-
-    });
-
 //When clicking on the hurricane button
 
-    d3.select("#hurricane")
+    d3.select("#damage")
         .on("click", (e, d) => {
 
     d3.selectAll(".death_circle")
@@ -209,7 +190,8 @@ innerChart3
         .data(data3)
         .transition()
         .duration(1000)
-        .attr("fill-opacity", (d) => (d.Hurricane === true ? 1 : 0)); 
+        .attr("fill-opacity", (d) => (d.Hurricane === true ? 0.7 : 0.7)); 
+
 
 });
 
