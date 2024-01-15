@@ -4,7 +4,7 @@
 
 const margin2 = {top: 5, right: 90, bottom: 30, left: 100};
 const width2 = 1000;
-const height2 = 270;
+const height2 = 400;
 const innerWidth2 = width2 - margin2.left - margin2.right;
 const innerHeight2 = height2 - margin2.top - margin2.bottom;
 
@@ -60,7 +60,7 @@ const data2 = d3.csv("./data/sankey_data2.csv", d3.autoType)
 //  Formating 
 // --------------------------------------
 
-    format = d3.format(".01s")
+    format = d3.format(".03s")
 
 // --------------------------------------
 //  Scales
@@ -80,7 +80,7 @@ const data2 = d3.csv("./data/sankey_data2.csv", d3.autoType)
       .nodeId((d) => d.id)
       .linkSort(null)
       .nodeWidth(20) //
-      .nodePadding(5) //space between each node
+      .nodePadding(30) //space between each node
       .extent([
         [0, 0],
         [innerWidth2, innerHeight2]
@@ -116,6 +116,7 @@ const data2 = d3.csv("./data/sankey_data2.csv", d3.autoType)
         .selectAll("text")
         .data((sankey2(data_final2)).nodes)
         .join("text")
+        .attr("class", "text")
         .text((d) => (d.name) + " " + format(d.value))
         .attr("x", (d) => (d.x0 > innerWidth2 / 2 ? d.x1 +5 : d.x0 - 5))
         .attr("y", (d) => (d.y1 + d.y0) / 2)

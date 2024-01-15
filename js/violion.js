@@ -2,9 +2,9 @@
 //  Margin and canvas
 // --------------------------------------
 
-const margin0 = {top: 0, right: 0, bottom: 20, left:0};
+const margin0 = {top: 60, right: 0, bottom: 0, left:10};
 const width0 = 1000;
-const height0 = 200;
+const height0 = 250;
 const innerwidth0 = width0 - margin0.left - margin0.right;
 const innerheight0 = height0 - margin0.top - margin0.bottom;
 
@@ -109,13 +109,13 @@ const data0 = d3.csv("./data/violin.csv", d3.autoType)
  
     innerChart0
         .append("g")
-        .attr("class", "y-violin")
+        .attr("class", "text")
         .selectAll("text")
         .data(disaster)
         .join("text")
         .text((d) => (d.count) + " " +  (d.id)+ "s" )
-        .attr("x", (d, i) => 30 + i * 175)
-        .attr("y", 200)
+        .attr("x", (d, i) => 10 + i * 173)
+        .attr("y", -10)
         .attr("fill", (d) => color(d.id));
 
 });

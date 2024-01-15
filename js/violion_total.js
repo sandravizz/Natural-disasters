@@ -50,7 +50,7 @@ const data00 = d3.csv("./data/violin.csv", d3.autoType)
     const Container = innerChart00
           .append("g");
 
-        const areaGenerator = d3.area()
+    const areaGenerator = d3.area()
           .x0((d => 500 - violinsScale(d.length)))
           .x1(d => 500 + violinsScale(d.length))
           .y(d => y(d.x1) + ((y(d.x0) - y(d.x1))))
@@ -83,21 +83,21 @@ innerChart00
     .append("text")
     .attr("x", 0)
     .attr("y", 50)
-    .attr("class", "explanation")
+    .attr("class", "text")
     .text("Long tail distribution")
     .append("tspan")
     .attr("class", "tspan")
     .attr("x", 0)
     .attr("y", 70)
-    .text("The long tail is the name for a long-known feature of some statistical distributions.")
+    .text("Long tail is the name for a long-known feature of some statistical distributions.")
     .append("tspan")
     .attr("x", 0)
     .attr("y", 85)
-    .text("A high-amplitude (head) is followed by a low-amplitude population.(tail))")
+    .text("A high-amplitude is followed by a low-amplitude population.")
     .append("tspan")
     .attr("x", 0)
     .attr("y", 100)
-    .text("The events at the far end of the tail have a very low probability of occurrence.");
+    .text("Events at the far end of the tail have a very low probability of occurrence.");
 
 // --------------------------------------
 //  Axes

@@ -2,9 +2,9 @@
 //  Margin and canvas
 // --------------------------------------
 
-const margin3 = {top: 65, right: 50, bottom: 40, left:15};
+const margin3 = {top: 55, right: 50, bottom: 40, left:15};
 const width3 = 1000;
-const height3 = 600;
+const height3 = 450;
 const innerwidth3 = width3 - margin3.left - margin3.right;
 const innerheight3 = height3 - margin3.top - margin3.bottom;
 
@@ -51,11 +51,11 @@ let y = d3.scaleLinear()
 
 let r2 = d3.scaleSqrt()
     .domain(d3.extent(data3, d => d.Deaths))
-    .range([0, 30]);
+    .range([0, 20]);
 
 let r1 = d3.scaleSqrt()
     .domain(d3.extent(data3, d => d.Costs))
-    .range([0, 47]);
+    .range([0, 37]);
 
 let c = d3.scaleOrdinal()
     .domain(["True", "False"])

@@ -2,9 +2,9 @@
 //  Margin and canvas
 // --------------------------------------
 
-  const margin = {top: 5, right: 90, bottom: 30, left: 100};
+  const margin = {top: 0, right: 90, bottom: 30, left: 130};
   const width = 1000;
-  const height = 580;
+  const height = 550;
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 
@@ -71,7 +71,7 @@ const data = d3.csv("./data/sankey_data.csv", d3.autoType)
 //  Formating 
 // --------------------------------------
 
-    format = d3.format(".01s")
+    format = d3.format(".03s")
 
 // --------------------------------------
 //  Scales
@@ -96,7 +96,7 @@ const sankey = d3.sankey()
   .nodeId((d) => d.id)
   .linkSort(null)
   .nodeWidth(20) 
-  .nodePadding(5) //space between each node
+  .nodePadding(30) //space between each node
   .extent([
     [0, 0],
     [innerWidth, innerHeight]
@@ -129,13 +129,13 @@ innerChart
     .attr("width", (d) => d.y1 - d.y0)
     .attr("opacity", (d) => (d.x0 < innerWidth / 2 ? 1 : 0))
     .transition()
-    .delay(3000)
+    .delay(4500)
     .duration(1500)
     .attr("y", (d) => d.y0)
     .attr("height", (d) => d.y1 - d.y0)
     .attr("width", (d) => (d.x0 < innerWidth / 2 ? d.x1 - d.x0 + 30 : 20))
     .transition()
-    .delay(500)
+    .delay(1500)
     .duration(1500)
     .attr("opacity", (d) => (d.x0 < innerWidth / 2 ? 1 : 1));
 
@@ -145,6 +145,7 @@ innerChart
     .selectAll("text")
     .data((sankey(data_final)).nodes)
     .join("text")
+    .attr("class", "text")
     .text((d) => (d.name) + " " + format(d.value))
     .attr("x", (d) => (d.x0 > innerWidth / 2 ? d.x1 +5 : d.x0 - 5))
     .attr("fill", "white")
@@ -153,11 +154,11 @@ innerChart
     .attr("y",  (d) => (d.x0 < innerWidth / 2 ? (y(d.name) + 50) : ((d.y1 + d.y0) / 2)))
     .attr("opacity", (d) => (d.x0 > innerWidth / 2 ? 0 : 1))
     .transition()
-    .delay(3000)
+    .delay(4500)
     .duration(1500)
     .attr("y", (d) => (d.y1 + d.y0) / 2)
     .transition()
-    .delay(500)
+    .delay(1500)
     .duration(1500)
     .attr("opacity", (d) => (d.x0 > innerWidth / 2 ? 1 : 1));
 
@@ -173,7 +174,7 @@ innerChart
     .attr("fill", "none")
     .attr("stroke-width", 0)
     .transition()
-    .delay((d) => 7000 + d.source.id * 1500)
+    .delay((d) => 9000 + (7- d.source.id) * 1850)
     .duration(1000)
     .attr("stroke-width", (d) => Math.max(0, d.width));
 
