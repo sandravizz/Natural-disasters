@@ -29,7 +29,7 @@ formatDate = d3.timeFormat("%Y");
 // --------------------------------------
 
 
-const data3 = d3.csv("../data/tropical.csv", d => {
+const data3 = d3.csv("./data/tropical.csv", d => {
 
     return {
         Costs: +d.Costs,
