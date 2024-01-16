@@ -105,10 +105,14 @@ innerChart3
     .attr("x1", (d) => x(d.Year))
     .attr("x2", (d) => x(d.Year))
     .attr("y1", innerheight3)
-    .attr("y2", (d) => y(d.Costs) + r1(d.Costs))
+    .attr("y2",  innerheight3)
     .attr("stroke", (d) => c(d.Hurricane))
-    .attr("stroke-width", 0.6)
-    .attr("opacity", 0.87); 
+    .attr("stroke-width", 0.7)
+    .attr("opacity", 0.87)
+    .transition()
+    .delay((d, i) => 2000+ x(d.Year) * 25)
+    .duration(2000)
+    .attr("y2", (d) => y(d.Costs) + r1(d.Costs));
 
 //Circle costs
 innerChart3
@@ -119,14 +123,18 @@ innerChart3
     .attr("class", "cost_circle")   
     .attr("cx", (d) => x(d.Year))
     .attr("cy", (d) => y(d.Costs))
-    .attr("r", (d) => r1(d.Costs))
+    .attr("r", 0)
     .attr("fill", (d) => c(d.Hurricane))
     .attr("fill-opacity", (d) => (d.Hurricane === true ? 0.87 : 0.87))
     .attr("stroke", (d) => c(d.Hurricane))
     .attr("stroke-opacity", 1)
     .attr("stroke-width", 0.2)
     .on("mouseover", tooltip.show)
-    .on("mouseout", tooltip.hide); 
+    .on("mouseout", tooltip.hide)
+    .transition()
+    .delay((d, i) => 2000+ x(d.Year) * 25)
+    .duration(2000)
+    .attr("r", (d) => r1(d.Costs));
 
 //Circle death
 innerChart3
@@ -137,11 +145,15 @@ innerChart3
     .attr("class", "death_circle")   
     .attr("cx", (d) => x(d.Year))
     .attr("cy", (d) => y(d.Costs))
-    .attr("r", (d) => r2(d.Deaths))
+    .attr("r", 0)
     .attr("fill", "#ff00c4")
     .attr("fill-opacity", 0.7)
     .on("mouseover", tooltip.show)
-    .on("mouseout", tooltip.hide); 
+    .on("mouseout", tooltip.hide)
+    .transition()
+    .delay(28000)
+    .duration(500)
+    .attr("r", (d) => r2(d.Deaths)); 
 
 //Text 
 innerChart3
@@ -153,10 +165,15 @@ innerChart3
     .attr("x", (d) => x(d.Year) -2)
     .attr("y", (d) => y(d.Costs) - d3.max([r1(d.Costs),r2(d.Deaths)])-6)
     .attr("class", "super_hurricane")
+    .attr("opacity", 0)
     .text(d => d.Name)
     .attr("text-anchor", "end")
     .on("mouseover", tooltip.show)
-    .on("mouseout", tooltip.hide);
+    .on("mouseout", tooltip.hide)
+    .transition()
+    .delay(30000)
+    .duration(500)
+    .attr("opacity", 1); 
 
 // --------------------------------------
 //  Description text 
@@ -167,7 +184,12 @@ innerChart3
     .attr("x", 430)
     .attr("y", 10)
     .attr("class", "anotations")
-    .text("WTF 😱");
+    .text("WTF 😱")
+    .attr("opacity", 0) 
+    .transition()
+    .delay(32000)
+    .duration(500)
+    .attr("opacity", 1); 
 
 // --------------------------------------
 //  Buttons 
