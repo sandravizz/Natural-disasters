@@ -93,7 +93,7 @@ innerChart3.append("g")
             .tickPadding(5));
 
 // --------------------------------------
-//  Data drawing 
+//  Data drawing check
 // --------------------------------------
 
 //Lines
