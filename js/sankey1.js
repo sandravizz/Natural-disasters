@@ -71,7 +71,7 @@ const data = d3.csv("./data/sankey_data.csv", d3.autoType)
 //  Formating 
 // --------------------------------------
 
-    format = d3.format(".03s")
+    format = d3.format(".03s");
 
 // --------------------------------------
 //  Scales

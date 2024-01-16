@@ -421,8 +421,8 @@ a:focus {
 }
 
 .super_hurricane {
-  text-transform: lowercase;
   fill: #ccff99;
+  font-size: var( --step--3);
 }
 
 .tspan {
@@ -465,8 +465,8 @@ a:focus {
 
 .x-axis, .y-axis text {
   font-family:'Montserrat Alternates', sans-serif;
-  font-weight:200;
-  font-size: var( --step--2);
+  font-weight:300;
+  font-size: var( --step--3);
   opacity:1;
 }
 

@@ -2,7 +2,7 @@
 //  Margin and canvas
 // --------------------------------------
 
-const margin3 = {top: 55, right: 50, bottom: 40, left:15};
+const margin3 = {top: 55, right: 15, bottom: 40, left:15};
 const width3 = 1000;
 const height3 = 450;
 const innerwidth3 = width3 - margin3.left - margin3.right;
@@ -17,13 +17,31 @@ const innerChart3 = svg3
     .attr("transform", `translate(${margin3.left}, ${margin3.top})`);
 
 // --------------------------------------
+//  Formating 
+// --------------------------------------
+
+parseDate = d3.timeParse("%Y");
+console.log(parseDate("2015"));
+formatDate = d3.timeFormat("%Y");
+
+// --------------------------------------
 //  Data loading
 // --------------------------------------
 
-const data3 = d3.csv("./data/tropical.csv", d3.autoType) 
-  .then(function(data3){ 
 
-    // console.log(data3);
+const data3 = d3.csv("../data/tropical.csv", d => {
+
+    return {
+        Costs: +d.Costs,
+        Deaths: +d.Deaths,
+        Name: d.Name,
+        Disaster: d.Disaster,
+        Year: parseDate(d.Year)
+    };
+
+  }).then(data3 => {
+
+    console.log(data3);
 
 // --------------------------------------
 // Tooltip
@@ -41,7 +59,7 @@ svg3.call(tooltip);
 //  Scales
 // --------------------------------------
 
-let x = d3.scaleLinear()
+let x = d3.scaleTime()
     .domain(d3.extent(data3, d => d.Year))
     .range([0, innerwidth3]);
 
@@ -51,11 +69,11 @@ let y = d3.scaleLinear()
 
 let r2 = d3.scaleSqrt()
     .domain(d3.extent(data3, d => d.Deaths))
-    .range([0, 20]);
+    .range([0, 23]);
 
 let r1 = d3.scaleSqrt()
     .domain(d3.extent(data3, d => d.Costs))
-    .range([0, 35]);
+    .range([0, 34]);
 
 let c = d3.scaleOrdinal()
     .domain(["True", "False"])
@@ -69,7 +87,8 @@ innerChart3.append("g")
     .attr("class", "x-axis")
     .attr("transform", `translate(0, ${innerheight3})`)
     .call(d3.axisBottom(x)
-        	.tickValues([1980, 1992, 2005, 2012, 2017, 2020, 2022]) 
+        	.tickValues([parseDate(1980), parseDate(1992), parseDate(2005), parseDate(2012), parseDate(2017), parseDate(2020), parseDate(2022)]) 
+            .tickFormat(formatDate)
      		.tickSize(10)
             .tickPadding(5));
 
@@ -88,8 +107,8 @@ innerChart3
     .attr("y1", innerheight3)
     .attr("y2", (d) => y(d.Costs) + r1(d.Costs))
     .attr("stroke", (d) => c(d.Hurricane))
-    .attr("stroke-width", 0.4)
-    .attr("opacity", 0.7); 
+    .attr("stroke-width", 0.6)
+    .attr("opacity", 0.87); 
 
 //Circle costs
 innerChart3
@@ -131,11 +150,11 @@ innerChart3
     .data(data3)
     .join("text")
     .filter(d => d.Costs > 80000)
-    .attr("x", (d) => x(d.Year))
+    .attr("x", (d) => x(d.Year) -2)
     .attr("y", (d) => y(d.Costs) - d3.max([r1(d.Costs),r2(d.Deaths)])-6)
     .attr("class", "super_hurricane")
     .text(d => d.Name)
-    .attr("text-anchor", "middle")
+    .attr("text-anchor", "end")
     .on("mouseover", tooltip.show)
     .on("mouseout", tooltip.hide);
 
