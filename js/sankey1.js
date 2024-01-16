@@ -78,13 +78,14 @@ const data = d3.csv("./data/sankey_data.csv", d3.autoType)
 // --------------------------------------
 
 let color = d3.scaleOrdinal()
-    .domain(["TC", "Drought", "Wildfire", "Flooding", "Winter", "Storm"])
+    .domain(["Cyclone", "Drought", "Wildfire", "Flooding", "Winter", "Storm"])
     .range(["#ccff99", "#cccc99", "#B0CCA3", "#99FFD7", "#99FFB4", "#A8A87E"]);
 
 // for the stacked bar chart
 let y = d3.scaleBand()
-    .domain(["Winter", "Wildfire", "Flooding", "Drought", "Storm", "TC"])
-    .rangeRound([innerHeight, 0]);
+    .domain(["Winter", "Wildfire", "Flooding", "Drought", "Storm", "Cyclone"])
+    .rangeRound([innerHeight, 0])
+    .padding(0.1);
 
 // --------------------------------------
 //  Sankey
@@ -95,8 +96,8 @@ const sankey = d3.sankey()
   .nodeAlign(d3.sankeyLeft) //as we only have two node groups it doesn't impact much
   .nodeId((d) => d.id)
   .linkSort(null)
-  .nodeWidth(20) 
-  .nodePadding(30) //space between each node
+  .nodeWidth(25) 
+  .nodePadding(18) //space between each node
   .extent([
     [0, 0],
     [innerWidth, innerHeight]
@@ -118,11 +119,11 @@ innerChart
     .attr("fill", (d) => (d.x0 < innerWidth / 2 ? color(d.name) : "white"))
     .on("mouseover", (e, d) => {
       d3.selectAll(".sankey_path").style("opacity", (p) =>
-        p.source.name === d.name || p.target.name === d.name ? "1" : "0.07"
+        p.source.name === d.name || p.target.name === d.name ? "0.9" : "0.1"
       );
     })
     .on("mouseout", (e, d) => {
-      d3.selectAll(".sankey_path").style("opacity", 1);
+      d3.selectAll(".sankey_path").style("opacity", 0.9);
     })
     .attr("y", (d) => y(d.name))
     .attr("height", y.bandwidth())
@@ -146,12 +147,12 @@ innerChart
     .data((sankey(data_final)).nodes)
     .join("text")
     .attr("class", "text")
-    .text((d) => (d.name) + " " + format(d.value))
-    .attr("x", (d) => (d.x0 > innerWidth / 2 ? d.x1 +5 : d.x0 - 5))
+    .text((d) => (d.name) + "s" /*+ " " + format(d.value)*/)
+    .attr("x", (d) => (d.x0 > innerWidth / 2 ? d.x1 + 10 : d.x0 - 10))
     .attr("fill", "white")
     .attr("dy", "0.4em")
     .attr("text-anchor", (d) => (d.x0 < innerWidth / 2 ? "end" : "start"))
-    .attr("y",  (d) => (d.x0 < innerWidth / 2 ? (y(d.name) + 50) : ((d.y1 + d.y0) / 2)))
+    .attr("y",  (d) => (d.x0 < innerWidth / 2 ? (y(d.name) + 40) : ((d.y1 + d.y0) / 2)))
     .attr("opacity", (d) => (d.x0 > innerWidth / 2 ? 0 : 1))
     .transition()
     .delay(4500)
@@ -172,6 +173,7 @@ innerChart
     .attr("d", d3.sankeyLinkHorizontal())
     .attr("stroke", (d) => color(d.source.name))
     .attr("fill", "none")
+    .attr("opacity", 0.9)
     .attr("stroke-width", 0)
     .transition()
     .delay((d) => 9000 + (7- d.source.id) * 1850)

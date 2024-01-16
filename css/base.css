@@ -392,14 +392,14 @@ a:focus {
   display: inline-block;
   margin: 2px 1px;
   padding: 3px 6px;
-  line-height: 2rem;
+  line-height: 1.6rem;
   font-weight: 500;
   border-radius: 10px;
 }
 
 .decade {
-  color: #444952;
-  background-color: white;
+  color: #1c1423;
+  background-color:white;
 }
 
 .tropical {
@@ -466,9 +466,8 @@ a:focus {
 .x-axis, .y-axis text {
   font-family:'Montserrat Alternates', sans-serif;
   font-weight:200;
-  font-size: var( --step--3);
+  font-size: var( --step--2);
   opacity:1;
-  fill:lightgrey;
 }
 
 .x-axis, .x-violin, .y-axis, .y-violin path {

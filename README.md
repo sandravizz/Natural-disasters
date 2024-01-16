@@ -21,6 +21,8 @@ The first step is always to check your data and variable structure as well as ge
 
 ![Alt text](img/1.png)
 
+This is a very short visual intro to the project using images, music and effects to create an atmosphere that matches the information shared, please check out this [video](https://www.youtube.com/watch?v=vxkJkISGWGM). 
+
 Credits to 
 - [imagesLoaded](https://imagesloaded.desandro.com/) by Dave DeSandro
 - [TweenMax](https://greensock.com/tweenmax) by Greensock

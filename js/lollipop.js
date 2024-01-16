@@ -192,7 +192,6 @@ innerChart3
         .duration(1000)
         .attr("fill-opacity", (d) => (d.Hurricane === true ? 0.7 : 0.7)); 
 
-
 });
 
 //When clicking on the reset button
