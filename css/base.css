@@ -67,7 +67,7 @@ body {
     --color-text: #eaf8e9; 
     --color-nav: #fff;
 	--font-trail-size: 11vh;
-	--font-trail-lheight: 1.1;
+	--font-trail-height: 1.1;
 	--font-trail-family: "Syncopate", sans-serif; 
 }
 
@@ -238,7 +238,7 @@ a:focus {
 	text-transform: uppercase;
 	font-size: 3.5rem;
 	font-weight: var(--font-trail-weight);
-	line-height: var(--font-trail-lheight);
+	line-height: var(--font-trail-height);
 	font-family: var(--font-trail-family);
 }
 
@@ -386,6 +386,11 @@ a:focus {
 	padding-bottom: 10px;
 	fill:white;
 	font-size: var( --step--3);
+  }
+
+.anotations {
+	fill:white;
+	font-size: var( --step-1);
   }
 
 .support {

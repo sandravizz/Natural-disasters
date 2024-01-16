@@ -159,6 +159,17 @@ innerChart3
     .on("mouseout", tooltip.hide);
 
 // --------------------------------------
+//  Description text 
+// --------------------------------------
+
+innerChart3
+    .append("text")
+    .attr("x", 430)
+    .attr("y", 10)
+    .attr("class", "anotations")
+    .text("WTF 😱");
+
+// --------------------------------------
 //  Buttons 
 // --------------------------------------
 
@@ -192,7 +203,12 @@ innerChart3
             .transition()
             .duration(1000)
             .attr("fill-opacity", (d) => (d.Hurricane === true ? 0 : 0)); 
-       
+
+        d3.selectAll(".anotations")
+            .transition()
+           .duration(1000)
+           .attr("opacity", 0);
+                  
     });
 
 //When clicking on the hurricane button
@@ -211,6 +227,11 @@ innerChart3
         .duration(1000)
         .attr("fill-opacity", (d) => (d.Hurricane === true ? 0.7 : 0.7)); 
 
+    d3.selectAll(".anotations")
+            .transition()
+           .duration(1000)
+           .attr("opacity", 0);
+
 });
 
 //When clicking on the reset button
@@ -228,6 +249,11 @@ innerChart3
             .transition()
             .duration(1000)
             .attr("fill-opacity", (d) => (d.Hurricane === true ? 0.7 : 0.7)); 
+ 
+        d3.selectAll(".anotations")
+            .transition()
+           .duration(1000)
+           .attr("opacity", 1);
 
 });
 
