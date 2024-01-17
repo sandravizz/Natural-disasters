@@ -2,7 +2,7 @@
 //  Margin and canvas
 // --------------------------------------
 
-const margin3 = {top: 55, right: 15, bottom: 40, left:15};
+const margin3 = {top: 55, right: 15, bottom: 30, left:15};
 const width3 = 1000;
 const height3 = 450;
 const innerwidth3 = width3 - margin3.left - margin3.right;
@@ -21,13 +21,12 @@ const innerChart3 = svg3
 // --------------------------------------
 
 parseDate = d3.timeParse("%Y");
-console.log(parseDate("2015"));
 formatDate = d3.timeFormat("%Y");
+format = d3.format(".03s");
 
 // --------------------------------------
 //  Data loading
 // --------------------------------------
-
 
 const data3 = d3.csv("./data/tropical.csv", d => {
 
@@ -41,7 +40,7 @@ const data3 = d3.csv("./data/tropical.csv", d => {
 
   }).then(data3 => {
 
-    console.log(data3);
+// console.log(data3);
 
 // --------------------------------------
 // Tooltip
@@ -50,7 +49,7 @@ const data3 = d3.csv("./data/tropical.csv", d => {
 const tooltip = d3.tip()
     .attr("class", "tooltip")
     .html(
-      (event, d) => `<div>${(d.Name)}<br>Year ${(d.Year)}</br>Death ${(d.Deaths)}<br>Damage ${format(d.Costs)}</br></div>`
+      (event, d) => `<div>${(d.Name)}<br>Year ${formatDate(d.Year)}</br>Death ${(d.Deaths)}<br>Damage ${format(d.Costs)}</br></div>`
     );
 
 svg3.call(tooltip); 
@@ -87,11 +86,21 @@ innerChart3.append("g")
     .attr("class", "x-axis")
     .attr("transform", `translate(0, ${innerheight3})`)
     .call(d3.axisBottom(x)
-        	.tickValues([parseDate(1980), parseDate(1992), parseDate(2005), parseDate(2012), parseDate(2017), parseDate(2020), parseDate(2022)]) 
+        	.tickValues([parseDate(1980), parseDate(2023)]) 
             .tickFormat(formatDate)
      		.tickSize(10)
             .tickPadding(5));
 
+    d3.select(".x-axis")
+            .transition()
+            .delay(9000)
+            .duration(500)
+            .call(d3.axisBottom(x)
+            .tickValues([parseDate(1980), parseDate(1992), parseDate(2005), parseDate(2012), parseDate(2017), parseDate(2020), parseDate(2023)])
+            .tickFormat(formatDate)
+            .tickSize(10)
+            .tickPadding(5));
+         
 // --------------------------------------
 //  Data drawing check
 // --------------------------------------
@@ -110,8 +119,8 @@ innerChart3
     .attr("stroke-width", 0.7)
     .attr("opacity", 0.87)
     .transition()
-    .delay((d, i) => 2000+ x(d.Year) * 25)
-    .duration(2000)
+    .delay((d, i) => 500+ x(d.Year) * 5)
+    .duration(1000)
     .attr("y2", (d) => y(d.Costs) + r1(d.Costs));
 
 //Circle costs
@@ -132,8 +141,8 @@ innerChart3
     .on("mouseover", tooltip.show)
     .on("mouseout", tooltip.hide)
     .transition()
-    .delay((d, i) => 2000+ x(d.Year) * 25)
-    .duration(2000)
+    .delay((d, i) => 500+ x(d.Year) * 5)
+    .duration(1000)
     .attr("r", (d) => r1(d.Costs));
 
 //Circle death
@@ -151,7 +160,7 @@ innerChart3
     .on("mouseover", tooltip.show)
     .on("mouseout", tooltip.hide)
     .transition()
-    .delay(28000)
+    .delay(7000)
     .duration(500)
     .attr("r", (d) => r2(d.Deaths)); 
 
@@ -171,7 +180,7 @@ innerChart3
     .on("mouseover", tooltip.show)
     .on("mouseout", tooltip.hide)
     .transition()
-    .delay(30000)
+    .delay(8000)
     .duration(500)
     .attr("opacity", 1); 
 
@@ -187,7 +196,7 @@ innerChart3
     .text("WTF 😱")
     .attr("opacity", 0) 
     .transition()
-    .delay(32000)
+    .delay(12000)
     .duration(500)
     .attr("opacity", 1); 
 
@@ -210,7 +219,7 @@ innerChart3
         .text(d => d.label)
         .style("color", d => d.color);
 
-//When clicking on the deaths button
+//Click event: deaths
 
     d3.select("#deaths")
         .on("click", (e, d) => {
@@ -233,7 +242,7 @@ innerChart3
                   
     });
 
-//When clicking on the hurricane button
+//Click event: damage
 
     d3.select("#damage")
         .on("click", (e, d) => {
@@ -256,7 +265,7 @@ innerChart3
 
 });
 
-//When clicking on the reset button
+//Click event: reset
 
     d3.select("#reset")
         .on("click", (e, d) => {
