@@ -2,7 +2,7 @@
 
 The more time I spend in nature the more fascinated I get with its beauty, wisdom and teachings. It's hard to put into words so I quote Albert Einstein, who said *Look deep into nature, and then you will understand everything better*. 
 
-At the same time climate change is becoming real and threatening all life in this planet. Responding to [Aaron Swartz](https://en.wikipedia.org/wiki/Aaron_Swartz)'s question- *What is the most important thing you could be working on in the world right now? And if you're not working on that, why aren't you?* I believe this is the most important thing right now.  
+At the same time climate change is becoming real and threatening all life on this planet. Responding to [Aaron Swartz](https://en.wikipedia.org/wiki/Aaron_Swartz)'s question- *What is the most important thing you could be working on in the world right now? And if you're not working on that, why aren't you?* I believe this is the most important thing right now.  
 
 In this project I analyse deeply the most destructive natural disasters happening in the US over the last decades. The main objective is to understand patterns and possible changes over time providing a sourcefull foundation for discussion or further research. 
 
