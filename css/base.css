@@ -230,7 +230,7 @@ a:focus {
 	grid-template-areas: 'inner';
 	align-items: center;
 	opacity: 0;
-	pointer-events: none;
+	pointer-events: auto;
 }
 
 .content__slide--current {
@@ -283,7 +283,7 @@ a:focus {
 	overflow: hidden;
 	flex: 1;
 	opacity: 0;
-	pointer-events: none;
+	pointer-events: auto;
 }
 
 .content__text:nth-child(6) {
@@ -357,7 +357,7 @@ a:focus {
 		width: 100%;
 		height: 100%;
 		padding: 2rem 2rem 2rem 2rem;
-		pointer-events: none;
+		pointer-events: auto;
 	}
 
 	.frame__tagline {

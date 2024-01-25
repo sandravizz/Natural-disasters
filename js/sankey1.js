@@ -117,6 +117,10 @@ innerChart
     .join("rect")
     .attr("x", (d) => d.x0)
     .attr("fill", (d) => (d.x0 < innerWidth / 2 ? color(d.name) : "white"))
+    .attr("y", (d) => y(d.name))
+    .attr("height", y.bandwidth())
+    .attr("width", (d) => d.y1 - d.y0)
+    .attr("opacity", (d) => (d.x0 < innerWidth / 2 ? 1 : 0))
     .on("mouseover", (e, d) => {
       d3.selectAll(".sankey_path").style("opacity", (p) =>
         p.source.name === d.name || p.target.name === d.name ? "0.9" : "0.1"
@@ -125,10 +129,6 @@ innerChart
     .on("mouseout", (e, d) => {
       d3.selectAll(".sankey_path").style("opacity", 0.9);
     })
-    .attr("y", (d) => y(d.name))
-    .attr("height", y.bandwidth())
-    .attr("width", (d) => d.y1 - d.y0)
-    .attr("opacity", (d) => (d.x0 < innerWidth / 2 ? 1 : 0))
     .transition()
     .delay(4500)
     .duration(1500)
