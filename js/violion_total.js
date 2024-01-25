@@ -89,15 +89,15 @@ innerChart00
     .attr("class", "tspan")
     .attr("x", 0)
     .attr("y", 70)
-    .text("Long tail is the name for a long-known feature of some statistical distributions.")
+    .text("Long tail is the name for a feature of some statistical distributions.")
     .append("tspan")
     .attr("x", 0)
     .attr("y", 85)
-    .text("A high-amplitude is followed by a low-amplitude population.")
+    .text("The head of the graph includes disaster events causing less damage happening freuqently.")
     .append("tspan")
     .attr("x", 0)
     .attr("y", 100)
-    .text("Events at the far end of the tail have a very low probability of occurrence.");
+    .text("Whereas events at the far end of the tail have a very low probability of occurrence.");
 
 // --------------------------------------
 //  Axes

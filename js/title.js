@@ -134,7 +134,7 @@
         constructor(el) {
             this.DOM = {el: el};
             this.DOM.nav = {
-                next: this.DOM.el.querySelector('.content__nav-button--next')
+                next: this.DOM.el.querySelector('.content__nav-button')
             };
             this.slides = [];
             [...this.DOM.el.querySelectorAll('.content__slide')].forEach(slide => this.slides.push(new Slide(slide)));
@@ -168,10 +168,12 @@
                 });
                 upcomingSlide.textFX.DOM.texts[upcomingSlide.textFX.middleIdx].style.opacity = 0;
             };
+
             const onCurrentEndCallback = () => {
                 currentSlide.DOM.el.classList.remove('content__slide--current');
                 upcomingSlide.textFX.show({dir: dir === 'next' ? 'down' : 'up'}).then(() => this.isAnimating = false);
             };
+
             currentSlide.textFX.hide({dir: dir === 'next' ? 'up' : 'down', halfwayCallback: onCurrentHalfwayCallback}).then(onCurrentEndCallback);
         }
     }

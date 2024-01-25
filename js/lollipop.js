@@ -156,7 +156,7 @@ innerChart3
     .attr("cy", (d) => y(d.Costs))
     .attr("r", 0)
     .attr("fill", "#ff00c4")
-    .attr("fill-opacity", 0.7)
+    .attr("fill-opacity", 1)
     .on("mouseover", tooltip.show)
     .on("mouseout", tooltip.hide)
     .transition()
@@ -172,8 +172,8 @@ innerChart3
     .join("text")
     .filter(d => d.Costs > 80000)
     .attr("x", (d) => x(d.Year) -2)
-    .attr("y", (d) => y(d.Costs) - d3.max([r1(d.Costs),r2(d.Deaths)])-6)
-    .attr("class", "super_hurricane")
+    .attr("y", (d) => y(d.Costs) + d3.max([r1(d.Costs),r2(d.Deaths)]) + 10)
+    .attr("class", "anotations2")
     .attr("opacity", 0)
     .text(d => d.Name)
     .attr("text-anchor", "end")
@@ -190,7 +190,7 @@ innerChart3
 
 innerChart3
     .append("text")
-    .attr("x", 430)
+    .attr("x", 470)
     .attr("y", 10)
     .attr("class", "anotations")
     .text("WTF 😱")
@@ -205,19 +205,19 @@ innerChart3
 // --------------------------------------
 
     const filters = [
-    { id: "damage", label: "Damage", isActive: false,  color: "#ccff99" },
-    { id: "deaths", label: "Deaths", isActive: false, color: "#ff00c4" },
-    { id: "reset", label: "Reset", isActive: false, color: "lightgrey" }
+    { id: "damage", label: "Damage", isActive: false,  backgroundcolor: "#ccff99" },
+    { id: "deaths", label: "Deaths", isActive: false, backgroundcolor: "#ff00c4" },
+    { id: "reset", label: "Reset", isActive: false, backgroundcolor: "lightgrey" }
     ];
 
     d3.select("#filters")
         .selectAll(".filter")
         .data(filters)
         .join("button")
-        .attr("class", "content__nav-button content__nav-button--prev")
         .attr("id", d => d.id)
         .text(d => d.label)
-        .style("color", d => d.color);
+        .style("color", "#00161f")
+        .style("background-color", d => d.backgroundcolor);
 
 //Click event: deaths
 
@@ -227,7 +227,7 @@ innerChart3
         d3.selectAll(".death_circle")
             .transition()
             .duration(1000)
-            .attr("fill-opacity", 0.7);
+            .attr("fill-opacity", 1);
         
         d3.selectAll(".cost_circle")
             .data(data3)
@@ -256,7 +256,7 @@ innerChart3
         .data(data3)
         .transition()
         .duration(1000)
-        .attr("fill-opacity", (d) => (d.Hurricane === true ? 0.7 : 0.7)); 
+        .attr("fill-opacity", (d) => (d.Hurricane === true ? 0.87 : 0.87)); 
 
     d3.selectAll(".anotations")
             .transition()
@@ -273,13 +273,13 @@ innerChart3
         d3.selectAll(".death_circle")
             .transition()
             .duration(1000)
-            .attr("fill-opacity", 0.7);
+            .attr("fill-opacity", 1);
 
         d3.selectAll(".cost_circle")
             .data(data3)
             .transition()
             .duration(1000)
-            .attr("fill-opacity", (d) => (d.Hurricane === true ? 0.7 : 0.7)); 
+            .attr("fill-opacity", (d) => (d.Hurricane === true ? 0.87 : 0.87)); 
  
         d3.selectAll(".anotations")
             .transition()

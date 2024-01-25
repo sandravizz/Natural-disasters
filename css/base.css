@@ -1,6 +1,3 @@
-
-/****************************+ Page *****+********************************************/
-
 /*--------------------------------------*/
 /* Global stylings */
 /*--------------------------------------*/
@@ -33,10 +30,6 @@ footer,header,hgroup,main,section,summary{
 	display:block;
 }
 
-img {
-	border:0;
-}
-
 abbr[title]{
 	border-bottom:1px dotted;
 }
@@ -51,29 +44,16 @@ dfn{
 
 hr{
 	-moz-box-sizing:content-box;
-	box-sizing:content-box;height:0;
+	box-sizing:content-box;
+	height:0;
 }
 
 pre{white-space:pre-wrap;}
 q{quotes:"\201C" "\201D" "\2018" "\2019";}
-
-
-
-sup{top:-0.5em;}sub{bottom:-0.25em;}
-
+sup{top:-0.5em;}
+sub{bottom:-0.25em;}
 svg:not(:root){overflow:hidden;}
-
-button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}
-button,input{line-height:normal;}
-button,select{text-transform:none;}
-button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;}
-button[disabled],html input[disabled]{cursor:default;}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;}
-
-input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}
-input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none;}
-
-button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
-
+button,input,select,textarea{font-family:inherit;font-size:100%}
 textarea{overflow:auto;vertical-align:top;}
 
 *,
@@ -181,11 +161,24 @@ a:focus {
 /*--------------------------------------*/
 
 .frame {
-	padding: 0 0 0 0;
 	text-align: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 2rem 2rem 2rem 2rem;
+	pointer-events: auto;
+}
+
+.frame__tagline {
+	justify-self: end;
+	margin: 0;
+	text-align: right;
 }
 
 .frame__links {
+	padding: 0;
+	justify-self: start;
 	font-size: var( --step--2);
 }
 
@@ -195,7 +188,8 @@ a:focus {
 }
 
 .frame__demos {
-	margin: 1rem 0; /*On top of the slide numbers*/
+	margin: 1rem 0;
+	justify-self: end;
 	font-size: var( --step--2);
 }
 
@@ -209,11 +203,11 @@ a:focus {
 /*--------------------------------------*/
 
 .content {
-	display: grid;
+	display: grid; 
 	grid-template-rows: 100%;
 	grid-template-columns: 100%;
 	grid-template-areas: 'main';
-	height: calc(100vh - 19rem);
+	height: calc(120vh - 19rem);
 	width: 100%;
 	margin: 0 auto;
 	position: relative;
@@ -244,18 +238,12 @@ a:focus {
 }
 
 .content__img {
-	height: calc(100vh - 25rem);
-	width: 90%;
-	max-width: calc(1000px - 11rem);
-	max-height: 600px;
+	width: 100%;
+	height:100%;
 	justify-self: center;
-	overflow: hidden;
-	z-index: -1;
-	position: relative;
 }
 
 .content__img--full::after {
-	content: '';
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -267,7 +255,6 @@ a:focus {
 .content__img-inner {
 	width: 100%;
 	height: 100%;
-	background-position: 50% 50%;
 	background-size: cover;
 }
 
@@ -280,6 +267,7 @@ a:focus {
 }
 
 .content__text {
+	font-size: var(--step-5);
 	overflow: hidden;
 	flex: 1;
 	opacity: 0;
@@ -320,96 +308,47 @@ a:focus {
 /*--------------------------------------*/
 
 .content__nav {
-	grid-area: main;
-	justify-self: center;
-	align-self: end;
-	width: 80%;
-	max-width: 900px;
-	height: auto;
-	display: flex;
-	align-items: flex-end;
-	justify-content: center;
-	font-size: 1rem;
-	position: relative;
+	height: 100%;
 }
 
 .content__nav-button {
+	font-weight: 400;
+	line-height: 1.5rem;
+	border-radius: 10px;
+	cursor: pointer;
+	border: 0;
+	background: #00161f;
+	color: white;
+}
+
+#filters  {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+#filters button  {
 	border: 0;
 	cursor: pointer;
-	background: none;
-	margin: 0 0 0 0;
-	padding: 5;
-	color: var(--color-nav);
-	font-weight: 300;
-	line-height: 1;
+	background: #00161f;
+	color: white;
+	font-weight: 400;
+	line-height: 1.5rem;
+	border-radius: 10px;
 }
+
+#filters button:hover {
+	border-radius: 40px;
+}
+
 
 /*--------------------------------------*/
 /* Screen stylings */
 /*--------------------------------------*/
 
-@media screen and (min-width: 0em) {
+/* @media screen and (min-width: 805px) {
 
-	.frame {
-		text-align: center;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		padding: 2rem 2rem 2rem 2rem;
-		pointer-events: auto;
-	}
-
-	.frame__tagline {
-		justify-self: end;
-		margin: 0;
-		text-align: right;
-	}
-
-	.frame__demos {
-		margin: 1;
-		justify-self: end;
-	}
-
-	.frame__links {
-		padding: 0;
-		justify-self: start;
-	}
-
-	.frame a {
-		pointer-events: auto;
-	}
-
-	.content {
-		height: 100%;
-	}
-
-	.content__img {
-		width: calc(90% - 11rem);
-		height: 100%;
-	}
-
-	.content__img--full {
-		height: 100%;
-		width: 100%;
-		max-width: none;
-		max-height: none;
-	}
-
-	.content__text-inner {
-		font-size: var( --step-5);
-	}
-
-	.content__nav {
-		margin-top: 0vh;
-		margin-left: 0vh;
-		font-size: var( --step-0);
-	}
-	.demo-5 .content__text-inner--stroke {
-		-webkit-text-stroke: 2px var(--color-slide-text);
-		text-stroke: 2px var(--color-slide-text);
-	}
-}
+	
+} */
 
 /****************************+ Dataviz ********************************************/
 
@@ -448,6 +387,11 @@ a:focus {
 .anotations {
 	fill:white;
 	font-size: var( --step--1);
+  }
+
+.anotations2 {
+	fill:white;
+	font-size: var( --step--3);
   }
 
 .support {
