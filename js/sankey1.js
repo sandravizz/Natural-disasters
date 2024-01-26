@@ -2,9 +2,9 @@
 //  Margin and canvas
 // --------------------------------------
 
-  const margin = {top: 0, right: 90, bottom: 30, left: 130};
+  const margin = {top: 0, right: 90, bottom: 20, left: 130};
   const width = 1000;
-  const height = 530;
+  const height = 450;
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 
@@ -84,7 +84,7 @@ let color = d3.scaleOrdinal()
 // for the stacked bar chart
 let y = d3.scaleBand()
     .domain(["Winter", "Wildfire", "Flooding", "Drought", "Storm", "Cyclone"])
-    .rangeRound([innerHeight, 0])
+    .rangeRound([300, 0])
     .padding(0.1);
 
 // --------------------------------------
@@ -97,7 +97,7 @@ const sankey = d3.sankey()
   .nodeId((d) => d.id)
   .linkSort(null)
   .nodeWidth(25) 
-  .nodePadding(18) //space between each node
+  .nodePadding(5) //space between each node
   .extent([
     [0, 0],
     [innerWidth, innerHeight]
@@ -152,7 +152,7 @@ innerChart
     .attr("fill", "white")
     .attr("dy", "0.4em")
     .attr("text-anchor", (d) => (d.x0 < innerWidth / 2 ? "end" : "start"))
-    .attr("y",  (d) => (d.x0 < innerWidth / 2 ? (y(d.name) + 40) : ((d.y1 + d.y0) / 2)))
+    .attr("y",  (d) => (d.x0 < innerWidth / 2 ? (y(d.name) + 25) : ((d.y1 + d.y0) / 2)))
     .attr("opacity", (d) => (d.x0 > innerWidth / 2 ? 0 : 1))
     .transition()
     .delay(4500)

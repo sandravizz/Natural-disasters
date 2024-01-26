@@ -80,7 +80,7 @@ const data2 = d3.csv("./data/sankey_data2.csv", d3.autoType)
       .nodeId((d) => d.id)
       .linkSort(null)
       .nodeWidth(25) //
-      .nodePadding(18) //space between each node
+      .nodePadding(5) //space between each node
       .extent([
         [0, 0],
         [innerWidth2, innerHeight2]

@@ -408,9 +408,8 @@ text {
 
 .support {
   display: inline-block;
-  margin: 2px 1px;
-  padding: 3px 6px;
-  line-height: 2rem;
+  padding-left: 10px;
+  padding-right: 10px;
   font-weight: 500;
   border-radius: 10px;
 }

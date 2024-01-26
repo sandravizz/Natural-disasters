@@ -114,7 +114,7 @@ const data0 = d3.csv("./data/violin.csv", d3.autoType)
         .data(disaster)
         .join("text")
         .text((d) => (d.count) + " " +  (d.id) + "s" )
-        .attr("x", (d, i) => 10 + i * 173)
+        .attr("x", (d, i) => 15 + i * 177)
         .attr("y", -10)
         .attr("fill", (d) => color(d.id));
 

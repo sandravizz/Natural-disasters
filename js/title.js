@@ -144,7 +144,7 @@
             this.initEvents();
         }
         initEvents() {      
-            setInterval(this.navigate.bind(this), 2000, 'next');
+            // setInterval(this.navigate.bind(this), 4000, 'next');
         }
         navigate(dir) {
             if ( this.isAnimating ) {
