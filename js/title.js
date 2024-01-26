@@ -143,9 +143,8 @@
             this.slides[this.current].DOM.el.classList.add('content__slide--current');
             this.initEvents();
         }
-        initEvents() {
-            this.onClickNextFn = _ => this.navigate('next');
-            this.DOM.nav.next.addEventListener('click', this.onClickNextFn);
+        initEvents() {      
+            setInterval(this.navigate.bind(this), 2000, 'next');
         }
         navigate(dir) {
             if ( this.isAnimating ) {

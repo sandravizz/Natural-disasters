@@ -18,7 +18,6 @@ body {
 	--color-link: #eaf8e9;
     --color-link-hover: #f6fcff;
     --color-slide-text: #f6fcff;
-	--font-trail-lheight: 1.3;
 	color: var(--color-text);
 	background-color: var(--color-bg);
 	font-family: 'Montserrat Alternates', sans-serif;
@@ -307,10 +306,6 @@ a:focus {
 /* Button stylings */
 /*--------------------------------------*/
 
-.content__nav {
-	height: 100%;
-}
-
 .content__nav-button {
 	font-weight: 400;
 	line-height: 1.5rem;
@@ -356,11 +351,20 @@ a:focus {
 /* Text stylings */
 /*--------------------------------------*/
 
-.article {
+.title {
   margin-bottom: 20px;
   margin-top:20px;
   font-size: var( --step-1);
 }
+
+.article {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-left: 100px;
+	margin-right: 100px;
+	line-height: 1.6rem;
+	font-size: var( --step--1);
+  }
 
 .chart_title {
 	margin-bottom: 30px;
@@ -368,13 +372,21 @@ a:focus {
 	font-size: var( --step--1);
   }
 
-.text {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
+text {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
   fill:white;
-  font-size: var( --step--3);
+  font-size: var( --step--4);
 }
+
+.tspan {
+	fill: white;
+	font-size: var( --step--4);
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+  }
 
 .text2 {
 	margin-top: 20px;
@@ -430,11 +442,6 @@ a:focus {
 .super_hurricane {
   fill: #ccff99;
   font-size: var( --step--2);
-}
-
-.tspan {
-  fill: white;
-  font-size: var( --step--3);
 }
 
 /*--------------------------------------*/
