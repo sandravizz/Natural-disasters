@@ -160,6 +160,8 @@ a:focus {
 /*--------------------------------------*/
 
 .frame {
+	position:absolute;
+	z-index: 999999;
 	text-align: center;
 	top: 0;
 	left: 0;
@@ -206,7 +208,7 @@ a:focus {
 	grid-template-rows: 100%;
 	grid-template-columns: 100%;
 	grid-template-areas: 'main';
-	height: calc(120vh - 19rem);
+	height: 100vh;
 	width: 100%;
 	margin: 0 auto;
 	position: relative;
@@ -335,16 +337,6 @@ a:focus {
 	border-radius: 40px;
 }
 
-
-/*--------------------------------------*/
-/* Screen stylings */
-/*--------------------------------------*/
-
-/* @media screen and (min-width: 805px) {
-
-	
-} */
-
 /****************************+ Dataviz ********************************************/
 
 /*--------------------------------------*/
@@ -372,7 +364,7 @@ a:focus {
 	font-size: var( --step--1);
   }
 
-text {
+.text {
   margin-top: 0px;
   margin-bottom: 0px;
   padding-bottom: 0px;
@@ -501,3 +493,24 @@ text {
   stroke-opacity:1;
   stroke:white;
 }
+
+/*--------------------------------------*/
+/* Screen stylings */
+/*--------------------------------------*/
+
+/* @media screen and (min-width: 1025px) {
+
+body {
+		background-color: red;
+	  }
+	
+.text {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	fill:white;
+	font-size: 20px;
+  }
+
+	
+} */

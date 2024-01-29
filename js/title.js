@@ -133,9 +133,6 @@
     class Slideshow {
         constructor(el) {
             this.DOM = {el: el};
-            this.DOM.nav = {
-                next: this.DOM.el.querySelector('.content__nav-button')
-            };
             this.slides = [];
             [...this.DOM.el.querySelectorAll('.content__slide')].forEach(slide => this.slides.push(new Slide(slide)));
             this.slidesTotal = this.slides.length;
@@ -144,7 +141,7 @@
             this.initEvents();
         }
         initEvents() {      
-            setInterval(this.navigate.bind(this), 4000, 'next');
+            setTimeout(setInterval(this.navigate.bind(this), 5000, 'next'), 3000);
         }
         navigate(dir) {
             if ( this.isAnimating ) {
