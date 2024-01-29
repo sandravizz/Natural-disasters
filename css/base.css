@@ -180,7 +180,8 @@ a:focus {
 .frame__links {
 	padding: 0;
 	justify-self: start;
-	font-size: var( --step--2);
+	font-weight: 500;
+	font-size: var( --step--1);
 }
 
 .frame__links a:not(:last-child),
@@ -191,12 +192,13 @@ a:focus {
 .frame__demos {
 	margin: 1rem 0;
 	justify-self: end;
-	font-size: var( --step--2);
+	font-weight: 600;
+	font-size: var( --step--1);
 }
 
-.frame__demo--current,
-.frame__demo--current:hover {
-	color: var(--color-text);
+.frame__demos:hover, .frame__links:hover {
+	font-weight: 800;
+	font-size: var( --step--1);
 }
 
 /*--------------------------------------*/
@@ -268,7 +270,7 @@ a:focus {
 }
 
 .content__text {
-	font-size: var(--step-5);
+	font-size: 85px;
 	overflow: hidden;
 	flex: 1;
 	opacity: 0;
@@ -297,8 +299,8 @@ a:focus {
 }
 
 .content__text-inner--stroke {
-	-webkit-text-stroke: 1.8px var(--color-slide-text);
-	text-stroke: 1.8px var(--color-slide-text);
+	-webkit-text-stroke: 2.5px var(--color-slide-text);
+	text-stroke: 2.5px var(--color-slide-text);
 	-webkit-text-fill-color: transparent;
 	text-fill-color: transparent;
 	color: transparent;

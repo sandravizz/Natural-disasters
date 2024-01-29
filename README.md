@@ -19,7 +19,7 @@ The first step is always to check your data and variable structure as well as ge
 
  ## 1 Intro | TweenMax.js
 
-![Alt text](img/1.png)
+
 
 This is a very short visual intro to the project using images, music and effects to create an atmosphere that matches the information shared, please check out this [video](https://www.youtube.com/watch?v=vxkJkISGWGM). 
 
@@ -30,7 +30,7 @@ Credits to
 
  ## 2 Violin chart | d3.js 
 
-![Alt text](img/2.png)
+
 
  ## 3 Sankey diagram by decade | d3.js 
 
@@ -38,19 +38,19 @@ Credits to
  
  Please find a short introduction to this sankey, how to reand and interpret it in this [video](https://www.youtube.com/watch?v=iPAET_ZtVxI) and on how I created the dataset for the sankey in this [video](https://www.youtube.com/watch?v=kFycJtlujEs). If you want to understand the code behind this visualisation please check out the this [video](https://www.youtube.com/watch?v=VV39xSZAJ6c).
 
- ![Alt text](img/3.png)
+
 
  ## 4 Sankey diagram recent year | d3.js 
 
  In this second sankey its all about our current decade and the question where are we heading now? Looking on the first 3 years only we can see that the trend stays the same but everything seems to speed up. 
 
- ![Alt text](img/4.png)
+
 
  ## 5 D3.js visualisation | Lollipop chart
 
 Therefore the logic question is so why tropical cyclones are the ones causing this super disasters now. Therefore I filtered only on these ones and chacke now by year how they developed. The main question is, if these aggregated data are mainly based on a few outliers or an actual behaviour change?
 
-![Alt text](img/5.png)
+
  
  
 
