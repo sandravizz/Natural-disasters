@@ -21,9 +21,6 @@ body {
 	font-family: 'Montserrat Alternates', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-}
-
-main {
 	display: block;
 }
 
@@ -38,15 +35,33 @@ main {
 /*--------------------------------------*/
 
 :root {
+	/* Step -8: 10.71px → 3.36px */
+	--step--8: clamp(0.21rem, 0.8006rem + -0.6562vw, 0.6694rem);
+	/* Step -7: 11.43px → 4.19px */
+	--step--7: clamp(0.2619rem, 0.8437rem + -0.6464vw, 0.7144rem);
+	/* Step -6: 12.20px → 5.24px */
+	--step--6: clamp(0.3275rem, 0.8868rem + -0.6214vw, 0.7625rem);
+	/* Step -5: 13.02px → 6.55px */
+	--step--5: clamp(0.4094rem, 0.9293rem + -0.5777vw, 0.8138rem);
+	/* Step -4: 13.89px → 8.19px */
 	--step--4: clamp(0.5119rem, 0.9699rem + -0.5089vw, 0.8681rem);
+	/* Step -3: 14.82px → 10.24px */
 	--step--3: clamp(0.64rem, 1.008rem + -0.4089vw, 0.9263rem);
+	/* Step -2: 15.81px → 12.80px */
 	--step--2: clamp(0.8rem, 1.0419rem + -0.2687vw, 0.9881rem);
+	/* Step -1: 16.87px → 16.00px */
 	--step--1: clamp(1rem, 1.0699rem + -0.0777vw, 1.0544rem);
+	/* Step 0: 18.00px → 20.00px */
 	--step-0: clamp(1.125rem, 1.0893rem + 0.1786vw, 1.25rem);
+	/* Step 1: 19.21px → 25.00px */
 	--step-1: clamp(1.2006rem, 1.0972rem + 0.517vw, 1.5625rem);
+	/* Step 2: 20.49px → 31.25px */
 	--step-2: clamp(1.2806rem, 1.0885rem + 0.9607vw, 1.9531rem);
+	/* Step 3: 21.87px → 39.06px */
 	--step-3: clamp(1.3669rem, 1.0599rem + 1.5348vw, 2.4413rem);
+	/* Step 4: 23.33px → 48.83px */
 	--step-4: clamp(1.4581rem, 1.0028rem + 2.2768vw, 3.0519rem);
+	/* Step 5: 24.89px → 61.04px */
 	--step-5: clamp(1.5556rem, 0.9101rem + 3.2277vw, 3.815rem);
   }
 
@@ -268,7 +283,7 @@ a:focus {
 /*--------------------------------------*/
 
 #filters  {
-	display: flex;
+	display: left;
 	justify-content: space-evenly;
 }
 
@@ -280,10 +295,12 @@ a:focus {
 	font-weight: 400;
 	line-height: 1.5rem;
 	border-radius: 10px;
+	font-size: var( --step--2);
+	font-family: 'Montserrat Alternates', sans-serif;
 }
 
 #filters button:hover {
-	border-radius: 40px;
+	border-radius: 40px;	
 }
 
 /*--------------------------------------*/
@@ -316,12 +333,12 @@ a:focus {
   margin-bottom: 0px;
   padding-bottom: 0px;
   fill:white;
-  font-size: var( --step--4);
+  font-size: var( --step--3);
 }
 
 .tspan {
 	fill: white;
-	font-size: var( --step--4);
+	font-size: var( --step--3);
 	margin-top: 0px;
 	margin-bottom: 0px;
 	padding-bottom: 0px;
@@ -447,42 +464,50 @@ a:focus {
 
 @media screen and (max-width: 1274px) {
 
-.content__text {
-		font-size: 65px;
+	.content__text {font-size: 65px;}
+	#filters button {line-height: 1.5rem; font-size: var( --step--2);}
+	.title {font-size: var( --step-1); margin-bottom:20px; margin-top:20px;}
+	.chart_title {font-size: var( --step--1); margin-bottom: 30px; margin-top:20px;}
+	.frame__demos {font-size: var( --step--1);}
+	.frame__links {font-size: var( --step--1);}
+
 	}
-		
-}
 
 @media screen and (max-width: 1000px) {
 
-	.content__text {
-			font-size: 45px;
-		}
-			
+	.content__text {font-size: 45px;}
+	.text {font-size: var( --step--4);}
+	.tspan {font-size: var( --step--4);}
+	#filters button  {line-height: 1.3rem; font-size: var( --step--3);}
+	.title {font-size: var( --step-0); margin-bottom:15px; margin-top:15px;}
+	.chart_title {font-size: var( --step--2); margin-bottom: 25px; margin-top:15px;}
+	.frame__demos {font-size: var( --step--2);}
+	.frame__links {font-size: var( --step--2);}
+
 	}
 
 @media screen and (max-width: 700px) {
 
-		.content__text {
-				font-size: 25px;
-				
-			}
+	.content__text {font-size: 25px;}
+	.content__text-inner--stroke {-webkit-text-stroke: 1px var(--color-slide-text);}
+	#filters button  {font-weight: 400; line-height: 1.1rem; font-size: var( --step--4);}
+	.title {font-size: var( --step--1); margin-bottom:10px; margin-top:10px;}
+	.chart_title {font-size: var( --step--3); margin-bottom: 20px; margin-top:10px;}
+	.frame__demos {font-size: var( --step--3);}
+	.frame__links {font-size: var( --step--3);}
 
-		.content__text-inner--stroke {
-				-webkit-text-stroke: 1px var(--color-slide-text);
-			}
-				
-		}
+	}
 
 @media screen and (max-width: 400px) {
 
-			.content__text {
-					font-size: 20px;
+	.content__text {font-size: 20px;}	
+	.content__text-inner--stroke {-webkit-text-stroke: 1px var(--color-slide-text);}
+	.text {font-size: var( --step--6);}		
+	.tspan {font-size: var( --step--6);}
+	#filters button  {font-weight: 400; line-height: 1rem; font-size: var( --step--8);}
+	.title {font-size: var( --step--2); margin-bottom:5px; margin-top:5px;}
+	.chart_title {font-size: var( --step--4); margin-bottom: 15px; margin-top:5px;}
+	.frame__demos {font-size: var( --step--4);}
+	.frame__links {font-size: var( --step--4);}
 					
-				}
-	
-			.content__text-inner--stroke {
-					-webkit-text-stroke: 1px var(--color-slide-text);
-				}
-					
-			}
+	}

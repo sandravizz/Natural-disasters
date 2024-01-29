@@ -46,13 +46,13 @@ const data3 = d3.csv("./data/tropical.csv", d => {
 // Tooltip
 // --------------------------------------
 
-const tooltip = d3.tip()
-    .attr("class", "tooltip")
-    .html(
-      (event, d) => `<div>${(d.Name)}<br>Year ${formatDate(d.Year)}</br>Death ${(d.Deaths)}<br>Damage ${format(d.Costs)}</br></div>`
-    );
+// const tooltip = d3.tip()
+//     .attr("class", "tooltip")
+//     .html(
+//       (event, d) => `<div>${(d.Name)}<br>Year ${formatDate(d.Year)}</br>Death ${(d.Deaths)}<br>Damage ${format(d.Costs)}</br></div>`
+//     );
 
-svg3.call(tooltip); 
+// svg3.call(tooltip); 
 
 // --------------------------------------
 //  Scales
@@ -138,8 +138,8 @@ innerChart3
     .attr("stroke", (d) => c(d.Hurricane))
     .attr("stroke-opacity", 1)
     .attr("stroke-width", 0.2)
-    .on("mouseover", tooltip.show)
-    .on("mouseout", tooltip.hide)
+    // .on("mouseover", tooltip.show)
+    // .on("mouseout", tooltip.hide)
     .transition()
     .delay((d, i) => 500+ x(d.Year) * 5)
     .duration(1000)
@@ -157,8 +157,8 @@ innerChart3
     .attr("r", 0)
     .attr("fill", "#ff00c4")
     .attr("fill-opacity", 1)
-    .on("mouseover", tooltip.show)
-    .on("mouseout", tooltip.hide)
+    // .on("mouseover", tooltip.show)
+    // .on("mouseout", tooltip.hide)
     .transition()
     .delay(7000)
     .duration(500)
@@ -177,8 +177,8 @@ innerChart3
     .attr("opacity", 0)
     .text(d => d.Name)
     .attr("text-anchor", "end")
-    .on("mouseover", tooltip.show)
-    .on("mouseout", tooltip.hide)
+    // .on("mouseover", tooltip.show)
+    // .on("mouseout", tooltip.hide)
     .transition()
     .delay(8000)
     .duration(500)

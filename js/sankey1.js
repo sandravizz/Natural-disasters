@@ -84,7 +84,7 @@ let color = d3.scaleOrdinal()
 // for the stacked bar chart
 let y = d3.scaleBand()
     .domain(["Winter", "Wildfire", "Flooding", "Drought", "Storm", "Cyclone"])
-    .rangeRound([300, 0])
+    .rangeRound([300, 60])
     .padding(0.1);
 
 // --------------------------------------
@@ -130,13 +130,13 @@ innerChart
       d3.selectAll(".sankey_path").style("opacity", 0.9);
     })
     .transition()
-    .delay(4500)
+    .delay(2000)
     .duration(1500)
     .attr("y", (d) => d.y0)
     .attr("height", (d) => d.y1 - d.y0)
     .attr("width", (d) => (d.x0 < innerWidth / 2 ? d.x1 - d.x0 + 30 : 20))
     .transition()
-    .delay(1500)
+    .delay(500)
     .duration(1500)
     .attr("opacity", (d) => (d.x0 < innerWidth / 2 ? 1 : 1));
 
@@ -155,11 +155,11 @@ innerChart
     .attr("y",  (d) => (d.x0 < innerWidth / 2 ? (y(d.name) + 25) : ((d.y1 + d.y0) / 2)))
     .attr("opacity", (d) => (d.x0 > innerWidth / 2 ? 0 : 1))
     .transition()
-    .delay(4500)
+    .delay(2000)
     .duration(1500)
     .attr("y", (d) => (d.y1 + d.y0) / 2)
     .transition()
-    .delay(1500)
+    .delay(500)
     .duration(1500)
     .attr("opacity", (d) => (d.x0 > innerWidth / 2 ? 1 : 1));
 
@@ -176,8 +176,8 @@ innerChart
     .attr("opacity", 0.9)
     .attr("stroke-width", 0)
     .transition()
-    .delay((d) => 9000 + (7- d.source.id) * 1850)
-    .duration(1000)
+    .delay((d) => 4200 + (7- d.source.id) * 1300)
+    .duration(500)
     .attr("stroke-width", (d) => Math.max(0, d.width));
 
 });

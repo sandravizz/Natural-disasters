@@ -40,8 +40,8 @@ const data00 = d3.csv("./data/violin.csv", d3.autoType)
         console.log(d3.max(data00, d => d.costs));
 
    const violinsScale = d3.scaleLinear()
-            .domain([0, d3.max(bins, d => d.length)])
-            .range([0, innerwidth00/2]);
+        .domain([0, d3.max(bins, d => d.length)])
+        .range([0, innerwidth00/2]);
 
 // --------------------------------------
 //  Data drawing
@@ -81,23 +81,23 @@ const data00 = d3.csv("./data/violin.csv", d3.autoType)
 
 innerChart00
     .append("text")
-    .attr("x", 40)
+    .attr("x", 10)
     .attr("y", 52)
     .attr("class", "text")
     .text("Long tail distribution")
     .append("tspan")
     .attr("class", "tspan")
-    .attr("x", 40)
+    .attr("x", 10)
     .attr("y", 65)
-    .text("Long tail is the name for a feature of some statistical distributions.")
+    .text("Long tail is a type of statistical distribution, where.")
     .append("tspan")
-    .attr("x", 40)
+    .attr("x", 10)
     .attr("y", 75)
-    .text("The head of the graph includes disaster events causing less damage happening freuqently.")
+    .text("events causing lower damager happen most frequent (head) and events.")
     .append("tspan")
-    .attr("x", 40)
+    .attr("x", 10)
     .attr("y", 85)
-    .text("Whereas events at the far end of the tail have a very low probability of occurrence.");
+    .text("at the far end of the tail have a very low probability of occurrence.");
 
 // --------------------------------------
 //  Axes
