@@ -480,7 +480,7 @@ a:focus {
 	.tspan {font-size: var( --step--4);}
 	#filters button  {line-height: 1.3rem; font-size: var( --step--3);}
 	.title {font-size: var( --step-0); margin-bottom:15px; margin-top:15px;}
-	.chart_title {font-size: var( --step--2); margin-bottom: 25px; margin-top:15px;}
+	.chart_title {font-size: var( --step--2); margin-bottom: 30px; margin-top:15px;}
 	.frame__demos {font-size: var( --step--2);}
 	.frame__links {font-size: var( --step--2);}
 
@@ -492,7 +492,7 @@ a:focus {
 	.content__text-inner--stroke {-webkit-text-stroke: 1px var(--color-slide-text);}
 	#filters button  {font-weight: 400; line-height: 1.1rem; font-size: var( --step--4);}
 	.title {font-size: var( --step--1); margin-bottom:10px; margin-top:10px;}
-	.chart_title {font-size: var( --step--3); margin-bottom: 20px; margin-top:10px;}
+	.chart_title {font-size: var( --step--3); margin-bottom: 25px; margin-top:10px;}
 	.frame__demos {font-size: var( --step--3);}
 	.frame__links {font-size: var( --step--3);}
 
@@ -506,7 +506,7 @@ a:focus {
 	.tspan {font-size: var( --step--6);}
 	#filters button  {font-weight: 400; line-height: 1rem; font-size: var( --step--8);}
 	.title {font-size: var( --step--2); margin-bottom:5px; margin-top:5px;}
-	.chart_title {font-size: var( --step--4); margin-bottom: 15px; margin-top:5px;}
+	.chart_title {font-size: var( --step--4); margin-bottom: 25px; margin-top:5px;}
 	.frame__demos {font-size: var( --step--4);}
 	.frame__links {font-size: var( --step--4);}
 					
