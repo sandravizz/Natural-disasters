@@ -4,8 +4,6 @@
 
 html {
 	font-size: 100%;
-	-ms-text-size-adjust:100%;
-	-webkit-text-size-adjust:100%;
 }
 
 body {
@@ -25,35 +23,9 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-footer,header,hgroup,main,section,summary{
-	display:block;
+main {
+	display: block;
 }
-
-abbr[title]{
-	border-bottom:1px dotted;
-}
-
-b,strong{
-	font-weight:bold;
-}
-
-dfn{
-	font-style:italic;
-}
-
-hr{
-	-moz-box-sizing:content-box;
-	box-sizing:content-box;
-	height:0;
-}
-
-pre{white-space:pre-wrap;}
-q{quotes:"\201C" "\201D" "\2018" "\2019";}
-sup{top:-0.5em;}
-sub{bottom:-0.25em;}
-svg:not(:root){overflow:hidden;}
-button,input,select,textarea{font-family:inherit;font-size:100%}
-textarea{overflow:auto;vertical-align:top;}
 
 *,
 *::after,
@@ -61,35 +33,20 @@ textarea{overflow:auto;vertical-align:top;}
 	box-sizing: border-box;	
 }
 
+/*--------------------------------------*/
+/* Font stylings */
+/*--------------------------------------*/
+
 :root {
-	/* Step -4: 13.89px → 8.19px */
 	--step--4: clamp(0.5119rem, 0.9699rem + -0.5089vw, 0.8681rem);
-  
-	/* Step -3: 14.82px → 10.24px */
 	--step--3: clamp(0.64rem, 1.008rem + -0.4089vw, 0.9263rem);
-  
-	/* Step -2: 15.81px → 12.80px */
 	--step--2: clamp(0.8rem, 1.0419rem + -0.2687vw, 0.9881rem);
-  
-	/* Step -1: 16.87px → 16.00px */
 	--step--1: clamp(1rem, 1.0699rem + -0.0777vw, 1.0544rem);
-  
-	/* Step 0: 18.00px → 20.00px */
 	--step-0: clamp(1.125rem, 1.0893rem + 0.1786vw, 1.25rem);
-  
-	/* Step 1: 19.21px → 25.00px */
 	--step-1: clamp(1.2006rem, 1.0972rem + 0.517vw, 1.5625rem);
-  
-	/* Step 2: 20.49px → 31.25px */
 	--step-2: clamp(1.2806rem, 1.0885rem + 0.9607vw, 1.9531rem);
-  
-	/* Step 3: 21.87px → 39.06px */
 	--step-3: clamp(1.3669rem, 1.0599rem + 1.5348vw, 2.4413rem);
-  
-	/* Step 4: 23.33px → 48.83px */
 	--step-4: clamp(1.4581rem, 1.0028rem + 2.2768vw, 3.0519rem);
-  
-	/* Step 5: 24.89px → 61.04px */
 	--step-5: clamp(1.5556rem, 0.9101rem + 3.2277vw, 3.815rem);
   }
 
@@ -300,25 +257,15 @@ a:focus {
 
 .content__text-inner--stroke {
 	-webkit-text-stroke: 2.5px var(--color-slide-text);
-	text-stroke: 2.5px var(--color-slide-text);
 	-webkit-text-fill-color: transparent;
-	text-fill-color: transparent;
 	color: transparent;
 }
+
+/****************************+ Dataviz ********************************************/
 
 /*--------------------------------------*/
 /* Button stylings */
 /*--------------------------------------*/
-
-.content__nav-button {
-	font-weight: 400;
-	line-height: 1.5rem;
-	border-radius: 10px;
-	cursor: pointer;
-	border: 0;
-	background: #00161f;
-	color: white;
-}
 
 #filters  {
 	display: flex;
@@ -338,8 +285,6 @@ a:focus {
 #filters button:hover {
 	border-radius: 40px;
 }
-
-/****************************+ Dataviz ********************************************/
 
 /*--------------------------------------*/
 /* Text stylings */
@@ -500,19 +445,44 @@ a:focus {
 /* Screen stylings */
 /*--------------------------------------*/
 
-/* @media screen and (min-width: 1025px) {
+@media screen and (max-width: 1274px) {
 
-body {
-		background-color: red;
-	  }
-	
-.text {
-	margin-top: 0px;
-	margin-bottom: 0px;
-	padding-bottom: 0px;
-	fill:white;
-	font-size: 20px;
-  }
+.content__text {
+		font-size: 65px;
+	}
+		
+}
 
+@media screen and (max-width: 1000px) {
+
+	.content__text {
+			font-size: 45px;
+		}
+			
+	}
+
+@media screen and (max-width: 700px) {
+
+		.content__text {
+				font-size: 25px;
+				
+			}
+
+		.content__text-inner--stroke {
+				-webkit-text-stroke: 1px var(--color-slide-text);
+			}
+				
+		}
+
+@media screen and (max-width: 400px) {
+
+			.content__text {
+					font-size: 20px;
+					
+				}
 	
-} */
+			.content__text-inner--stroke {
+					-webkit-text-stroke: 1px var(--color-slide-text);
+				}
+					
+			}
