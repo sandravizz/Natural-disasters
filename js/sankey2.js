@@ -80,7 +80,7 @@ const data2 = d3.csv("./data/sankey_data2.csv", d3.autoType)
       .nodeId((d) => d.id)
       .linkSort(null)
       .nodeWidth(25) //
-      .nodePadding(5) //space between each node
+      .nodePadding(2) //space between each node
       .extent([
         [0, 0],
         [innerWidth2, innerHeight2]
@@ -94,11 +94,12 @@ const data2 = d3.csv("./data/sankey_data2.csv", d3.autoType)
 
     //Nodes = rects
     innerChart2
-        .selectAll("rect")
+        .selectAll(".sankey2rects")
         .data((sankey2(data_final2)).nodes)
         .join("rect")
+        .attr("class", "sankey2rects")  
         .attr("height", (d) => d.y1 - d.y0)
-        .attr("width", (d) => (d.x0 < innerWidth2 / 2 ? d.x1 - d.x0 + 30 : 20))
+        .attr("width", (d) => (d.x0 < innerWidth2 / 2 ? d.x1 - d.x0 + 20 : 20))
         .attr("y", (d) => d.y0)
         .attr("x", (d) => d.x0)
         .attr("fill", (d) => (d.x0 < innerWidth2 / 2 ? color(d.name) : "white"))

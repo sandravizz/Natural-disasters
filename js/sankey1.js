@@ -97,7 +97,7 @@ const sankey = d3.sankey()
   .nodeId((d) => d.id)
   .linkSort(null)
   .nodeWidth(25) 
-  .nodePadding(5) //space between each node
+  .nodePadding(2) //space between each node
   .extent([
     [0, 0],
     [innerWidth, innerHeight]
@@ -112,9 +112,10 @@ const sankey = d3.sankey()
 
 // Nodes: rects
 innerChart
-    .selectAll("rect")
+    .selectAll(".sankey1rects")
     .data((sankey(data_final)).nodes)
     .join("rect")
+    .attr("class", "sankey1rects")  
     .attr("x", (d) => d.x0)
     .attr("fill", (d) => (d.x0 < innerWidth / 2 ? color(d.name) : "white"))
     .attr("y", (d) => y(d.name))
@@ -134,7 +135,7 @@ innerChart
     .duration(1500)
     .attr("y", (d) => d.y0)
     .attr("height", (d) => d.y1 - d.y0)
-    .attr("width", (d) => (d.x0 < innerWidth / 2 ? d.x1 - d.x0 + 30 : 20))
+    .attr("width", (d) => (d.x0 < innerWidth / 2 ? d.x1 - d.x0 + 20 : 20))
     .transition()
     .delay(500)
     .duration(1500)
