@@ -70,7 +70,7 @@ const data00 = d3.csv("./data/violin.csv", d3.autoType)
     innerChart00
         .append("text")
         .attr("class", "text")
-        .text("367 natural disasters")
+        .text("367 natural disasters (all types)")
         .attr("x", innerwidth00/2 - 70)
         .attr("y", -9)
         .attr("fill", "white");
@@ -116,6 +116,6 @@ innerChart00
         .attr("x", innerwidth00/2 +35)
         .attr("y", y(180000) +3.5)
         .attr("fill", "white")
-        .text(" = 180.000.000.000.000 $"));
+        .text(" = 180.000.000.000 $"));
 
 });

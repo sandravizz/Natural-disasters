@@ -149,7 +149,7 @@ innerChart
     .join("text")
     .attr("class", "text")
     .text((d) => (d.name) + "s" /*+ " " + format(d.value)*/)
-    .attr("x", (d) => (d.x0 > innerWidth / 2 ? d.x1 + 10 : d.x0 - 10))
+    .attr("x", (d) => (d.x0 > innerWidth / 2 ? d.x1 : d.x0 - 5))
     .attr("fill", "white")
     .attr("dy", "0.4em")
     .attr("text-anchor", (d) => (d.x0 < innerWidth / 2 ? "end" : "start"))
