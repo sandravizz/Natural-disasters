@@ -19,7 +19,7 @@ The first step is always to check your data and variable structure as well as ge
 
  ## 1 Intro | TweenMax.js
 
-
+![Alt text](img/1A.png)
 
 This is a very short visual intro to the project using images, music and effects to create an atmosphere that matches the information shared, please check out this [video](https://www.youtube.com/watch?v=vxkJkISGWGM). 
 
@@ -30,9 +30,11 @@ Credits to
 
  ## 2 Violin chart | d3.js 
 
-
+![Alt text](image.png)
 
  ## 3 Sankey diagram by decade | d3.js 
+
+![Alt text](image-2.png)
 
  After finishing the EDA I wanted to create a compact chart which shows the connection between disaster types and change over type. I choose to aggregate the data on decade level to soften outliers. In the sankey diagram we see two stacked bar charts representing the nodes hence the total damage caused by disaster type on the leftside and by decades on the rigt side. The size of the paths shows how much a specific disaster type contributed to the damage of one specific decade and vice versa. 
  
@@ -40,15 +42,32 @@ Credits to
 
 
 
- ## 4 Sankey diagram recent year | d3.js 
+ ## 4 Sankey diagram recent years | d3.js 
+
+![Alt text](img/4A.png)
 
  In this second sankey its all about our current decade and the question where are we heading now? Looking on the first 3 years only we can see that the trend stays the same but everything seems to speed up. 
 
 
 
- ## 5 D3.js visualisation | Lollipop chart
+ ## 5 Lollipop chart tropical cyclones over time | d3.js
+
+ ![Alt text](img/5A.png)
 
 Therefore the logic question is so why tropical cyclones are the ones causing this super disasters now. Therefore I filtered only on these ones and chacke now by year how they developed. The main question is, if these aggregated data are mainly based on a few outliers or an actual behaviour change?
+
+## _____________
+
+Made with :green_heart:  by [sandraviz](https://www.sandraviz.com/)
+
+Follow me: [twitter](https://twitter.com/SandraCrypto), [vis.social](https://vis.social/@sb_42), [linkedin](https://www.linkedin.com/in/sandradataviz/) and  [youtube](https://www.youtube.com/@sandraviz3403)
+
+
+
+
+
+
+
 
 
  
