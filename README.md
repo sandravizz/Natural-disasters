@@ -33,9 +33,10 @@ Credits to
 
  ## 2 Violin chart | d3.js 
 
+![Violin chart](img/2A.png)
+
 As every story also this one should start simple. How many disasters happened, what amount of damage do disasters produce on average, what are the most exreme disasters and how is it different by type are typical questions, which pop up in the audiences mind first. 
 
-![Violin chart](img/2A.png)
 
  ## 3 Sankey diagram by decade | d3.js 
 
