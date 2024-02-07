@@ -7,15 +7,15 @@ html {
 }
 
 body {
-	margin:0;
+	margin: 0;
 	--color-nav: #fff;
 	--color-text: #ff00c4;
 	--color-link: #59545e;
 	--color-text: #f6fcff;
-    --color-bg: #00161f;
+	--color-bg: #00161f;
 	--color-link: #eaf8e9;
-    --color-link-hover: #f6fcff;
-    --color-slide-text: #f6fcff;
+	--color-link-hover: #f6fcff;
+	--color-slide-text: #f6fcff;
 	color: var(--color-text);
 	background-color: var(--color-bg);
 	font-family: 'Montserrat Alternates', sans-serif;
@@ -27,7 +27,7 @@ body {
 *,
 *::after,
 *::before {
-	box-sizing: border-box;	
+	box-sizing: border-box;
 }
 
 /*--------------------------------------*/
@@ -63,7 +63,7 @@ body {
 	--step-4: clamp(1.4581rem, 1.0028rem + 2.2768vw, 3.0519rem);
 	/* Step 5: 24.89px → 61.04px */
 	--step-5: clamp(1.5556rem, 0.9101rem + 3.2277vw, 3.815rem);
-  }
+}
 
 /*--------------------------------------*/
 /* Page stylings */
@@ -71,7 +71,7 @@ body {
 
 .demo-5 {
 	--font-trail-height: 1;
-	--font-trail-family: "Syncopate", sans-serif; 
+	--font-trail-family: "Syncopate", sans-serif;
 }
 
 /*--------------------------------------*/
@@ -108,7 +108,7 @@ body {
 @keyframes loaderAnim {
 	to {
 		opacity: 1;
-		transform: scale3d(0.5,0.5,1);
+		transform: scale3d(0.5, 0.5, 1);
 	}
 }
 
@@ -132,45 +132,60 @@ a:focus {
 /*--------------------------------------*/
 
 .frame {
-	position:absolute;
+	position: absolute;
 	z-index: 999999;
 	text-align: center;
-	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	padding: 2rem 2rem 2rem 2rem;
+	min-height: calc(100% - 40px);
+	padding: 0.5rem 1rem 40px 1rem;
 	pointer-events: auto;
 }
 
-.frame__tagline {
+.frame__demos {
+	margin: 0rem 0;
 	justify-self: end;
-	margin: 0;
-	text-align: right;
+	font-weight: 600;
+	font-size: var(--step--2);
+}
+
+.frame__demos:hover {
+	font-weight: 800;
+	font-size: var(--step--2);
 }
 
 .frame__links {
-	padding: 0;
-	justify-self: start;
+	position: relative;
+	bottom: 0;
+	width: 100%;
 	font-weight: 500;
-	font-size: var( --step--1);
+	font-size: var(--step--3);
+	text-align: center;
+	line-height: 1.7;
 }
 
-.frame__links a:not(:last-child),
+.frame__links--intro {
+	position: absolute;
+}
+
+.frame__links2 {
+	font-weight: 500;
+	margin-top: 7px;
+	margin-bottom: 10px;
+	font-size: var(--step--3);
+}
+
+.frame__links2 a:not(:last-child),
 .frame__demos a:not(:last-child) {
-	margin-right: 1rem;
+	margin-right: 0.9rem;
 }
 
-.frame__demos {
-	margin: 1rem 0;
-	justify-self: end;
+.frame__links>a:hover,
+.frame__author:hover,
+.frame__links2>a:hover {
 	font-weight: 600;
-	font-size: var( --step--1);
-}
-
-.frame__demos:hover, .frame__links:hover {
-	font-weight: 800;
-	font-size: var( --step--1);
+	font-size: var(--step--3);
 }
 
 /*--------------------------------------*/
@@ -178,7 +193,7 @@ a:focus {
 /*--------------------------------------*/
 
 .content {
-	display: grid; 
+	display: grid;
 	grid-template-rows: 100%;
 	grid-template-columns: 100%;
 	grid-template-areas: 'main';
@@ -214,7 +229,7 @@ a:focus {
 
 .content__img {
 	width: 100%;
-	height:100%;
+	height: 100%;
 	justify-self: center;
 }
 
@@ -267,7 +282,7 @@ a:focus {
 }
 
 .content__text-inner--bottom {
-	transform: translate3d(0,-40%,0);
+	transform: translate3d(0, -40%, 0);
 }
 
 .content__text-inner--stroke {
@@ -282,12 +297,12 @@ a:focus {
 /* Button stylings */
 /*--------------------------------------*/
 
-#filters  {
+#filters {
 	display: left;
 	justify-content: space-evenly;
 }
 
-#filters button  {
+#filters button {
 	border: 0;
 	cursor: pointer;
 	background: #00161f;
@@ -295,12 +310,12 @@ a:focus {
 	font-weight: 400;
 	line-height: 1.5rem;
 	border-radius: 10px;
-	font-size: var( --step--2);
+	font-size: var(--step--2);
 	font-family: 'Montserrat Alternates', sans-serif;
 }
 
 #filters button:hover {
-	border-radius: 40px;	
+	border-radius: 40px;
 }
 
 /*--------------------------------------*/
@@ -308,9 +323,9 @@ a:focus {
 /*--------------------------------------*/
 
 .title {
-  margin-bottom: 20px;
-  margin-top:20px;
-  font-size: var( --step-1);
+	margin-bottom: 20px;
+	margin-top: 20px;
+	font-size: var(--step-1);
 }
 
 .article {
@@ -319,84 +334,86 @@ a:focus {
 	margin-left: 100px;
 	margin-right: 100px;
 	line-height: 1.6rem;
-	font-size: var( --step--1);
-  }
+	font-size: var(--step--1);
+}
 
 .chart_title {
 	margin-bottom: 30px;
-	margin-top:20px;
-	font-size: var( --step--1);
-  }
+	margin-top: 20px;
+	font-size: var(--step--1);
+}
 
 .text {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  fill:white;
-  font-size: var( --step--3);
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	fill: white;
+	font-size: var(--step--3);
 }
 
 .tspan {
 	fill: white;
-	font-size: var( --step--3);
+	font-size: var(--step--3);
 	margin-top: 0px;
 	margin-bottom: 0px;
 	padding-bottom: 0px;
-  }
+}
 
 .text2 {
 	margin-top: 20px;
 	margin-bottom: 20px;
 	padding-bottom: 10px;
-	fill:white;
-	font-size: var( --step--3);
-  }
+	fill: white;
+	font-size: var(--step--3);
+}
 
 .anotations {
-	fill:white;
-	font-size: var( --step--1);
-  }
+	fill: white;
+	font-size: var(--step--1);
+}
 
 .anotations2 {
-	fill:white;
-	font-size: var( --step--3);
-  }
+	fill: white;
+	font-size: var(--step--3);
+}
 
 .support {
-  display: inline-block;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-weight: 500;
-  border-radius: 10px;
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-weight: 500;
+	border-radius: 10px;
 }
 
 .decade {
-  color: #1c1423;
-  background-color:white;
+	color: #1c1423;
+	background-color: white;
 }
 
 .tropical {
-  color: #444952;
-  background-color: #ccff99;
-} 
+	color: #444952;
+	background-color: #ccff99;
+}
 
 /*--------------------------------------*/
 /* Chart stylings */
 /*--------------------------------------*/
 
 .container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 0px;
-  padding-left: 0px;
-  width: 100%;
-  height:100%;
-  max-width: 1200px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 0px;
+	padding-right: 0px;
+	padding-left: 0px;
+	width: 100%;
+	height: auto;
+	min-height: calc(100% - 40px);
+	max-width: 1200px;
 }
 
 .super_hurricane {
-  fill: #ccff99;
-  font-size: var( --step--2);
+	fill: #ccff99;
+	font-size: var(--step--2);
 }
 
 /*--------------------------------------*/
@@ -404,58 +421,64 @@ a:focus {
 /*--------------------------------------*/
 
 .tooltip {
-  font-weight:400;
-  font-size:13px;
-  margin-left: 100;
-  padding: 10px;
-  gap: 8px; 
-  display: flex;
-  flex-direction: row;
-  align-items: right; 
-  text-align: center;
-  color:#444952;
-  background-color:#ccff99;
-  box-shadow: 1px 3px 8px 
-  rgba(34, 84, 114, 0.2);
-  border-radius: 3px;
-  line-height: 1.4;
+	font-weight: 400;
+	font-size: 13px;
+	margin-left: 100;
+	padding: 10px;
+	gap: 8px;
+	display: flex;
+	flex-direction: row;
+	align-items: right;
+	text-align: center;
+	color: #444952;
+	background-color: #ccff99;
+	box-shadow: 1px 3px 8px rgba(34, 84, 114, 0.2);
+	border-radius: 3px;
+	line-height: 1.4;
 }
 
 /*--------------------------------------*/
 /* Axes stylings */
 /*--------------------------------------*/
 
-.x-violin, .y-violin text {
-  font-family:'Montserrat Alternates', sans-serif;
-  font-weight:200;
-  font-size: var( --step--3);
-  opacity:1;
+.x-violin,
+.y-violin text {
+	font-family: 'Montserrat Alternates', sans-serif;
+	font-weight: 200;
+	font-size: var(--step--3);
+	opacity: 1;
 }
 
-.x-axis, .y-axis text {
-  font-family:'Montserrat Alternates', sans-serif;
-  font-weight:300;
-  font-size: var( --step--3);
-  opacity:1;
+.x-axis,
+.y-axis text {
+	font-family: 'Montserrat Alternates', sans-serif;
+	font-weight: 300;
+	font-size: var(--step--3);
+	opacity: 1;
 }
 
-.x-axis, .x-violin, .y-axis, .y-violin path {
-  stroke-width:0;
-  stroke-opacity:0;
-  stroke:#8ff798;
+.x-axis,
+.x-violin,
+.y-axis,
+.y-violin path {
+	stroke-width: 0;
+	stroke-opacity: 0;
+	stroke: #8ff798;
 }
 
-.x-axis, .x-violin, .y-violin line {
-  fill:none;
-  stroke-width:0;
-  stroke-opacity:1;
-  stroke:white;
+.x-axis,
+.x-violin,
+.y-violin line {
+	fill: none;
+	stroke-width: 0;
+	stroke-opacity: 1;
+	stroke: white;
 }
 
 .y-axis line {
-  stroke-width:0.1;
-  stroke-opacity:1;
-  stroke:white;
+	stroke-width: 0.1;
+	stroke-opacity: 1;
+	stroke: white;
 }
 
 /*--------------------------------------*/
@@ -464,50 +487,174 @@ a:focus {
 
 @media screen and (max-width: 1274px) {
 
-	.content__text {font-size: 65px;}
-	#filters button {line-height: 1.5rem; font-size: var( --step--2);}
-	.title {font-size: var( --step-1); margin-bottom:20px; margin-top:20px;}
-	.chart_title {font-size: var( --step--1); margin-bottom: 30px; margin-top:20px;}
-	.frame__demos {font-size: var( --step--1);}
-	.frame__links {font-size: var( --step--1);}
-
+	.content__text {
+		font-size: 65px;
 	}
+
+	#filters button {
+		line-height: 1.5rem;
+		font-size: var(--step--2);
+	}
+
+	.title {
+		font-size: var(--step-1);
+		margin-bottom: 20px;
+		margin-top: 20px;
+	}
+
+	.chart_title {
+		font-size: var(--step--1);
+		margin-bottom: 30px;
+		margin-top: 20px;
+	}
+
+	.frame__demos {
+		font-size: var(--step--1);
+	}
+
+	.frame__links {
+		font-size: var(--step--1);
+	}
+
+	.frame__links2 {
+		font-size: var(--step--1);
+	}
+
+}
 
 @media screen and (max-width: 1000px) {
 
-	.content__text {font-size: 45px;}
-	.text {font-size: var( --step--4);}
-	.tspan {font-size: var( --step--4);}
-	#filters button  {line-height: 1.3rem; font-size: var( --step--3);}
-	.title {font-size: var( --step-0); margin-bottom:15px; margin-top:15px;}
-	.chart_title {font-size: var( --step--2); margin-bottom: 30px; margin-top:15px;}
-	.frame__demos {font-size: var( --step--2);}
-	.frame__links {font-size: var( --step--2);}
-
+	.content__text {
+		font-size: 45px;
 	}
+
+	.text {
+		font-size: var(--step--4);
+	}
+
+	.tspan {
+		font-size: var(--step--4);
+	}
+
+	#filters button {
+		line-height: 1.3rem;
+		font-size: var(--step--3);
+	}
+
+	.title {
+		font-size: var(--step-0);
+		margin-bottom: 15px;
+		margin-top: 15px;
+	}
+
+	.chart_title {
+		font-size: var(--step--2);
+		margin-bottom: 30px;
+		margin-top: 15px;
+	}
+
+	.frame__demos {
+		font-size: var(--step--2);
+	}
+
+	.frame__links {
+		font-size: var(--step--2);
+	}
+
+	.frame__links2 {
+		font-size: var(--step--2);
+	}
+
+}
 
 @media screen and (max-width: 700px) {
 
-	.content__text {font-size: 25px;}
-	.content__text-inner--stroke {-webkit-text-stroke: 1px var(--color-slide-text);}
-	#filters button  {font-weight: 400; line-height: 1.1rem; font-size: var( --step--4);}
-	.title {font-size: var( --step--1); margin-bottom:10px; margin-top:10px;}
-	.chart_title {font-size: var( --step--3); margin-bottom: 25px; margin-top:10px;}
-	.frame__demos {font-size: var( --step--3);}
-	.frame__links {font-size: var( --step--3);}
-
+	.content__text {
+		font-size: 25px;
 	}
+
+	.content__text-inner--stroke {
+		-webkit-text-stroke: 1px var(--color-slide-text);
+	}
+
+	#filters button {
+		font-weight: 400;
+		line-height: 1.1rem;
+		font-size: var(--step--4);
+	}
+
+	.title {
+		font-size: var(--step--1);
+		margin-bottom: 10px;
+		margin-top: 10px;
+	}
+
+	.chart_title {
+		font-size: var(--step--3);
+		margin-bottom: 25px;
+		margin-top: 10px;
+	}
+
+	.frame__demos {
+		font-size: var(--step--3);
+	}
+
+	.frame__links {
+		font-size: var(--step--3);
+	}
+
+	.frame__links2 {
+		font-size: var(--step--3);
+	}
+
+}
 
 @media screen and (max-width: 400px) {
 
-	.content__text {font-size: 20px;}	
-	.content__text-inner--stroke {-webkit-text-stroke: 1px var(--color-slide-text);}
-	.text {font-size: var( --step--6);}		
-	.tspan {font-size: var( --step--6);}
-	#filters button  {font-weight: 400; line-height: 1rem; font-size: var( --step--8);}
-	.title {font-size: var( --step--2); margin-bottom:5px; margin-top:5px;}
-	.chart_title {font-size: var( --step--4); margin-bottom: 25px; margin-top:5px;}
-	.frame__demos {font-size: var( --step--4);}
-	.frame__links {font-size: var( --step--4);}
-					
+	.content__text {
+		font-size: 20px;
 	}
+
+	.content__text-inner--stroke {
+		-webkit-text-stroke: 1px var(--color-slide-text);
+	}
+
+	.text {
+		font-size: var(--step--6);
+	}
+
+	.tspan {
+		font-size: var(--step--6);
+	}
+
+	#filters button {
+		font-weight: 400;
+		line-height: 1rem;
+		font-size: var(--step--8);
+	}
+
+	.title {
+		font-size: var(--step--2);
+		margin-bottom: 5px;
+		margin-top: 5px;
+	}
+
+	.chart_title {
+		font-size: var(--step--4);
+		margin-bottom: 25px;
+		margin-top: 5px;
+	}
+
+	.frame__demos {
+		font-size: var(--step--4);
+	}
+
+	.frame__links {
+		font-size: var(--step--4);
+	}
+
+	.frame__links2 {
+		font-size: var(--step--4);
+	}
+
+}

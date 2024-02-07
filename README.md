@@ -1,4 +1,4 @@
-# Natural diasasters 
+# Natural disasters 
 
 The more time I spend in nature the more fascinated I get with its beauty, wisdom and teachings. It's hard to put into words so I quote Albert Einstein, who said *Look deep into nature, and then you will understand everything better*. 
 
