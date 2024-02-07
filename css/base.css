@@ -133,7 +133,7 @@ a:focus {
 
 .frame {
 	position: absolute;
-	z-index: 999999;
+	z-index: 999998;
 	text-align: center;
 	left: 0;
 	width: 100%;
@@ -167,6 +167,7 @@ a:focus {
 
 .frame__links--intro {
 	position: absolute;
+	z-index: 999999;
 }
 
 .frame__links2 {
