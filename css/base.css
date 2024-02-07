@@ -198,7 +198,7 @@ a:focus {
 	grid-template-rows: 100%;
 	grid-template-columns: 100%;
 	grid-template-areas: 'main';
-	height: 100vh;
+	height: 100dvh;
 	width: 100%;
 	margin: 0 auto;
 	position: relative;
