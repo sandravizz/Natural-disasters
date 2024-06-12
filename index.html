@@ -1,180 +1,262 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Billion $ disasters 1980 - 2024 in the US</title>
+    <meta
+      name="description"
+      content="A data visualisation project about natural disasters happened in the US from 1980 - 2024"
+    />
+    <meta
+      name="keywords"
+      content="data visualisation, d3.js, natural disasters, climate change, sankey"
+    />
+    <meta name="author" content="Sandra Becker" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Kanit:500,900|Syncopate:700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Billion $ disasters 1980 - 2024 in the US  </title>
-	<meta name="description" content="A data visualisation project about natural disasters happened in the US from 1980 - 2024" />
-	<meta name="keywords" content="data visualisation, d3.js, natural disasters, climate change, sankey" />
-	<meta name="author" content="Sandra Becker" />
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Kanit:500,900|Syncopate:700" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/base.css" />
-	
-	<script>
-	document.documentElement.className = "js";
-	var supportsCssVars = function() { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
-	supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
-	</script>
+    <script>
+      document.documentElement.className = "js";
+      var supportsCssVars = function () {
+        var e,
+          t = document.createElement("style");
+        return (
+          (t.innerHTML = "root: { --tmp-var: bold; }"),
+          document.head.appendChild(t),
+          (e = !!(
+            window.CSS &&
+            window.CSS.supports &&
+            window.CSS.supports("font-weight", "var(--tmp-var)")
+          )),
+          t.parentNode.removeChild(t),
+          e
+        );
+      };
+      supportsCssVars() ||
+        alert(
+          "Please view this demo in a modern browser that supports CSS Variables."
+        );
+    </script>
+  </head>
 
-</head>
+  <body class="demo-5 loading">
+    <main>
+      <div class="content">
+        <div class="frame">
+          <div class="frame__demos">
+            <a href="index.html" class="frame__demo frame__demo--current">1</a>
+            <a href="index2.html" class="frame__demo">2</a>
+            <a href="index3.html" class="frame__demo">3</a>
+            <a href="index4.html" class="frame__demo">4</a>
+            <a href="index5.html" class="frame__demo">5</a>
+          </div>
+        </div>
 
-<body class="demo-5 loading">
-	<main>
+        <div class="content__slide">
+          <div class="content__img content__img--full">
+            <div
+              class="content__img-inner"
+              style="background-image: url(img/1.jpeg)"
+            ></div>
+          </div>
+          <div class="content__text-wrap">
+            <span class="content__text">
+              <span class="content__text-inner content__text-inner--stroke"
+                >natural disasters></span
+              >
+            </span>
+            <span class="content__text">
+              <span class="content__text-inner">natural disasters</span>
+            </span>
+            <span class="content__text content__text--full">
+              <span class="content__text-inner content__text-inner--stroke"
+                >natural disasters</span
+              >
+            </span>
+            <span class="content__text">
+              <span class="content__text-inner content__text-inner--stroke"
+                >natural disasters</span
+              >
+            </span>
+            <span class="content__text">
+              <span class="content__text-inner">natural disasters</span>
+            </span>
+            <span class="content__text content__text--full">
+              <span class="content__text-inner content__text-inner--stroke"
+                >natural disasters</span
+              >
+            </span>
+            <span class="content__text">
+              <span class="content__text-inner content__text-inner--bottom"
+                >natural disasters</span
+              >
+            </span>
+            <span class="content__text">
+              <span class="content__text-inner">natural disasters</span>
+            </span>
+            <span class="content__text content__text--full">
+              <span class="content__text-inner content__text-inner--stroke"
+                >natural disasters</span
+              >
+            </span>
+            <span class="content__text">
+              <span
+                class="content__text-inner content__text-inner--stroke content__text-inner--bottom"
+                >natural disasters</span
+              >
+            </span>
+            <span class="content__text">
+              <span class="content__text-inner">natural disasters</span>
+            </span>
+          </div>
+        </div>
 
-		<div class="content">
-			<div class="frame">	
+        <div class="content__slide">
+          <div class="content__img content__img--full">
+            <div
+              class="content__img-inner"
+              style="background-image: url(img/2.jpeg)"
+            ></div>
+          </div>
+          <div class="content__text-wrap">
+            <span class="content__text">
+              <span class="content__text-inner content__text-inner--stroke"
+                >USA | 1980 to 2024</span
+              >
+            </span>
+            <span class="content__text">
+              <span class="content__text-inner">USA | 1980 to 2024</span>
+            </span>
+            <span class="content__text content__text--full">
+              <span class="content__text-inner content__text-inner--stroke"
+                >USA | 1980 to 2024</span
+              >
+            </span>
+            <span class="content__text">
+              <span class="content__text-inner content__text-inner--stroke"
+                >USA | 1980 to 2024</span
+              >
+            </span>
+            <span class="content__text">
+              <span class="content__text-inner">USA | 1980 to 2024</span>
+            </span>
+            <span class="content__text content__text--full">
+              <span class="content__text-inner content__text-inner--stroke"
+                >USA | 1980 to 2024</span
+              >
+            </span>
+            <span class="content__text">
+              <span class="content__text-inner content__text-inner--bottom"
+                >USA | 1980 to 2024</span
+              >
+            </span>
+            <span class="content__text">
+              <span class="content__text-inner">USA | 1980 to 2024</span>
+            </span>
+            <span class="content__text content__text--full">
+              <span class="content__text-inner content__text-inner--stroke"
+                >USA | 1980 to 2024</span
+              >
+            </span>
+            <span class="content__text">
+              <span
+                class="content__text-inner content__text-inner--stroke content__text-inner--bottom"
+                >USA | 1980 to 2024</span
+              >
+            </span>
+            <span class="content__text">
+              <span class="content__text-inner">USA | 1980 to 2024</span>
+            </span>
+          </div>
+        </div>
+        <div class="content__slide">
+          <div class="content__img content__img--full">
+            <div
+              class="content__img-inner"
+              style="background-image: url(img/3.jpeg)"
+            ></div>
+          </div>
+          <div class="content__text-wrap">
+            <span class="content__text">
+              <span class="content__text-inner content__text-inner--stroke"
+                >Damage in million $</span
+              >
+            </span>
+            <span class="content__text">
+              <span class="content__text-inner">Damage in million $</span>
+            </span>
+            <span class="content__text content__text--full">
+              <span class="content__text-inner content__text-inner--stroke"
+                >Damage in million $</span
+              >
+            </span>
+            <span class="content__text">
+              <span class="content__text-inner content__text-inner--stroke"
+                >Damage in million $</span
+              >
+            </span>
+            <span class="content__text">
+              <span class="content__text-inner">Damage in million $</span>
+            </span>
+            <span class="content__text content__text--full">
+              <span class="content__text-inner content__text-inner--stroke"
+                >Damage in million $</span
+              >
+            </span>
+            <span class="content__text">
+              <span class="content__text-inner content__text-inner--bottom"
+                >Damage in million $</span
+              >
+            </span>
+            <span class="content__text">
+              <span class="content__text-inner">Damage in million $</span>
+            </span>
+            <span class="content__text content__text--full">
+              <span class="content__text-inner content__text-inner--stroke"
+                >Damage in million $</span
+              >
+            </span>
+            <span class="content__text">
+              <span
+                class="content__text-inner content__text-inner--stroke content__text-inner--bottom"
+                >Damage in million $</span
+              >
+            </span>
+            <span class="content__text">
+              <span class="content__text-inner">Damage in million $</span>
+            </span>
+          </div>
+        </div>
 
-				<div class="frame__demos">
-					<a href="index.html" class="frame__demo frame__demo--current">1</a>
-					<a href="index2.html" class="frame__demo">2</a>
-					<a href="index3.html" class="frame__demo">3</a>
-					<a href="index4.html" class="frame__demo">4</a>
-					<a href="index5.html" class="frame__demo">5</a>
-				</div> 
-			</div>
+        <div class="frame__links frame__links--intro">
+          <a href="https://www.sandraviz.com/">Design & Code by Sandra 💞</a>
+          <div class="frame__links2">
+            <a
+              href="https://www.ncei.noaa.gov/access/billions/events/US/1980-2023?disasters[]=all-disasters"
+              >Data Source</a
+            >
+            <a
+              href="https://observablehq.com/collection/@sandraviz/billion-dollar-disaster"
+              >Notebooks</a
+            >
+            <a href="https://github.com/sandravizz/Billion-dollar-disaster-US"
+              >GitHub</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
 
-			<div class="content__slide">
-				<div class="content__img content__img--full">
-					<div class="content__img-inner" style="background-image: url(img/1.jpeg);"></div>
-				</div>
-				<div class="content__text-wrap">
-					<span class="content__text">
-						<span class="content__text-inner content__text-inner--stroke">natural disasters></span>
-					</span>
-					<span class="content__text">
-						<span class="content__text-inner">natural disasters</span>
-					</span>
-					<span class="content__text content__text--full">
-						<span class="content__text-inner content__text-inner--stroke">natural disasters</span>
-					</span>
-					<span class="content__text">
-						<span class="content__text-inner content__text-inner--stroke">natural disasters</span>
-					</span>
-					<span class="content__text">
-						<span class="content__text-inner">natural disasters</span>
-					</span>
-					<span class="content__text content__text--full">
-						<span class="content__text-inner content__text-inner--stroke">natural disasters</span>
-					</span>
-					<span class="content__text">
-						<span class="content__text-inner content__text-inner--bottom">natural disasters</span>
-					</span>
-					<span class="content__text">
-						<span class="content__text-inner">natural disasters</span>
-					</span>
-					<span class="content__text content__text--full">
-						<span class="content__text-inner content__text-inner--stroke">natural disasters</span>
-					</span>
-					<span class="content__text">
-						<span class="content__text-inner content__text-inner--stroke content__text-inner--bottom">natural disasters</span>
-					</span>
-					<span class="content__text">
-						<span class="content__text-inner">natural disasters</span>
-					</span>
-
-				</div>
-
-			</div>
-
-			<div class="content__slide">
-				<div class="content__img content__img--full">
-					<div class="content__img-inner" style="background-image: url(img/2.jpeg);"></div>
-				</div>
-				<div class="content__text-wrap">
-					<span class="content__text">
-						<span class="content__text-inner content__text-inner--stroke">USA | 1980 to 2024</span>
-					</span>
-					<span class="content__text">
-						<span class="content__text-inner">USA | 1980 to 2024</span>
-					</span>
-					<span class="content__text content__text--full">
-						<span class="content__text-inner content__text-inner--stroke">USA | 1980 to 2024</span>
-					</span>
-					<span class="content__text">
-						<span class="content__text-inner content__text-inner--stroke">USA | 1980 to 2024</span>
-					</span>
-					<span class="content__text">
-						<span class="content__text-inner">USA | 1980 to 2024</span>
-					</span>
-					<span class="content__text content__text--full">
-						<span class="content__text-inner content__text-inner--stroke">USA | 1980 to 2024</span>
-					</span>
-					<span class="content__text">
-						<span class="content__text-inner content__text-inner--bottom">USA | 1980 to 2024</span>
-					</span>
-					<span class="content__text">
-						<span class="content__text-inner">USA | 1980 to 2024</span>
-					</span>
-					<span class="content__text content__text--full">
-						<span class="content__text-inner content__text-inner--stroke">USA | 1980 to 2024</span>
-					</span>
-					<span class="content__text">
-						<span class="content__text-inner content__text-inner--stroke content__text-inner--bottom">USA | 1980 to 2024</span>
-					</span>
-					<span class="content__text">
-						<span class="content__text-inner">USA | 1980 to 2024</span>
-					</span>
-				</div>
-			</div>
-			<div class="content__slide">
-				<div class="content__img content__img--full">
-					<div class="content__img-inner" style="background-image: url(img/3.jpeg);"></div>
-				</div>
-				<div class="content__text-wrap">
-					<span class="content__text">
-						<span class="content__text-inner content__text-inner--stroke">Damage in million $</span>
-					</span>
-					<span class="content__text">
-						<span class="content__text-inner">Damage in million $</span>
-					</span>
-					<span class="content__text content__text--full">
-						<span class="content__text-inner content__text-inner--stroke">Damage in million $</span>
-					</span>
-					<span class="content__text">
-						<span class="content__text-inner content__text-inner--stroke">Damage in million $</span>
-					</span>
-					<span class="content__text">
-						<span class="content__text-inner">Damage in million $</span>
-					</span>
-					<span class="content__text content__text--full ">
-						<span class="content__text-inner content__text-inner--stroke">Damage in million $</span>
-					</span>
-					<span class="content__text">
-						<span class="content__text-inner content__text-inner--bottom">Damage in million $</span>
-					</span>
-					<span class="content__text">
-						<span class="content__text-inner">Damage in million $</span>
-					</span>
-					<span class="content__text content__text--full">
-						<span class="content__text-inner content__text-inner--stroke">Damage in million $</span>
-					</span>
-					<span class="content__text">
-						<span class="content__text-inner content__text-inner--stroke content__text-inner--bottom">Damage in million $</span>
-					</span>
-					<span class="content__text">
-						<span class="content__text-inner">Damage in million $</span>
-					</span>
-				</div>
-			</div>
-			
-			
-		
-			<div class="frame__links frame__links--intro">
-				<a href="https://www.sandraviz.com/">Design & Code by Sandra 💞</a>
-				<div class="frame__links2">
-					<a href="https://www.ncei.noaa.gov/access/billions/events/US/1980-2023?disasters[]=all-disasters">Data Source</a>
-					<a href="https://www.youtube.com/watch?v=FaoWCGo88ks">Videos</a>
-					<a href="https://github.com/sandravizz/Billion-dollar-disaster-US">GitHub</a>
-				</div>
-			</div>
-		</div>
-	</main>
-
-	<script src="plugins/imagesloaded.pkgd.min.js"></script>
-	<script src="plugins/TweenMax.min.js"></script>
-	<script src="js/title.js"></script>
-</body>
-
+    <script src="plugins/imagesloaded.pkgd.min.js"></script>
+    <script src="plugins/TweenMax.min.js"></script>
+    <script src="js/title.js"></script>
+  </body>
 </html>
