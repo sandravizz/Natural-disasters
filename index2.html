@@ -1,53 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Billion $ disasters 1980 - 2024 in the US</title>
+    <meta
+      name="description"
+      content="A data visualisation project about natural disasters happened in the US from 1980 - 2024"
+    />
+    <meta
+      name="keywords"
+      content="data visualisation, d3.js, natural disasters, climate change, sankey"
+    />
+    <meta name="author" content="Sandra Becker" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Kanit:500,900|Syncopate:700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+  </head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Billion $ disasters 1980 - 2024 in the US  </title>
-	<meta name="description" content="A data visualisation project about natural disasters happened in the US from 1980 - 2024" />
-	<meta name="keywords" content="data visualisation, d3.js, natural disasters, climate change, sankey" />
-	<meta name="author" content="Sandra Becker" />
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Kanit:500,900|Syncopate:700" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/base.css" />
-</head>
+  <body class="demo-2 loading">
+    <main>
+      <div class="frame">
+        <div class="frame__demos">
+          <a href="index.html" class="frame__demo">1</a>
+          <a href="index2.html" class="frame__demo frame__demo--current">2</a>
+          <a href="index3.html" class="frame__demo">3</a>
+          <a href="index4.html" class="frame__demo">4</a>
+          <a href="index5.html" class="frame__demo">5</a>
+        </div>
 
-<body class="demo-2 loading">
-	<main>
-		<div class="frame">
-			
-			<div class="frame__demos">
-				<a href="index.html" class="frame__demo">1</a>
-				<a href="index2.html" class="frame__demo frame__demo--current">2</a>
-				<a href="index3.html" class="frame__demo">3</a>
-				<a href="index4.html" class="frame__demo">4</a>
-				<a href="index5.html" class="frame__demo">5</a>
-			</div>
+        <div class="container">
+          <p class="title">Few disasters causing dramatic damage.</p>
+          <p class="chart_title">Damage in million $ by disaster type</p>
+          <div id="chart00"></div>
+          <div id="chart0"></div>
+        </div>
 
-			<div class="container"> 
-				<p class ="title">Few disasters causing dramatic damage.</p>					
-				<p class ="chart_title">Damage distribution by disaster type</p>							
-				<div id="chart00"></div>	
-				<div id="chart0"></div>	
-				<!-- <article class = "article"></article> -->
-			</div>
-
-			<div class="frame__links">
-				<a href="www.sandraviz.com">Design & Code by Sandra 💞</a>
-				<div class="frame__links2">
-					<a href="https://www.ncei.noaa.gov/access/billions/events/US/1980-2023?disasters[]=all-disasters">Data Source</a>
-					<a href="https://www.youtube.com/watch?v=FaoWCGo88ks">Videos</a>
-					<a href="https://github.com/sandravizz/Billion-dollar-disaster-US">GitHub</a>
-				</div>
-			</div>
-		</div>
-		
-		
-	</main>
-		<script src="plugins/d3.js"></script>
-		<script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
-		<script src="js/violion.js"></script>
-		<script src="js/violion_total.js"></script>
-</body>
+        <div class="frame__links">
+          <a href="www.sandraviz.com">Design & Code by Sandra 💞</a>
+          <div class="frame__links2">
+            <a
+              href="https://www.ncei.noaa.gov/access/billions/events/US/1980-2023?disasters[]=all-disasters"
+              >Data Source</a
+            >
+            <a
+              href="https://observablehq.com/collection/@sandraviz/billion-dollar-disaster"
+              >Notebooks</a
+            >
+            <a href="https://github.com/sandravizz/Billion-dollar-disaster-US"
+              >GitHub</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="plugins/d3.js"></script>
+    <script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
+    <script src="js/violion.js"></script>
+    <script src="js/violion_total.js"></script>
+  </body>
 </html>
