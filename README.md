@@ -6,7 +6,7 @@ At the same time climate change is becoming real and threatening all life on thi
 
 In this project I analyse deeply the most destructive natural disasters happening in the US over the last decades. The main objective is to understand patterns and possible changes over time providing a resourceful foundation for discussion or further research.
 
-On a practical side I showcase the whole process of a data visualisation project using the programming language JavaScript for data cleaning, EDA, plotting and the final dynamic visualisation with data provided by [NCEI](https://www.ncei.noaa.gov/access/billions/events/US/1980-2023?disasters[]=all-disasters).
+On a practical side I showcase the whole process of a data visualisation project using the programming language JavaScript for [data cleaning](https://observablehq.com/@sandraviz/billion-disasters_data_wrangeling?collection=@sandraviz/billion-dollar-disaster), [EDA](https://observablehq.com/@sandraviz/billion-dollar-disasters-arquero-js-plot-js?collection=@sandraviz/billion-dollar-disaster) and the final dynamic visualisation with data provided by [NCEI](https://www.ncei.noaa.gov/access/billions/events/US/1980-2023?disasters[]=all-disasters).
 
 Have a look at the image below showing a hurricane, one of the most dangerous natural disasters. Some birds though fly directly into the eye of the hurricane, where it is surprisingly calm.
 
@@ -54,9 +54,10 @@ In this second sankey it's all about our current decade and the question where a
 
 ![Lollipop chart](img/5A.png)
 
-Therefore the logic question is why tropical cyclones are the ones causing these "super" disasters now. Therefore I filtered only on these ones. Showing frequency, damage dimension as well as relation to death numbers over time reveals more interesting patterns, especially regarding recent years. We can clearly see that since early 2000 disasters have been happening more frequently and create in certain situations huge damage. Even though number of deaths and damage in dollars are kind of related, as both express the intensity of a disaster, we can see in this chart clearly two outliers where the number of deaths was unproportional high.
+Therefore the logical question is why tropical cyclones are the ones causing these "super" disasters now. Therefore I filtered only on these ones. Showing frequency, damage dimension as well as relation to death numbers over time reveals more interesting patterns, especially regarding recent years. We can clearly see that since early 2000 disasters have been happening more frequently and create in certain situations huge damage. Even though number of deaths and damage in dollars are kind of related, as both express the intensity of a disaster, we can see in this chart clearly two outliers where the number of deaths was unproportional high.
 
 ##
 
 Made with :green_heart: by [sandraviz](https://www.sandraviz.com/)
+
 Follow me on [linkedin](https://www.linkedin.com/in/sandradataviz/) or work with me [upwork](https://www.upwork.com/freelancers/~01385aaac85d3fbba5).
