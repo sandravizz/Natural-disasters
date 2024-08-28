@@ -1,6 +1,6 @@
 # Natural disasters
 
-The more time I spend in nature the more fascinated I get with its beauty, wisdom and teachings. It's hard to put into words so I quote Albert Einstein, who said _Look deep into nature, and then you will understand everything better_.
+The more time I spend in nature the more I am fascinated by its beauty, wisdom and teachings. It's hard to put into words so I quote Albert Einstein, who said _Look deep into nature, and then you will understand everything better_.
 
 At the same time climate change is becoming real and threatening all life on this planet. Responding to [Aaron Swartz](https://en.wikipedia.org/wiki/Aaron_Swartz)'s question _What is the most important thing you could be working on in the world right now? And if you're not working on that, why aren't you?_ I believe this is the most important thing right now.
 
@@ -14,15 +14,15 @@ Have a look at the image below showing a hurricane, one of the most dangerous na
 
 ## 0 EDA
 
-The first step is always to check your data and variable structure as well as general patterns and trends. For this purpose I used [arquero.js](https://uwdata.github.io/arquero/) as a data processing library and [plot.js](https://observablehq.com/plot/) as a plotting library. Please find the whole analysis and findings in this [Observable notebook](https://observablehq.com/@sandraviz/billion-dollar-disasters-arquero-js-plot-js?collection=@sandraviz/billion-dollar-disaster).
+The first step is always to check your data and variables as well as general patterns and trends. For this purpose I used [arquero.js](https://uwdata.github.io/arquero/) as a data processing library and [plot.js](https://observablehq.com/plot/) as a plotting/charting library. Please find the whole analysis and findings in this [Observable notebook](https://observablehq.com/@sandraviz/billion-dollar-disasters-arquero-js-plot-js?collection=@sandraviz/billion-dollar-disaster).
 
 ## 1 Intro | TweenMax.js
 
 ![Intro](img/1A.png)
 
-For me it is very important to understand the real situation behind the analysis and visualisation, what is the so called _human_ factor of the project. In the case of natural disasters it's mass destruction, deaths of humans and nature as well as putting a lot of people in hopeless living situations.
+It is very important for me to understand the whole situation behind the data I'm working with: what is the so called _human_ factor of the project. In the case of natural disasters it's mass destruction, deaths of humans and nature as well as putting a lot of people in hopeless living situations.
 
-I choose a sequence of three images to transmit a typical storyline and impressions in the situation of a natural disaster. I created a very short visual intro to the project using images, music and effects to create an atmosphere that matches the information shared.
+I choose a sequence of three images to transmit the atmosphere in the situation of a natural disaster.
 
 Often satellite images (like the frist one is referring to) are at the warning state of such an event. The second image showing an emergency police car with palms in the background bowing due to intense wind speed is a typical impression of a current natural disaster situation and finally an image of destruction using the color red to further more enhance the dramatic development in more recent years.
 
@@ -36,13 +36,13 @@ Credits to
 
 ![Violin chart](img/2A.png)
 
-As every story also this one should start simple. How many disasters happened, what amount of damage do disasters produce on average, what are the most extreme disasters and how is it different by type are typical questions, which pop up in the audiences mind first.
+As every story also this one should start simple. How many disasters happened? What damage is produced on average by one disaster? What are the most extreme disasters and how do those differentiate by type? These are typical questions when thinking about natural disasters.
 
 ## 3 Sankey diagram by decade | d3.js
 
 ![Sankey chart1](img/3A.png)
 
-After a visual introduction to the project I created a compact chart which shows the connection between disaster types and change over type. I chose to aggregate data by decade to soften outliers. In the sankey diagram we see two stacked bar charts representing the nodes hence the total damage caused by disaster type on the left side and by decades on the right side. The size of the paths shows how much a specific disaster type contributed to the damage of one specific decade and vice versa.
+After an introduction to the data by showing the distribution, I wanted to decompose the information on the time axis. For this purpose I created a compact chart which shows the connection between disaster types and change over type. I chose to aggregate data by decade to soften outliers. In the sankey diagram we see two stacked bar charts representing the nodes hence the total damage caused by disaster type on the left side and by decades on the right side. The size of the paths shows how much a specific disaster type contributed to the damage of one specific decade and vice versa.
 
 ## 4 Sankey diagram recent years | d3.js
 
@@ -59,5 +59,4 @@ Therefore the logic question is why tropical cyclones are the ones causing these
 ##
 
 Made with :green_heart: by [sandraviz](https://www.sandraviz.com/)
-
-Follow me: [twitter](https://twitter.com/SandraCrypto), [linkedin](https://www.linkedin.com/in/sandradataviz/)
+Follow me on [linkedin](https://www.linkedin.com/in/sandradataviz/) or work with me [upwork](https://www.upwork.com/freelancers/~01385aaac85d3fbba5).
