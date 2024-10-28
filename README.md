@@ -1,5 +1,7 @@
 # Natural disasters
 
+A [data visualisation project](https://www.sandraviz.com/natural-disasters) about natural disasters.
+
 The more time I spend in nature the more I am fascinated by its beauty, wisdom and teachings. It's hard to put into words so I quote Albert Einstein, who said _Look deep into nature, and then you will understand everything better_.
 
 At the same time climate change is becoming real and threatening all life on this planet. Responding to [Aaron Swartz](https://en.wikipedia.org/wiki/Aaron_Swartz)'s question _What is the most important thing you could be working on in the world right now? And if you're not working on that, why aren't you?_ I believe this is the most important thing right now.
