@@ -144,7 +144,7 @@ a:focus {
 }
 
 .frame__demos {
-	margin: 0rem 0;
+	margin: 0 auto;
 	justify-self: end;
 	font-weight: 600;
 	font-size: var(--step--2);
@@ -160,7 +160,7 @@ a:focus {
 	bottom: 0;
 	width: 100%;
 	font-weight: 500;
-	font-size: var(--step--3);
+	font-size: var(--step-1);
 	text-align: center;
 	line-height: 1.7;
 }
@@ -174,7 +174,7 @@ a:focus {
 	font-weight: 500;
 	margin-top: 7px;
 	margin-bottom: 10px;
-	font-size: var(--step--3);
+	font-size: var(--step--2);
 }
 
 .frame__links2 a:not(:last-child),
