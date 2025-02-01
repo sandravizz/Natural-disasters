@@ -1,63 +1,68 @@
-Name,Disaster,Costs,Deaths,Year,Decade,Hurricane
-Allen ,Tropical Cyclone,2177.2,13,1980,80,true
-Alicia ,Tropical Cyclone,9180,21,1983,80,true
-Elena ,Tropical Cyclone,3684.6,4,1985,80,true
-Gloria ,Tropical Cyclone,2431.5,11,1985,80,true
-Juan ,Tropical Cyclone,4220.7,63,1985,80,true
-Allison ,Tropical Cyclone,1445,11,1989,80,false
-Hugo ,Tropical Cyclone,22139.8,86,1989,80,true
-Bob ,Tropical Cyclone,3381.6,18,1991,90,true
-Andrew ,Tropical Cyclone,58860,61,1992,90,true
-Iniki ,Tropical Cyclone,6727,7,1992,90,true
-Alberto ,Tropical Cyclone,2066.9,32,1994,90,false
-Erin ,Tropical Cyclone,1708.5,6,1995,90,true
-Marilyn ,Tropical Cyclone,4200,13,1995,90,true
-Opal ,Tropical Cyclone,9378,27,1995,90,true
-Fran ,Tropical Cyclone,9763.8,37,1996,90,true
-Frances ,Tropical Cyclone,1316,2,1998,90,false
-Bonnie ,Tropical Cyclone,1842.4,3,1998,90,true
-Georges ,Tropical Cyclone,11250.9,16,1998,90,true
-Floyd ,Tropical Cyclone,11878.5,77,1999,90,true
-Allison ,Tropical Cyclone,14743.1,43,2001,0,false
-Lili ,Tropical Cyclone,1877.7,2,2002,0,true
-Isidore ,Tropical Cyclone,1955,5,2002,0,false
-Isabel ,Tropical Cyclone,9103.5,55,2003,0,true
-Charley ,Tropical Cyclone,25919.2,35,2004,0,true
-Frances ,Tropical Cyclone,15876,48,2004,0,true
-Ivan ,Tropical Cyclone,33211,57,2004,0,true
-Jeanne ,Tropical Cyclone,12144.6,28,2004,0,true
-Dennis ,Tropical Cyclone,3917.1,15,2005,0,true
-Katrina ,Tropical Cyclone,195046.1,1833,2005,0,true
-Rita ,Tropical Cyclone,28490.1,119,2005,0,true
-Wilma ,Tropical Cyclone,29260,35,2005,0,true
-Dolly ,Tropical Cyclone,1774.2,3,2008,0,true
-Gustav ,Tropical Cyclone,8395.8,53,2008,0,true
-Ike ,Tropical Cyclone,41998.3,112,2008,0,true
-Irene ,Tropical Cyclone,18351.9,45,2011,10,true
-Lee ,Tropical Cyclone,3392.1,21,2011,10,false
-Isaac ,Tropical Cyclone,3675.4,9,2012,10,true
-Sandy ,Tropical Cyclone,86502.7,159,2012,10,true
-Matthew ,Tropical Cyclone,12700,49,2016,10,true
-Harvey ,Tropical Cyclone,155000,89,2017,10,true
-Irma ,Tropical Cyclone,62000,97,2017,10,true
-Maria ,Tropical Cyclone,111600,2981,2017,10,true
-Florence ,Tropical Cyclone,29280,53,2018,10,true
-Michael ,Tropical Cyclone,30219.8,49,2018,10,true
-Dorian ,Tropical Cyclone,1932,10,2019,10,true
-Imelda ,Tropical Cyclone,6000,5,2019,10,false
-Hanna ,Tropical Cyclone,1268.5,0,2020,20,true
-Isaias ,Tropical Cyclone,5613.1,16,2020,20,true
-Laura ,Tropical Cyclone,27393.7,42,2020,20,true
-Sally ,Tropical Cyclone,8583.2,5,2020,20,true
-Delta ,Tropical Cyclone,3383.1,5,2020,20,true
-Zeta ,Tropical Cyclone,5135.3,6,2020,20,true
-Eta ,Tropical Cyclone,1722.8,12,2020,20,false
-Elsa ,Tropical Cyclone,1358.6,1,2021,20,false
-Fred ,Tropical Cyclone,1430.2,7,2021,20,false
-Ida ,Tropical Cyclone,82400.7,96,2021,20,true
-Nicholas ,Tropical Cyclone,1137.9,0,2021,20,true
-Fiona ,Tropical Cyclone,2610.4,25,2022,20,true
-Ian ,Tropical Cyclone,116272,152,2022,20,true
-Nicole ,Tropical Cyclone,1050.6,5,2022,20,true
-Typhoon Mawar ,Tropical Cyclone,4292.5,2,2023,20,false
-Idalia ,Tropical Cyclone,3490.6,5,2023,20,true
+Description,Disaster,Costs,Unadjusted Cost,Deaths,Year,Decade,Hurricane
+Hurricane Allen ,Tropical Cyclone,2236.2,590,13,1980,80,true
+Hurricane Alicia ,Tropical Cyclone,9450,3000,21,1983,80,true
+Hurricane Elena ,Tropical Cyclone,3788.4,1297.4,4,1985,80,true
+Hurricane Gloria ,Tropical Cyclone,2491.3,856.1,11,1985,80,true
+Hurricane Juan ,Tropical Cyclone,4340.4,1496.7,63,1985,80,true
+Tropical Storm Allison ,Tropical Cyclone,1485.9,585,11,1989,80,false
+Hurricane Hugo ,Tropical Cyclone,22679.7,8999.9,86,1989,80,true
+Hurricane Bob ,Tropical Cyclone,3471.8,1502.9,18,1991,90,true
+Hurricane Andrew ,Tropical Cyclone,60480,27000,61,1992,90,true
+Hurricane Iniki ,Tropical Cyclone,6913,3100,7,1992,90,true
+Tropical Storm Alberto ,Tropical Cyclone,2126.8,998.5,32,1994,90,false
+Hurricane Erin ,Tropical Cyclone,1751,850,6,1995,90,true
+Hurricane Marilyn ,Tropical Cyclone,4326,2100,13,1995,90,true
+Hurricane Opal ,Tropical Cyclone,9612.5,4689,27,1995,90,true
+Hurricane Fran ,Tropical Cyclone,10014,5007,37,1996,90,true
+Tropical Storm Frances ,Tropical Cyclone,1351,700,2,1998,90,false
+Hurricane Bonnie ,Tropical Cyclone,1891.4,980,3,1998,90,true
+Hurricane Georges ,Tropical Cyclone,11550.1,5984.5,16,1998,90,true
+Hurricane Floyd ,Tropical Cyclone,12203.2,6491,77,1999,90,true
+Tropical Storm Allison ,Tropical Cyclone,15084,8522,43,2001,0,false
+Hurricane Lili ,Tropical Cyclone,1932.9,1104.5,2,2002,0,true
+Tropical Storm Isidore ,Tropical Cyclone,2001,1150,5,2002,0,false
+Hurricane Isabel ,Tropical Cyclone,9322.9,5484,55,2003,0,true
+Hurricane Charley ,Tropical Cyclone,26559.2,15999.5,35,2004,0,true
+Hurricane Frances ,Tropical Cyclone,16268,9800,48,2004,0,true
+Hurricane Ivan ,Tropical Cyclone,34031,20500.5,57,2004,0,true
+Hurricane Jeanne ,Tropical Cyclone,12444.5,7496.5,28,2004,0,true
+Hurricane Dennis ,Tropical Cyclone,4017,2495,15,2005,0,true
+Hurricane Katrina ,Tropical Cyclone,201297.5,125029.5,1833,2005,0,true
+Hurricane Rita ,Tropical Cyclone,29415.2,18500.1,119,2005,0,true
+Hurricane Wilma ,Tropical Cyclone,30020,19000,35,2005,0,true
+Hurricane Dolly ,Tropical Cyclone,1812.2,1267.3,3,2008,0,true
+Hurricane Gustav ,Tropical Cyclone,8635.7,5997,53,2008,0,true
+Hurricane Ike ,Tropical Cyclone,43198.4,29998.8,112,2008,0,true
+Hurricane Irene ,Tropical Cyclone,18756.7,13494,45,2011,10,true
+Tropical Storm Lee ,Tropical Cyclone,3492.4,2512.5,21,2011,10,false
+Hurricane Isaac ,Tropical Cyclone,3786.1,2763.5,9,2012,10,true
+Hurricane Sandy ,Tropical Cyclone,88453.9,65039.6,159,2012,10,true
+Hurricane Matthew ,Tropical Cyclone,13100,10000,49,2016,10,true
+Hurricane Harvey ,Tropical Cyclone,160000,125000,89,2017,10,true
+Hurricane Irma ,Tropical Cyclone,64000,50000,97,2017,10,true
+Hurricane Maria ,Tropical Cyclone,115200,90000,2981,2017,10,true
+Hurricane Florence ,Tropical Cyclone,30000,24000,53,2018,10,true
+Hurricane Michael ,Tropical Cyclone,31218.8,24975,49,2018,10,true
+Hurricane Dorian ,Tropical Cyclone,1980.3,1610,10,2019,10,true
+Tropical Storm Imelda ,Tropical Cyclone,6150,5000,5,2019,10,false
+Hurricane Hanna ,Tropical Cyclone,1300.8,1075,0,2020,20,true
+Hurricane Isaias ,Tropical Cyclone,5756.1,4757,16,2020,20,true
+Hurricane Laura ,Tropical Cyclone,28090.3,23215,42,2020,20,true
+Hurricane Sally ,Tropical Cyclone,8801.5,7274,5,2020,20,true
+Hurricane Delta ,Tropical Cyclone,3469.3,2867,5,2020,20,true
+Hurricane Zeta ,Tropical Cyclone,5266,4352,6,2020,20,true
+Tropical Storm Eta ,Tropical Cyclone,1766.7,1460,12,2020,20,false
+Tropical Storm Elsa ,Tropical Cyclone,1407.1,1213,1,2021,20,false
+Tropical Storm Fred ,Tropical Cyclone,1481.3,1277,7,2021,20,false
+Hurricane Ida ,Tropical Cyclone,84608.1,73572,96,2021,20,true
+Hurricane Nicholas ,Tropical Cyclone,1168.5,1016,0,2021,20,true
+Hurricane Fiona ,Tropical Cyclone,2685.7,2510,25,2022,20,true
+Hurricane Ian ,Tropical Cyclone,119626,111800,152,2022,20,true
+Hurricane Nicole ,Tropical Cyclone,1081.2,1020,5,2022,20,true
+Typhoon Mawar ,Tropical Cyclone,4420,4250,2,2023,20,false
+Hurricane Idalia ,Tropical Cyclone,3559.7,3456,5,2023,20,true
+Hurricane Beryl ,Tropical Cyclone,7219,7219,46,2024,20,true
+Hurricane Debby ,Tropical Cyclone,2476,2476,17,2024,20,true
+Hurricane Francine ,Tropical Cyclone,1291,1291,0,2024,20,true
+Hurricane Helene ,Tropical Cyclone,78721,78721,219,2024,20,true
+Hurricane Milton ,Tropical Cyclone,34250,34250,32,2024,20,true
