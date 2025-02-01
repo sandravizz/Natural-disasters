@@ -10,7 +10,7 @@ At the same time climate change is becoming real and threatening all life on thi
 
 In this project I analyse deeply the most destructive natural disasters happening in the US over the last decades. The main objective is to understand patterns and possible changes over time providing a resourceful foundation for discussion or further research.
 
-On a practical side I showcase the whole process of a data visualisation project using the programming language JavaScript for [data cleaning](https://observablehq.com/@sandraviz/billion-disasters_data_wrangeling?collection=@sandraviz/natural-disasters), [EDA](https://observablehq.com/@sandraviz/billion-dollar-disasters-arquero-js-plot-js?collection=@sandraviz/billion-dollar-disaster) and the final dynamic visualisation with data provided by [NCEI](https://www.ncei.noaa.gov/access/billions/events/US/1980-2023?disasters[]=all-disasters).
+On a practical side I showcase the whole process of a data visualisation project using the programming language JavaScript for [data cleaning](https://observablehq.com/@sandraviz/billion-disasters_data_wrangeling?collection=@sandraviz/natural-disasters), [EDA](https://observablehq.com/@sandraviz/billion-dollar-disasters-arquero-js-plot-js?collection=@sandraviz/billion-dollar-disaster) and the final dynamic visualisation with data provided by [NCEI](https://www.ncei.noaa.gov/access/billions/events/US/1980-2024?disasters[]=all-disasters).
 
 Have a look at the image below showing a hurricane, one of the most dangerous natural disasters. Some birds though fly directly into the eye of the hurricane, where it is surprisingly calm.
 
