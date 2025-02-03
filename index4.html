@@ -24,32 +24,29 @@
     <link rel="stylesheet" type="text/css" href="css/base.css" />
   </head>
 
-  <body class="demo-2 loading">
+  <body class="loading">
     <main>
       <div class="frame">
-        <div class="frame__links">
-          <div class="frame__links2">
-            <a
-              href="https://www.ncei.noaa.gov/access/billions/events/US/1980-2024?disasters[]=all-disasters"
-              >Data Source</a
-            >
-            <a
-              href="https://observablehq.com/collection/@sandraviz/natural-disasters"
-              >Notebooks</a
-            >
-            <a href="https://github.com/sandravizz/Billion-dollar-disaster-US"
-              >GitHub</a
-            >
-          </div>
-          <div class="frame__demos">
-            <a href="index.html" class="frame__demo">1</a>
-            <a href="index2.html" class="frame__demo">2</a>
-            <a href="index3.html" class="frame__demo">3</a>
-            <a href="index4.html" class="frame__demo frame__demo--current">4</a>
-            <a href="index5.html" class="frame__demo">5</a>
-          </div>
+        <div class="frame_links">
+          <a
+            href="https://www.ncei.noaa.gov/access/billions/events/US/1980-2024?disasters[]=all-disasters"
+            >Data Source</a
+          >
+          <a
+            href="https://observablehq.com/collection/@sandraviz/natural-disasters"
+            >Notebooks</a
+          >
+          <a href="https://github.com/sandravizz/Billion-dollar-disaster-US"
+            >GitHub</a
+          >
         </div>
-
+        <div class="frame_pages">
+          <a href="index.html">Intro</a>
+          <a href="index2.html">Distribution</a>
+          <a href="index3.html">By decades</a>
+          <a href="index4.html">Recent Years</a>
+          <a href="index5.html">Tropical storms</a>
+        </div>
         <div class="container">
           <p class="title">
             Trend continues in recent years, with
@@ -60,9 +57,6 @@
           </p>
           <div id="chart2"></div>
         </div>
-        <a class="frame__links2" href="https://www.sandraviz.com/"
-          >Design & Code by Sandra 💞</a
-        >
       </div>
     </main>
     <script src="plugins/d3.js"></script>

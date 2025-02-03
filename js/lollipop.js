@@ -2,9 +2,9 @@
 //  Margin and canvas
 // --------------------------------------
 
-const margin3 = { top: 55, right: 20, bottom: 30, left: 20 };
+const margin3 = { top: 40, right: 20, bottom: 30, left: 20 };
 const width3 = 1000;
-const height3 = 450;
+const height3 = 420;
 const innerwidth3 = width3 - margin3.left - margin3.right;
 const innerheight3 = height3 - margin3.top - margin3.bottom;
 
@@ -34,7 +34,7 @@ const data3 = d3
     return {
       Costs: +d.Costs,
       Deaths: +d.Deaths,
-      Name: d.Name,
+      Description: d.Description,
       Disaster: d.Disaster,
       Year: parseDate(d.Year),
     };
@@ -46,13 +46,17 @@ const data3 = d3
     // Tooltip
     // --------------------------------------
 
-    // const tooltip = d3.tip()
-    //     .attr("class", "tooltip")
-    //     .html(
-    //       (event, d) => `<div>${(d.Name)}<br>Year ${formatDate(d.Year)}</br>Death ${(d.Deaths)}<br>Damage ${format(d.Costs)}</br></div>`
-    //     );
+    const tooltip = d3
+      .tip()
+      .attr("class", "tooltip")
+      .html(
+        (event, d) =>
+          `<div>${d.Description}<br>Year ${formatDate(d.Year)}</br>Death ${
+            d.Deaths
+          }<br>Damage ${format(d.Costs)}</br></div>`
+      );
 
-    // svg3.call(tooltip);
+    svg3.call(tooltip);
 
     // --------------------------------------
     //  Scales
@@ -158,8 +162,8 @@ const data3 = d3
       .attr("stroke", (d) => c(d.Hurricane))
       .attr("stroke-opacity", 1)
       .attr("stroke-width", 0.2)
-      // .on("mouseover", tooltip.show)
-      // .on("mouseout", tooltip.hide)
+      .on("mouseover", tooltip.show)
+      .on("mouseout", tooltip.hide)
       .transition()
       .delay((d, i) => 500 + x(d.Year) * 5)
       .duration(1000)
@@ -177,8 +181,8 @@ const data3 = d3
       .attr("r", 0)
       .attr("fill", "#ff00c4")
       .attr("fill-opacity", 1)
-      // .on("mouseover", tooltip.show)
-      // .on("mouseout", tooltip.hide)
+      .on("mouseover", tooltip.show)
+      .on("mouseout", tooltip.hide)
       .transition()
       .delay(7000)
       .duration(500)
@@ -197,8 +201,8 @@ const data3 = d3
       .attr("opacity", 0)
       .text((d) => d.Name)
       .attr("text-anchor", "end")
-      // .on("mouseover", tooltip.show)
-      // .on("mouseout", tooltip.hide)
+      .on("mouseover", tooltip.show)
+      .on("mouseout", tooltip.hide)
       .transition()
       .delay(8000)
       .duration(500)

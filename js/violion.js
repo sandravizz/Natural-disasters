@@ -2,7 +2,7 @@
 //  Margin and canvas
 // --------------------------------------
 
-const margin0 = { top: 50, right: 0, bottom: 0, left: 10 };
+const margin0 = { top: 20, right: 0, bottom: 0, left: 10 };
 const width0 = 1000;
 const height0 = 180;
 const innerwidth0 = width0 - margin0.left - margin0.right;
