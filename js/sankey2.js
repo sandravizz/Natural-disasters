@@ -4,7 +4,7 @@
 
 const margin2 = { top: 30, right: 90, bottom: 20, left: 100 };
 const width2 = 1000;
-const height2 = 440;
+const height2 = 620;
 const innerWidth2 = width2 - margin2.left - margin2.right;
 const innerHeight2 = height2 - margin2.top - margin2.bottom;
 
@@ -55,7 +55,7 @@ const data2 = d3
 
     let data_final2 = { nodes, links };
 
-    console.log(data_final2);
+    console.log("data_final2",data_final2);
 
     // --------------------------------------
     //  Formating
@@ -134,7 +134,7 @@ const data2 = d3
       .selectAll("text")
       .data(sankey2(data_final2).nodes)
       .join("text")
-      .attr("class", "text")
+      .attr("class", "nodes-text")
       .text((d) => d.name)
       .attr("x", (d) => (d.x0 > innerWidth2 / 2 ? d.x1 : d.x0 - 5))
       .attr("y", (d) => (d.y1 + d.y0) / 2)

@@ -34,7 +34,6 @@ body {
 /* Font stylings */
 /*--------------------------------------*/
 
-
 :root {
 	--step--10: clamp(0.1342rem, 0.1982rem + -0.0826vw, 0.1817rem);
 	--step--9: clamp(0.1678rem, 0.2355rem + -0.0874vw, 0.218rem);
@@ -57,7 +56,7 @@ body {
 	--step-8: clamp(4.8373rem, 3.9283rem + 4.5448vw, 7.4506rem);
 	--step-9: clamp(5.8048rem, 4.5844rem + 6.1017vw, 9.3132rem);
 	--step-10: clamp(6.9657rem, 5.3393rem + 8.1319vw, 11.6415rem);
-  }
+}
 
 /*--------------------------------------*/
 /* Page stylings */
@@ -138,32 +137,32 @@ a:focus {
 }
 
 .frame_links {
-	margin: 0rem 0rem 0rem 0rem;
-	padding: 0rem 0rem  0.5rem 0rem;
-	position: relative;
+	margin: 0rem 1rem 1rem 0rem;
+	padding: 0rem 1rem 1rem 0rem;
 	width: 100%;
+	position: relative;
 	font-weight: 400;
-	font-size: var(--step--3);
+	font-size: var(--step--4);
 	text-align: center;
 	line-height: 1;
 }
 
 .frame_links a:hover {
 	font-weight: 600;
-	font-size: var(--step--3);
+	font-size: var(--step--4);
 }
 
 .frame_pages {
 	margin: 0rem 0rem 0rem 0rem;
-	padding: 0rem 1rem  1rem 0rem;
-	font-weight: 400;
-	font-size: var(--step--3);
+	padding: 0rem 1rem 1rem 0rem;
+	font-weight: 500;
+	font-size: var(--step--2);
 	line-height: 1;
 }
 
 .frame_pages:hover {
 	font-weight: 600;
-	font-size: var(--step--3);
+	font-size: var(--step--2);
 }
 
 .frame_links--intro {
@@ -327,8 +326,10 @@ a:focus {
 	margin-top: 0px;
 	margin-bottom: 0px;
 	padding-bottom: 0px;
+	font-weight: 400;
+	text-anchor: middle;
 	fill: white;
-	font-size: var(--step--3);
+	font-size: var(--step--2);
 }
 
 .text2 {
@@ -336,7 +337,7 @@ a:focus {
 	margin-bottom: 20px;
 	padding-bottom: 10px;
 	fill: white;
-	font-size: var(--step--3);
+	font-size: var(--step--2);
 }
 
 .anotations {
@@ -407,6 +408,7 @@ a:focus {
 	box-shadow: 1px 3px 8px #ccff99;
 	border-radius: 20px;
 	line-height: 1.4;
+	z-index: 999999;
 }
 
 /*--------------------------------------*/
@@ -416,16 +418,16 @@ a:focus {
 .x-violin,
 .y-violin text {
 	font-family: 'Montserrat Alternates', sans-serif;
-	font-weight: 200;
-	font-size: var(--step--3);
+	font-weight: 400;
+	font-size: var(--step--2);
 	opacity: 1;
 }
 
 .x-axis,
 .y-axis text {
 	font-family: 'Montserrat Alternates', sans-serif;
-	font-weight: 300;
-	font-size: var(--step--3);
+	font-weight: 400;
+	font-size: var(--step--1);
 	opacity: 1;
 }
 

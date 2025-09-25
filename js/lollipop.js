@@ -2,9 +2,9 @@
 //  Margin and canvas
 // --------------------------------------
 
-const margin3 = { top: 40, right: 20, bottom: 30, left: 20 };
+const margin3 = { top: 60, right: 20, bottom: 30, left: 20 };
 const width3 = 1000;
-const height3 = 420;
+const height3 = 620;
 const innerwidth3 = width3 - margin3.left - margin3.right;
 const innerheight3 = height3 - margin3.top - margin3.bottom;
 
@@ -214,7 +214,7 @@ const data3 = d3
 
     innerChart3
       .append("text")
-      .attr("x", 470)
+      .attr("x", 440)
       .attr("y", 10)
       .attr("class", "anotations")
       .text("WTF 😱")

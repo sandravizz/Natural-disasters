@@ -4,7 +4,7 @@
 
 const margin00 = { top: 30, right: 0, bottom: 0, left: 0 };
 const width00 = 1000;
-const height00 = 250;
+const height00 = 310;
 const innerwidth00 = width00 - margin00.left - margin00.right;
 const innerheight00 = height00 - margin00.top - margin00.bottom;
 
@@ -23,10 +23,10 @@ const innerChart00 = svg00
 
 const data00 = d3.csv("./data/violin.csv", d3.autoType).then(function (data00) {
   costs = data00.map((d) => d.costs);
-  console.log(costs);
+  // console.log(costs);
 
   var bins = d3.bin()(costs);
-  console.log(bins);
+  // console.log(bins);
 
   // --------------------------------------
   //  Scales
@@ -69,8 +69,8 @@ const data00 = d3.csv("./data/violin.csv", d3.autoType).then(function (data00) {
     .append("text")
     .attr("class", "text")
     .text("395 natural disasters (all types)")
-    .attr("x", innerwidth00 / 2 - 70)
-    .attr("y", -9)
+    .attr("x", innerwidth00 / 2)
+    .attr("y", -11)
     .attr("fill", "white");
 
   // --------------------------------------
@@ -86,15 +86,15 @@ const data00 = d3.csv("./data/violin.csv", d3.autoType).then(function (data00) {
         .axisRight(y)
         .tickSize(innerwidth00 / 2)
         .tickFormat(d3.format(".02s"))
-        .tickPadding(9)
+        .tickPadding(14)
         .tickValues([28000, 60000, 100000, 140000, 180000])
     )
     .call((g) =>
       g
         .append("text")
-        .attr("x", innerwidth00 / 2 + 35)
-        .attr("y", y(180000) + 3.5)
+        .attr("x", innerwidth00 / 2 + 47)
+        .attr("y", y(180000) + 5)
         .attr("fill", "white")
-        .text(" = 180.000.000.000 $")
+        .text(" = 180.000.000.000 $ in damage")
     );
 });

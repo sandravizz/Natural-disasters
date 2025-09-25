@@ -2,9 +2,9 @@
 //  Margin and canvas
 // --------------------------------------
 
-const margin0 = { top: 20, right: 0, bottom: 0, left: 10 };
+const margin0 = { top: 150, right: 0, bottom: 0, left: 10 };
 const width0 = 1000;
-const height0 = 180;
+const height0 = 380;
 const innerwidth0 = width0 - margin0.left - margin0.right;
 const innerheight0 = height0 - margin0.top - margin0.bottom;
 
@@ -30,7 +30,7 @@ const disaster = [
   { id: "Winter Storm", count: 24 },
 ];
 
-console.log(disaster);
+// console.log(disaster);
 
 const data0 = d3.csv("./data/violin.csv", d3.autoType).then(function (data0) {
   disaster.forEach((disaster) => {
@@ -39,7 +39,7 @@ const data0 = d3.csv("./data/violin.csv", d3.autoType).then(function (data0) {
       .map((d) => d.costs);
 
     disaster["bins"] = d3.bin()(disaster.costs);
-    console.log(disaster.bins);
+    // console.log(disaster.bins);
   });
 
   disaster.sort((a, b) => a.mean - b.mean);
@@ -113,6 +113,9 @@ const data0 = d3.csv("./data/violin.csv", d3.autoType).then(function (data0) {
       .append("path")
       .attr("d", areaGenerator(disaster.bins))
       .attr("fill", (d) => color(disaster.id));
+
+
+      
   });
 
   // --------------------------------------
@@ -125,8 +128,36 @@ const data0 = d3.csv("./data/violin.csv", d3.autoType).then(function (data0) {
     .selectAll("text")
     .data(disaster)
     .join("text")
-    .text((d) => d.count + " " + d.id + "s")
-    .attr("x", (d, i) => 15 + i * 177)
+    .text((d) => d.count)
+    .attr("x", (d, i) => 63 + i * 173)
+    .attr("y", -30)
+    .attr("fill", (d) => color(d.id));
+
+  innerChart0
+    .append("g")
+    .attr("class", "text")
+    .selectAll("text")
+    .data(disaster)
+    .join("text")
+    .text((d) => d.id + "s")
+    .attr("x", (d, i) => 63 + i * 173)
     .attr("y", -10)
     .attr("fill", (d) => color(d.id));
+
+  // --------------------------------------
+  //  Axes
+  // --------------------------------------
+
+  // innerChart0
+  //   .append("g")
+  //   .attr("class", "y-violin")
+  //   .attr("transform", `translate(0, 0)`)
+  //   .call(
+  //     d3
+  //       .axisRight(y)
+  //       .tickSize(innerwidth00 / 2)
+  //       .tickFormat(d3.format(".02s"))
+  //       .tickPadding(-20)
+  //       .tickValues([25000, 50000, 100000, 150000])
+  //   );
 });

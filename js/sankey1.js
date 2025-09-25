@@ -4,7 +4,7 @@
 
 const margin = { top: 30, right: 90, bottom: 20, left: 130 };
 const width = 1000;
-const height = 440;
+const height =  620;
 const innerWidth = width - margin.left - margin.right;
 const innerHeight = height - margin.top - margin.bottom;
 
@@ -158,7 +158,7 @@ const data = d3
       .selectAll("text")
       .data(sankey(data_final).nodes)
       .join("text")
-      .attr("class", "text")
+      .attr("class", "nodes-text")
       .text((d) => d.name + "s" /*+ " " + format(d.value)*/)
       .attr("x", (d) => (d.x0 > innerWidth / 2 ? d.x1 : d.x0 - 5))
       .attr("fill", "white")
