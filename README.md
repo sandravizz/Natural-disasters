@@ -1,6 +1,6 @@
 # Natural disasters
 
-A [data visualisation project](https://www.sandraviz.com/inner-project-page/project-title-01) about natural disasters.
+A [data visualisation project](https://www.sandraviz.com/inner-project-page/project-title-01) about natural disasters. 
 
 ## Introduction
 
