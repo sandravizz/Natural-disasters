@@ -22,8 +22,6 @@ The first step is always to check your data and variables as well as general pat
 
 ## 1 Intro | TweenMax.js
 
-![Intro](img/1A.png)
-
 It is very important for me to understand the whole situation behind the data I'm working with: what is the so called _human_ factor of the project. In the case of natural disasters it's mass destruction, deaths of humans and nature as well as putting a lot of people in hopeless living situations.
 
 I choose a sequence of three images to transmit the atmosphere in the situation of a natural disaster.
