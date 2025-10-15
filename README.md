@@ -64,4 +64,4 @@ Therefore the logical question is why tropical cyclones are the ones causing the
 
 Made with :green_heart: by [Sandra](https://www.sandraviz.com)
 
-I am available for freelance data visualization work. Please [contact me](https://www.sandraviz.com/contact) in case you would like me to help you with my experience and expertise or [follow](https://bsky.app/profile/sandraviz.bsky.social) and [connect](https://www.linkedin.com/in/sandradataviz/) with me.
+I am available for freelance data visualization work. Please [contact me](https://www.sandraviz.com/contact) in case you would like me to help you with my experience and expertise or [connect](https://www.linkedin.com/in/sandradataviz/) with me.
